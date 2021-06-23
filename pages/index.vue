@@ -1,7 +1,7 @@
 <template>
   <div class="container">
-    <div>
-      <Logo />
+    <div class="row">
+      <Header />
       <h1 class="title">nuxt-film-app</h1>
       <div class="links">
         <a
@@ -26,19 +26,13 @@
 </template>
 
 <script>
-export default {}
+import Header from '~/components/Header.vue'
+export default {
+  components: { Header },
+}
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
 .title {
   font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
     'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;

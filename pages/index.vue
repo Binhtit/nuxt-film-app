@@ -1,9 +1,23 @@
 <template>
-  <div class="container">
+  <div class="container main__wrapper">
     <div class="row">
-      <Header />
-      <h1 class="title">nuxt-film-app</h1>
-      <div class="links">
+      <div class="col-md-10 p-0">
+        <VueSlickCarousel :arrows="false" :dots="true" :autoplay="true">
+          <div>
+            <img src="@/assets/image/home-slide1.png" alt="image-slide" />
+          </div>
+          <div>
+            <img src="@/assets/image/home-slide1.png" alt="image-slide" />
+          </div>
+          <div>
+            <img src="@/assets/image/home-slide1.png" alt="image-slide" />
+          </div>
+        </VueSlickCarousel>
+      </div>
+      <div class="col-md-2 p-0">
+        <div class="home__list-movies-v scroll-dark">
+          <List-movies-v />
+        </div>
         <a
           href="https://nuxtjs.org/"
           target="_blank"
@@ -26,32 +40,22 @@
 </template>
 
 <script>
-import Header from '~/components/Header.vue'
+import VueSlickCarousel from 'vue-slick-carousel'
+import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+// optional style for arrows & dots
+import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+import ListMoviesV from '~/components/List-movies-v.vue'
 export default {
-  components: { Header },
+  name: 'MyComponent',
+  components: { VueSlickCarousel, ListMoviesV },
 }
 </script>
 
-<style>
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+<style lang="scss">
+.home {
+  &__list-movies-v {
+    height: 384px;
+    overflow-y: scroll;
+  }
 }
 </style>

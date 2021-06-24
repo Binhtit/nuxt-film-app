@@ -10,14 +10,18 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,regular,italic,500,700,900%7CCatamaran:100,200,300,regular,500,600,700,800,900%7CNunito:regular&amp;subset=latin,vietnamese',
+      },
+    ],
     script: [{ src: '@/assets/js/bootstrap.min.js' }],
-    // eslint-disable-next-line no-dupe-keys
-    script: [{ src: 'https://code.jquery.com/jquery-3.2.1.slim.min.js' }],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['@/assets/css/main.scss', '@/assets/css/bootstrap.min.css'],
+  css: ['@/assets/css/bootstrap.min.css', '@/assets/css/root.scss'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],

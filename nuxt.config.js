@@ -16,6 +16,10 @@ export default {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,regular,italic,500,700,900%7CCatamaran:100,200,300,regular,500,600,700,800,900%7CNunito:regular&amp;subset=latin,vietnamese',
       },
+      {
+        rel: 'stylesheet',
+        href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css',
+      },
     ],
     script: [{ src: '@/assets/js/bootstrap.min.js' }],
   },

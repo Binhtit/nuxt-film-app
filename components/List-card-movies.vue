@@ -96,6 +96,7 @@ export default {
       }
     }
     ._date {
+      font-size: 13px;
       text-align: center;
       color: var(--gray1);
       i {

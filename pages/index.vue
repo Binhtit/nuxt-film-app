@@ -1,5 +1,5 @@
 <template>
-  <div class="container main__wrapper">
+  <div class="container home__wrapper">
     <div class="row">
       <div class="col-md-9 p-0">
         <VueSlickCarousel :arrows="false" :dots="true" :autoplay="true">
@@ -20,9 +20,41 @@
         </div>
       </div>
     </div>
+    <div class="row home__filter bg-component">
+      <div class="col-md-6 d-flex justify-content-between py-2">
+        <span
+          class="_filter-btn"
+          :class="{ _active: filterMoviesCode == 'all' }"
+          @click="filterMoviesCode = 'all'"
+        >
+          Tất cả
+        </span>
+        <span
+          class="_filter-btn"
+          :class="{ _active: filterMoviesCode == '1' }"
+          @click="filterMoviesCode = '1'"
+        >
+          Hành động
+        </span>
+        <span
+          class="_filter-btn"
+          :class="{ _active: filterMoviesCode == '2' }"
+          @click="filterMoviesCode = '2'"
+        >
+          Phép thuật
+        </span>
+        <span
+          class="_filter-btn"
+          :class="{ _active: filterMoviesCode == '3' }"
+          @click="filterMoviesCode = '3'"
+        >
+          Harem
+        </span>
+      </div>
+    </div>
     <div class="row bg-component">
       <section class="col-md-9 p-0 p-2">
-        <list-card-movies :movies-arr="moviesArr" />
+        <list-card-movies :movies-arr="moviesRs" />
       </section>
     </div>
   </div>
@@ -40,6 +72,7 @@ export default {
   components: { VueSlickCarousel, ListMoviesLatest, ListCardMovies },
   data() {
     return {
+      filterMoviesCode: 'all',
       moviesArr: [
         {
           id: 1,
@@ -49,8 +82,9 @@ export default {
           episodes: 25,
           description:
             'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
-          star: '4',
+          star: '2',
           date: '2021',
+          type: '1',
           image:
             'https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg',
         },
@@ -64,6 +98,7 @@ export default {
             'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
           star: '4',
           date: '2021',
+          type: '2',
           image:
             'https://img.vncdn.xyz/uploads/images/doc-bo-tieu-dao-f3199.jpg',
         },
@@ -75,8 +110,9 @@ export default {
           episodes: 25,
           description:
             'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
-          star: '4',
+          star: '1',
           date: '2021',
+          type: '1',
           image:
             'https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg',
         },
@@ -90,6 +126,7 @@ export default {
             'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
           star: '4',
           date: '2021',
+          type: '2',
           image:
             'https://img.vncdn.xyz/uploads/images/doc-bo-tieu-dao-f3199.jpg',
         },
@@ -103,6 +140,7 @@ export default {
             'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
           star: '4',
           date: '2021',
+          type: '2',
           image:
             'https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg',
         },
@@ -116,6 +154,7 @@ export default {
             'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
           star: '4',
           date: '2021',
+          type: '1',
           image:
             'https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg',
         },
@@ -129,6 +168,7 @@ export default {
             'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
           star: '4',
           date: '2021',
+          type: '1',
           image:
             'https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg',
         },
@@ -142,6 +182,7 @@ export default {
             'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
           star: '4',
           date: '2021',
+          type: '1',
           image:
             'https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg',
         },
@@ -155,6 +196,7 @@ export default {
             'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
           star: '4',
           date: '2021',
+          type: '2',
           image:
             'https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg',
         },
@@ -168,6 +210,7 @@ export default {
             'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
           star: '4',
           date: '2021',
+          type: '1',
           image:
             'https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg',
         },
@@ -181,6 +224,7 @@ export default {
             'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
           star: '4',
           date: '2021',
+          type: '3',
           image:
             'https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg',
         },
@@ -194,11 +238,24 @@ export default {
             'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
           star: '4',
           date: '2021',
+          type: '1',
           image:
             'https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg',
         },
       ],
     }
+  },
+  computed: {
+    moviesRs() {
+      return this.moviesArr.filter((movie) => {
+        if (this.filterMoviesCode === '1') return movie.type === '1'
+
+        if (this.filterMoviesCode === '2') return movie.type === '2'
+
+        if (this.filterMoviesCode === '3') return movie.type === '3'
+        return movie
+      })
+    },
   },
 }
 </script>
@@ -209,6 +266,36 @@ export default {
     height: 384px;
     background: var(--componentbackground);
     overflow-y: scroll;
+  }
+  &__filter {
+    border-bottom: 2px solid var(--mainbackground);
+    ._filter-btn {
+      cursor: pointer;
+      color: var(--gray2);
+      transition: 0.3s ease;
+      &._active {
+        color: var(--white);
+        font-weight: bold;
+      }
+      &:hover {
+        color: var(--white);
+      }
+    }
+  }
+}
+
+// slick-slider customization
+.slick-slider {
+  .slick-dots {
+    bottom: 15px;
+    li {
+      button {
+        &::before {
+          font-size: 12px;
+          color: var(--white);
+        }
+      }
+    }
   }
 }
 </style>

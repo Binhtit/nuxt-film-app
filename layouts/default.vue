@@ -6,8 +6,19 @@
       </div>
     </div>
     <Nuxt />
+    <div class="container">
+      <Footer />
+    </div>
   </div>
 </template>
+
+<script>
+export default {
+  mounted() {
+    document.body.classList.add('scroll-dark')
+  },
+}
+</script>
 
 <style>
 html {

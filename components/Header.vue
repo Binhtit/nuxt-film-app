@@ -1,9 +1,9 @@
 <template>
-  <div class="header__navbar mb-2">
+  <div class="header _navbar mb-2">
     <nav class="navbar navbar-expand-lg navbar-dark">
-      <nuxt-link class="navbar-brand" to="/"
-        >Navbar<span class="sr-only">(current)</span></nuxt-link
-      >
+      <nuxt-link class="_logo navbar-brand" to="/"
+        ><img src="/logo.png" alt="hoạt hình trung quốc"
+      /></nuxt-link>
       <button
         class="navbar-toggler"
         type="button"
@@ -19,25 +19,25 @@
       <div id="navbarSupportedContent" class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active ml-3">
-            <nuxt-link to="/2d-movies"
+            <nuxt-link to="/2d-movies" class="text-hover-yellow"
               >HOẠT HÌNH 2D<span class="sr-only">(current)</span></nuxt-link
             >
           </li>
           <li class="nav-item ml-3">
-            <nuxt-link to="/3d-movies"
-              >HOẠT HÌNH 2D<span class="sr-only">(current)</span></nuxt-link
+            <nuxt-link to="/3d-movies" class="text-hover-yellow"
+              >HOẠT HÌNH 3D<span class="sr-only">(current)</span></nuxt-link
             >
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
+        <form class="search-form form-inline my-2 my-lg-0">
           <input
             class="form-control mr-sm-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
           />
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
-            Search
+          <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">
+            <i class="fas fa-search"></i>
           </button>
         </form>
         <div>
@@ -64,10 +64,16 @@ export default {}
 
 <style lang="scss">
 .header {
-  &__navbar {
+  height: 66px;
+  &._navbar {
     .navbar {
       background: var(--componentbackground);
       width: 100%;
+      ._logo {
+        img {
+          height: 38px;
+        }
+      }
       a {
         color: var(--white);
       }
@@ -76,6 +82,12 @@ export default {}
       }
       .nav-lang {
         margin-left: 16px;
+      }
+      .search-form {
+        input {
+          background: var(--dark1);
+          border: 2px solid var(--gray1);
+        }
       }
     }
   }

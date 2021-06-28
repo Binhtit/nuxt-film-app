@@ -4,11 +4,32 @@ body {
 
     a {
         text-decoration: none;
+        &:hover {
+            text-decoration: none;
+        }
     }
 
     .bg-component{
         background: var(--componentbackground);
     }
+
+    .text-hover-yellow {
+        transition: 0.3s ease;
+        &:hover {
+            color: var(--yellow1) !important;
+            text-decoration: none;
+        }
+    }
+    
+    ._star {
+        font-size: 12px;
+        i {
+          color: var(--white);
+          &.active {
+            color: var(--yellow1);
+          }
+        }
+      }
 }
 
 /**  SCROLL dark */

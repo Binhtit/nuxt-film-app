@@ -1,18 +1,8 @@
 <template>
   <div class="container home__wrapper">
-    <div class="row">
+    <div class="row mb-2">
       <div class="col-md-9 p-0">
-        <VueSlickCarousel :arrows="false" :dots="true" :autoplay="true">
-          <div>
-            <img src="@/assets/image/home-slide1.png" alt="image-slide" />
-          </div>
-          <div>
-            <img src="@/assets/image/home-slide1.png" alt="image-slide" />
-          </div>
-          <div>
-            <img src="@/assets/image/home-slide1.png" alt="image-slide" />
-          </div>
-        </VueSlickCarousel>
+        <Carousel :movies-slide-arr="moviesSlideArr" />
       </div>
       <div class="col-md-3 p-0">
         <div class="home__list-movies-latest ml-2 scroll-dark">
@@ -53,23 +43,21 @@
       </div>
     </div>
     <div class="row bg-component">
-      <section class="col-md-9 p-0 p-2">
-        <list-card-movies :movies-arr="moviesRs" />
+      <section class="col-md-9 p-0 p-3">
+        <List-card-movies :movies-arr="moviesRs" />
       </section>
+      <div class="col-md-3"></div>
     </div>
   </div>
 </template>
 
 <script>
-import VueSlickCarousel from 'vue-slick-carousel'
-import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-// optional style for arrows & dots
-import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 import ListMoviesLatest from '~/components/List-movies-latest.vue'
 import ListCardMovies from '~/components/List-card-movies.vue'
+import Carousel from '~/components/Carousel.vue'
 export default {
   name: 'Home',
-  components: { VueSlickCarousel, ListMoviesLatest, ListCardMovies },
+  components: { ListMoviesLatest, ListCardMovies, Carousel },
   data() {
     return {
       filterMoviesCode: 'all',
@@ -243,6 +231,83 @@ export default {
             'https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg',
         },
       ],
+      moviesSlideArr: [
+        {
+          id: 1,
+          name: 'Vệt nắng cuối trời',
+          auth: 'N/A',
+          country: 'Nhật Bản',
+          category: 'Kiếm hiệp, Tình cảm',
+          episodes: 25,
+          description:
+            'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cựcTrong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+          star: '2',
+          date: '2021',
+          type: '1',
+          image:
+            'https://167008220.global.cdnfastest.com/storage20/hh247/images/1556074567-hatsune-miku-magical-mirai-2017_slider.jpg',
+        },
+        {
+          id: 2,
+          name: 'Ngày mai trời lại sáng',
+          auth: 'Abx-xxxx',
+          country: 'Mỷ',
+          category: 'Kiếm hiệp, Tình cảm',
+          episodes: 25,
+          description:
+            'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+          star: '4',
+          date: '2021',
+          type: '2',
+          image:
+            'https://167008220.global.cdnfastest.com/storage20/hh247/images/1556074567-hatsune-miku-magical-mirai-2017_slider.jpg',
+        },
+        {
+          id: 3,
+          name: 'Vệt nắng cuối trời',
+          auth: 'N/A',
+          country: 'Nhật Bản',
+          category: 'Kiếm hiệp, Tình cảm',
+          episodes: 25,
+          description:
+            'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cựcĐược tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+          star: '1',
+          date: '2021',
+          type: '1',
+          image:
+            'https://167008220.global.cdnfastest.com/storage20/hh247/images/1556074567-hatsune-miku-magical-mirai-2017_slider.jpg',
+        },
+        {
+          id: 4,
+          name: 'Ngày mai trời lại sáng',
+          auth: 'N/A',
+          country: 'Mỷ',
+          category: 'Kiếm hiệp, Tình cảm',
+          episodes: 25,
+          description:
+            'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+          star: '4',
+          date: '2021',
+          type: '2',
+          image:
+            'https://167008220.global.cdnfastest.com/storage20/hh247/images/1556074567-hatsune-miku-magical-mirai-2017_slider.jpg',
+        },
+        {
+          id: 5,
+          name: 'Vệt nắng cuối trời',
+          auth: 'N/A',
+          country: 'Nhật Bản',
+          category: 'Kiếm hiệp, Tình cảm',
+          episodes: 25,
+          description:
+            'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+          star: '4',
+          date: '2021',
+          type: '2',
+          image:
+            'https://167008220.global.cdnfastest.com/storage20/hh247/images/1556074567-hatsune-miku-magical-mirai-2017_slider.jpg',
+        },
+      ],
     }
   },
   computed: {
@@ -263,7 +328,7 @@ export default {
 <style lang="scss">
 .home {
   &__list-movies-latest {
-    height: 384px;
+    height: 100%;
     background: var(--componentbackground);
     overflow-y: scroll;
   }
@@ -279,21 +344,6 @@ export default {
       }
       &:hover {
         color: var(--white);
-      }
-    }
-  }
-}
-
-// slick-slider customization
-.slick-slider {
-  .slick-dots {
-    bottom: 15px;
-    li {
-      button {
-        &::before {
-          font-size: 12px;
-          color: var(--white);
-        }
       }
     }
   }

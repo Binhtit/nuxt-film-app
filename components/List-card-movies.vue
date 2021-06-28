@@ -1,6 +1,10 @@
 <template>
   <div class="row list-card-moves">
-    <article v-for="(movie, id) in moviesArr" :key="id" class="col-md-3 _card">
+    <article
+      v-for="(movie, id) in moviesArr"
+      :key="id"
+      class="col-md-3 col-sm-6 _card"
+    >
       <a href="#">
         <div>
           <figure class="Objf TpMvPlay AAIco-play_arrow">
@@ -40,21 +44,8 @@ export default {
   name: 'ListCardMovies',
   props: {
     moviesArr: {
-      type: Object,
-      default() {
-        return {
-          id: 11,
-          name: 'N/A',
-          auth: 'N/A',
-          country: 'N/A',
-          episodes: 0,
-          description: 'N/A',
-          date: 'N/A',
-          star: 0,
-          image: 'N/A',
-        }
-      },
-      required: false,
+      type: Array,
+      default() {},
     },
   },
 }
@@ -86,15 +77,6 @@ export default {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    ._star {
-      font-size: 12px;
-      i {
-        color: var(--white);
-        &.active {
-          color: var(--yellow1);
-        }
-      }
-    }
     ._date {
       font-size: 13px;
       text-align: center;

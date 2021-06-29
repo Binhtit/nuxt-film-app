@@ -22,6 +22,9 @@ export default {
       },
     ],
   },
+  router: {
+    linkExactActiveClass: '_active',
+  },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/assets/css/bootstrap.min.css', '@/assets/css/root.scss'],

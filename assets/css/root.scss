@@ -13,12 +13,17 @@ body {
         background: var(--componentbackground);
     }
 
-    .text-hover-yellow {
+    ._t-hover-yellow {
         transition: 0.3s ease;
         &:hover {
-            color: var(--yellow1) !important;
+            color: var(--yellow2) !important;
             text-decoration: none;
         }
+    }
+
+    ._active {
+        color: var(--yellow1) !important;
+        font-weight: bold;
     }
     
     ._star {
@@ -62,4 +67,5 @@ body {
     --gray2: #b9b9b9;
     --codeclass: #c56625; 
     --yellow1: #ffc107;
+    --yellow2: #ffeb3b;
 }

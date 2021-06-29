@@ -19,12 +19,12 @@
       <div id="navbarSupportedContent" class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active ml-3">
-            <nuxt-link to="/2d-movies" class="text-hover-yellow"
+            <nuxt-link to="/2d-movies" class="_t-hover-yellow"
               >HOẠT HÌNH 2D<span class="sr-only">(current)</span></nuxt-link
             >
           </li>
-          <li class="nav-item ml-3">
-            <nuxt-link to="/3d-movies" class="text-hover-yellow"
+          <li class="nav-item ml-4">
+            <nuxt-link to="/3d-movies" class="_t-hover-yellow"
               >HOẠT HÌNH 3D<span class="sr-only">(current)</span></nuxt-link
             >
           </li>

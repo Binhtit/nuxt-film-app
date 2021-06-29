@@ -3,7 +3,7 @@
     <div class="_title mx-auto">
       <p class="text-center">ANIME MỚI CẬP NHẬT</p>
     </div>
-    <ul class="_list">
+    <ul class="_list scroll-dark">
       <li v-for="(movies, id) in moviesLatestArr" :key="id">
         {{ movies.name }}
       </li>
@@ -40,6 +40,9 @@ export default {
 
   ._list {
     padding: 10px;
+    height: 100%;
+    max-height: 405px;
+    overflow-y: scroll;
     li {
       width: 100%;
       padding: 8px 6px 5px 8px;

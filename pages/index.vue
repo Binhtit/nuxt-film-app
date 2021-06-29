@@ -5,13 +5,13 @@
         <ParticularCarousel :movies-slide-arr="moviesSlideArr" />
       </div>
       <div class="col-md-3 p-0">
-        <div class="home__list-movies-latest ml-2 scroll-dark">
+        <div class="home__movies-latest ml-2">
           <CommonListMoviesLatest :movies-latest-arr="moviesLatestArr" />
         </div>
       </div>
     </div>
 
-    <!-- --NOTE-- Current coding _filter logic to optimize performance. but will not be suitable when the data is large. -->
+    <!-- --NOTE-- Current coding _filter logic to optimize performance. but will not be suitable when using paging in case large data. -->
     <div class="row home__filter bg-component py-2">
       <CommonFilterMoviesNavbar
         :movies-types="moviesTypes"
@@ -64,11 +64,8 @@ export default {
 
 <style lang="scss">
 .home {
-  &__list-movies-latest {
-    height: 100%;
-    max-height: 448px;
+  &__movies-latest {
     background: var(--componentbackground);
-    overflow-y: scroll;
   }
   &__filter {
     border-bottom: 2px solid var(--mainbackground);
@@ -76,10 +73,6 @@ export default {
       cursor: pointer;
       color: var(--gray2);
       transition: 0.3s ease;
-      &._active {
-        color: var(--white);
-        font-weight: bold;
-      }
       &:hover {
         color: var(--white);
       }

@@ -1,6 +1,6 @@
 <template>
   <!-- ListCardMovies -->
-  <div class="row list-card-moves">
+  <div class="row card-moves">
     <article
       v-for="(movie, id) in moviesArr"
       :key="id"
@@ -35,8 +35,6 @@
             <i class="far fa-calendar-alt"></i>{{ movie.date }}</span
           >
         </div>
-
-        <h1>{{ movie.type }}</h1>
       </a>
     </article>
   </div>
@@ -55,14 +53,13 @@ export default {
 </script>
 
 <style lang="scss">
-.list-card-moves {
+.card-moves {
   ._card {
     position: relative;
     padding-bottom: 25px;
   }
   ._image {
     width: 100%;
-    height: 210px;
     border-radius: 3px;
   }
   ._title {

@@ -1,5 +1,16 @@
 <template>
-  <div class="col-md-6 d-flex justify-content-between">
+  <div
+    class="
+      filter-nav
+      col-md-9
+      d-flex
+      justify-content-between
+      align-items-center
+    "
+  >
+    <span class="filter-nav__label"
+      >ANIME MỚI CẬP NHẬT <i class="fas fa-chevron-right pl-2"></i
+    ></span>
     <span
       v-for="(type, index) in moviesTypes"
       :key="index"
@@ -32,3 +43,19 @@ export default {
   },
 }
 </script>
+
+<style lang="scss">
+.filter-nav {
+  &__label {
+    color: var(--gray2);
+    font-size: 24px;
+    text-transform: uppercase;
+    i {
+      font-size: 16px;
+    }
+  }
+  ._filter-btn {
+    font-size: 17px;
+  }
+}
+</style>

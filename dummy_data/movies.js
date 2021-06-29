@@ -1,3 +1,4 @@
+// all movie
 const moviesArr = [
   {
     id: 1,
@@ -328,6 +329,355 @@ const moviesArr = [
       'https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg',
   },
 ]
+// 2D movie
+const moviesArr2d = [
+  {
+    id: 6,
+    name: 'Ngày mai trời lại sáng',
+    auth: 'N/A',
+    country: 'Mỷ',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '1',
+    technology: '2d',
+    date: '2021',
+    type: '1',
+    image:
+      'https://167008220.global.cdnfastest.com/uploads/images/bakuten-f3395.jpg',
+  },
+  {
+    id: 7,
+    name: 'Vệt nắng cuối trời',
+    auth: 'N/A',
+    country: 'Nhật Bản',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '4',
+    technology: '2d',
+    date: '2021',
+    type: '1',
+    image:
+      'https://167008220.global.cdnfastest.com/storage20/hh247/images/black-clover-f2304.jpg',
+  },
+  {
+    id: 8,
+    name: 'Ngày mai trời lại sáng',
+    auth: 'N/A',
+    country: 'Mỷ',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '4',
+    technology: '2d',
+    date: '2021',
+    type: '1',
+    image:
+      'https://167008220.global.cdnfastest.com/storage20/hh247/images/black-clover-f2304.jpg',
+  },
+  {
+    id: 9,
+    name: 'Vệt nắng cuối trời',
+    auth: 'N/A',
+    country: 'Nhật Bản',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '4',
+    technology: '2d',
+    date: '2021',
+    type: '2',
+    image:
+      'https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg',
+  },
+  {
+    id: 10,
+    name: 'Ngày mai trời lại sáng',
+    auth: 'N/A',
+    country: 'Mỷ',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '2',
+    technology: '2d',
+    date: '2021',
+    type: '1',
+    image:
+      'https://167008220.global.cdnfastest.com/storage20/hh247/images/black-clover-f2304.jpg',
+  },
+  {
+    id: 11,
+    name: 'Vệt nắng cuối trời',
+    auth: 'N/A',
+    country: 'Nhật Bản',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '4',
+    technology: '2d',
+    date: '2021',
+    type: '3',
+    image:
+      'https://167008220.global.cdnfastest.com/uploads/images/bakuten-f3395.jpg',
+  },
+  {
+    id: 12,
+    name: 'Ngày mai trời lại sáng',
+    auth: 'N/A',
+    country: 'Mỷ',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '4',
+    technology: '2d',
+    date: '2021',
+    type: '1',
+    image:
+      'https://167008220.global.cdnfastest.com/uploads/images/bakuten-f3395.jpg',
+  },
+  {
+    id: 13,
+    name: 'Vệt nắng cuối trời',
+    auth: 'N/A',
+    country: 'Nhật Bản',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '5',
+    technology: '2d',
+    date: '2021',
+    type: '3',
+    image:
+      'https://167008220.global.cdnfastest.com/storage20/hh247/images/black-clover-f2304.jpg',
+  },
+  {
+    id: 14,
+    name: 'Ngày mai trời lại sáng',
+    auth: 'N/A',
+    country: 'Mỷ',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '4',
+    technology: '2d',
+    date: '2021',
+    type: '1',
+    image:
+      'https://167008220.global.cdnfastest.com/storage20/hh247/images/black-clover-f2304.jpg',
+  },
+]
+// 3D movie
+const moviesArr3d = [
+  {
+    id: 1,
+    name: 'Vệt nắng cuối trời',
+    auth: 'N/A',
+    country: 'Nhật Bản',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '2',
+    technology: '3d',
+    date: '2021',
+    type: '1',
+    image:
+      'https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg',
+  },
+  {
+    id: 2,
+    name: 'Ngày mai trời lại sáng',
+    auth: 'N/A',
+    country: 'Mỷ',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '4',
+    technology: '3d',
+    date: '2021',
+    type: '2',
+    image: 'https://img.vncdn.xyz/uploads/images/doc-bo-tieu-dao-f3199.jpg',
+  },
+  {
+    id: 3,
+    name: 'Vệt nắng cuối trời',
+    auth: 'N/A',
+    country: 'Nhật Bản',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '1',
+    technology: '3d',
+    date: '2021',
+    type: '1',
+    image:
+      'https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg',
+  },
+  {
+    id: 4,
+    name: 'Ngày mai trời lại sáng',
+    auth: 'N/A',
+    country: 'Mỷ',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '4',
+    technology: '3d',
+    date: '2021',
+    type: '2',
+    image: 'https://img.vncdn.xyz/uploads/images/doc-bo-tieu-dao-f3199.jpg',
+  },
+  {
+    id: 5,
+    name: 'Vệt nắng cuối trời',
+    auth: 'N/A',
+    country: 'Nhật Bản',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '4',
+    technology: '3d',
+    date: '2021',
+    type: '2',
+    image:
+      'https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg',
+  },
+  {
+    id: 9,
+    name: 'Vệt nắng cuối trời',
+    auth: 'N/A',
+    country: 'Nhật Bản',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '4',
+    technology: '3d',
+    date: '2021',
+    type: '2',
+    image:
+      'https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg',
+  },
+  {
+    id: 15,
+    name: 'Vệt nắng cuối trời',
+    auth: 'N/A',
+    country: 'Nhật Bản',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '4',
+    technology: '3d',
+    date: '2021',
+    type: '3',
+    image:
+      'https://167008220.global.cdnfastest.com/uploads/images/thien-hoang-chien-than-f3290.jpg',
+  },
+  {
+    id: 16,
+    name: 'Ngày mai trời lại sáng',
+    auth: 'N/A',
+    country: 'Mỷ',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '4',
+    technology: '3d',
+    date: '2021',
+    type: '1',
+    image:
+      'https://167008220.global.cdnfastest.com/uploads/images/thien-hoang-chien-than-f3290.jpg',
+  },
+  {
+    id: 17,
+    name: 'Vệt nắng cuối trời',
+    auth: 'N/A',
+    country: 'Nhật Bản',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '4',
+    technology: '3d',
+    date: '2021',
+    type: '3',
+    image:
+      'https://167008220.global.cdnfastest.com/uploads/images/thien-hoang-chien-than-f3290.jpg',
+  },
+  {
+    id: 18,
+    name: 'Ngày mai trời lại sáng',
+    auth: 'N/A',
+    country: 'Mỷ',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '4',
+    technology: '3d',
+    date: '2021',
+    type: '1',
+    image:
+      'https://167008220.global.cdnfastest.com/uploads/images/thien-hoang-chien-than-f3290.jpg',
+  },
+  {
+    id: 19,
+    name: 'Vệt nắng cuối trời',
+    auth: 'N/A',
+    country: 'Nhật Bản',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '4',
+    technology: '3d',
+    date: '2021',
+    type: '3',
+    image:
+      'https://167008220.global.cdnfastest.com/uploads/images/thien-hoang-chien-than-f3290.jpg',
+  },
+  {
+    id: 20,
+    name: 'Ngày mai trời lại sáng',
+    auth: 'N/A',
+    country: 'Mỷ',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '4',
+    technology: '3d',
+    date: '2021',
+    type: '1',
+    image:
+      'https://167008220.global.cdnfastest.com/uploads/images/thien-hoang-chien-than-f3290.jpg',
+  },
+  {
+    id: 21,
+    name: 'Vệt nắng cuối trời',
+    auth: 'N/A',
+    country: 'Nhật Bản',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '4',
+    technology: '3d',
+    date: '2021',
+    type: '3',
+    image:
+      'https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg',
+  },
+  {
+    id: 22,
+    name: 'Ngày mai trời lại sáng',
+    auth: 'N/A',
+    country: 'Mỷ',
+    episodes: 25,
+    description:
+      'Trong một biến cố bất ngờ, cậu học sinh trung học buồn tẻ Hiro Yuuki đã có được trò chơi nhập vai lặn đầy đủ Kiwame Quest. Được tạo ra bởi công nghệ tốt nhất, trò chơi tuyên bố đưa thực tế đến cùng cực',
+    star: '4',
+    technology: '3d',
+    date: '2021',
+    type: '1',
+    image:
+      'https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg',
+  },
+]
 
 const moviesSlideArr = [
   {
@@ -451,4 +801,11 @@ const moviesLatestArr = [
   },
 ]
 
-export { moviesArr, moviesTypes, moviesSlideArr, moviesLatestArr }
+export {
+  moviesArr,
+  moviesArr2d,
+  moviesArr3d,
+  moviesTypes,
+  moviesSlideArr,
+  moviesLatestArr,
+}

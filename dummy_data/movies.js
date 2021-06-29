@@ -710,7 +710,7 @@ const moviesSlideArr = [
     date: '2021',
     type: '2',
     image:
-      'https://167008220.global.cdnfastest.com/storage20/hh247/images/1556074567-hatsune-miku-magical-mirai-2017_slider.jpg',
+      'https://167008220.global.cdnfastest.com/storage20/hh247/images/thinh-the-trang-nuong-f2743_slider.jpg',
   },
   {
     id: 3,
@@ -726,7 +726,7 @@ const moviesSlideArr = [
     date: '2021',
     type: '1',
     image:
-      'https://167008220.global.cdnfastest.com/storage20/hh247/images/1556074567-hatsune-miku-magical-mirai-2017_slider.jpg',
+      'https://167008220.global.cdnfastest.com/storage20/hh247/images/tham-tu-lung-danh-conan-f439_slider.jpg',
   },
   {
     id: 4,

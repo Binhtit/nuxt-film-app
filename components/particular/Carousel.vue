@@ -1,5 +1,5 @@
 <template>
-  <VueSlickCarousel :arrows="false" :dots="true" :autoplay="false">
+  <VueSlickCarousel :arrows="false" :dots="true" :autoplay="true">
     <div
       v-for="(movie, id) in moviesSlideArrRemake"
       :key="id"
@@ -99,7 +99,8 @@ export default {
       }
     }
     ._image-bg {
-      width: 100%;
+      height: 450px;
+      width: 855px;
     }
   }
   &__button {

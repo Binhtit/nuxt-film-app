@@ -14,9 +14,7 @@
 
 <script>
 export default {
-  mounted() {
-    document.body.classList.add('scroll-dark')
-  },
+  mounted() {},
 }
 </script>
 

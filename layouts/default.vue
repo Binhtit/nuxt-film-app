@@ -2,12 +2,12 @@
   <div>
     <div class="container-fluid bg-component">
       <div class="container p-0 bg-component">
-        <Header />
+        <CommonHeader />
       </div>
     </div>
     <Nuxt />
     <div class="container">
-      <Footer />
+      <CommonFooter />
     </div>
   </div>
 </template>

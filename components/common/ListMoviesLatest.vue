@@ -4,7 +4,7 @@
       <p class="text-center">ANIME MỚI CẬP NHẬT</p>
     </div>
     <ul class="_list">
-      <li v-for="(movies, id) in moviesName" :key="id">
+      <li v-for="(movies, id) in moviesLatestArr" :key="id">
         {{ movies.name }}
       </li>
     </ul>
@@ -13,23 +13,14 @@
 
 <script>
 export default {
+  props: {
+    moviesLatestArr: {
+      type: Array,
+      default() {},
+    },
+  },
   data() {
-    return {
-      moviesName: [
-        { id: '1', name: 'Super Cub' },
-        {
-          id: '1',
-          name: 'Kaguya-sama wa Kokurasetai: Tensai-tachi no Renai Zunousen OVA',
-        },
-        {
-          id: '1',
-          name: 'Kyuukyoku Shinka shita Full Dive RPG ga Genjitsu yori mo Kusoge Dattara',
-        },
-        { id: '1', name: 'Nanatsu no Taizai: Fundo no Shinpan' },
-        { id: '1', name: 'Shadows House' },
-        { id: '1', name: 'Osananajimi ga Zettai ni Makenai Love Comedy' },
-      ],
-    }
+    return {}
   },
 }
 </script>

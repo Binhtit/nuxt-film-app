@@ -1,4 +1,5 @@
 <template>
+  <!-- ListCardMovies -->
   <div class="row list-card-moves">
     <article
       v-for="(movie, id) in moviesArr"
@@ -34,6 +35,8 @@
             <i class="far fa-calendar-alt"></i>{{ movie.date }}</span
           >
         </div>
+
+        <h1>{{ movie.type }}</h1>
       </a>
     </article>
   </div>

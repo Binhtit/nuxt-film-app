@@ -1,4 +1,20 @@
-# nuxt-film-app
+# NUXT-MOVIES-APP
+
+![alt text](https://github.com/Binhtit/nuxt-movies-app/blob/main/static/logo.png)
+<h2 align="center">NUXT MOVIES APP</h2>
+
+## Description:
+The interface of the movie watching app is written in framework nuxtjs
+
+## Screenshots:
+### Home-page
+--- Header ---
+![alt text](https://i.ibb.co/vzq1jZr/header.png)
+--- Body ---
+![alt text](https://i.ibb.co/gFDj57J/body.png)
+--- Footer ---
+![alt text](https://i.ibb.co/s67ZXWK/footer.png)
+
 
 ## Build Setup
 

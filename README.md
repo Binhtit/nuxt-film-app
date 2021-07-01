@@ -15,6 +15,10 @@ The interface of the movie watching app is written in framework nuxtjs
 --- Footer ---
 ![alt text](https://i.ibb.co/s67ZXWK/footer.png)
 
+### movies2d-page
+### movies3d-page
+
+And more page Inside sources, please run *$ npm run dev*
 
 ## Build Setup
 

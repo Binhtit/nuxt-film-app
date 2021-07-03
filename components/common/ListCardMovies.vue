@@ -6,7 +6,7 @@
       :key="id"
       class="col-md-3 col-sm-6 _card"
     >
-      <a href="#">
+      <nuxt-link :to="{ name: 'movies-detail', params: movie }">
         <div>
           <figure class="Objf TpMvPlay AAIco-play_arrow">
             <img
@@ -35,7 +35,7 @@
             <i class="far fa-calendar-alt"></i>{{ movie.date }}</span
           >
         </div>
-      </a>
+      </nuxt-link>
     </article>
   </div>
 </template>

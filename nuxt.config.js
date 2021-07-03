@@ -26,6 +26,9 @@ export default {
     linkExactActiveClass: '_active',
   },
 
+  // Custom process bar
+  loading: { color: '#ffc107' },
+
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: ['@/assets/css/bootstrap.min.css', '@/assets/css/root.scss'],
 

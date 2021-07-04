@@ -5,7 +5,7 @@
     </div>
     <div class="row">
       <div class="col-dm-9">
-        <h1>{{ movie.name }}</h1>
+        <h1 class="text-center">{{ movie.name }}</h1>
       </div>
       <div class="col-dm-3"></div>
     </div>

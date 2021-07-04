@@ -30,7 +30,6 @@
 
 <script>
 import {
-  moviesArr,
   moviesTypes,
   moviesSlideArr,
   moviesLatestArr,
@@ -40,29 +39,33 @@ export default {
   name: 'Home',
   components: {},
   async asyncData({ $axios }) {
-    const moviesSorted = await $axios.$get(
+    const moviesArr = await $axios.$get(
       'https://nuxt-movies-app-default-rtdb.asia-southeast1.firebasedatabase.app/movies.json'
     )
-    return { moviesSorted }
+    return { moviesArr }
   },
   data() {
     return {
-      moviesArr,
       moviesSlideArr,
       moviesLatestArr,
       moviesTypes,
+      moviesSorted: [],
     }
   },
   computed: {},
   created() {},
-  mounted() {},
+  mounted() {
+    this.moviesSorted = this.moviesArr
+  },
   // watch() {},
   methods: {
     getMoviesCodeType(codeType) {
       if (codeType === MOVIE_CONSTANT.MOVIE_TYPE.MOVIE_TYPE_ALL) {
-        this.moviesSorted = moviesArr
+        this.moviesSorted = this.moviesArr
       } else {
-        this.moviesSorted = moviesArr.filter((movie) => movie.type === codeType)
+        this.moviesSorted = this.moviesArr.filter(
+          (movie) => movie.type === codeType
+        )
       }
     },
   },

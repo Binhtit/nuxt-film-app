@@ -19,30 +19,32 @@
 </template>
 
 <script>
-import {
-  moviesArr3d,
-  moviesTypes,
-  moviesSlideArr,
-  moviesLatestArr,
-} from '@/dummy_data/movies.js'
+import { moviesTypes, moviesLatestArr } from '@/dummy_data/movies.js'
 import { MOVIE_CONSTANT } from '~/assets/js/CONSTANT.js'
 export default {
   name: 'Movies3d',
+  async asyncData({ $axios }) {
+    const moviesArr3d = await $axios.$get(
+      'https://nuxt-movies-app-default-rtdb.asia-southeast1.firebasedatabase.app/movies3d.json'
+    )
+    return { moviesArr3d }
+  },
   data() {
     return {
-      moviesArr3d,
-      moviesSlideArr,
       moviesLatestArr,
       moviesTypes,
-      moviesSorted: moviesArr3d,
+      moviesSorted: [],
     }
+  },
+  mounted() {
+    this.moviesSorted = this.moviesArr3d
   },
   methods: {
     getMoviesCodeType(codeType) {
       if (codeType === MOVIE_CONSTANT.MOVIE_TYPE.MOVIE_TYPE_ALL) {
-        this.moviesSorted = moviesArr3d
+        this.moviesSorted = this.moviesArr3d
       } else {
-        this.moviesSorted = moviesArr3d.filter(
+        this.moviesSorted = this.moviesArr3d.filter(
           (movie) => movie.type === codeType
         )
       }

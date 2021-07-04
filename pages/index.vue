@@ -39,16 +39,23 @@ import { MOVIE_CONSTANT } from '~/assets/js/CONSTANT.js'
 export default {
   name: 'Home',
   components: {},
+  async asyncData({ $axios }) {
+    const moviesSorted = await $axios.$get(
+      'https://nuxt-movies-app-default-rtdb.asia-southeast1.firebasedatabase.app/movies.json'
+    )
+    return { moviesSorted }
+  },
   data() {
     return {
       moviesArr,
       moviesSlideArr,
       moviesLatestArr,
       moviesTypes,
-      moviesSorted: moviesArr,
     }
   },
   computed: {},
+  created() {},
+  mounted() {},
   // watch() {},
   methods: {
     getMoviesCodeType(codeType) {

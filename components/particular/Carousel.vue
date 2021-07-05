@@ -44,8 +44,8 @@
       <img class="_image-bg" :src="movie.image" alt="image-slide" />
       <a
         href="https://hoathinh247.com/phim-tham-tu-lung-danh-conan-73.html"
-        class="carousel__button btn btn-danger shadow"
-        >Xem <strong>Phim</strong></a
+        class="carousel__button btn btn-warning shadow"
+        ><strong>Xem Phim</strong></a
       >
     </div>
   </VueSlickCarousel>

@@ -2,15 +2,16 @@
   <!-- ListCardMovies -->
   <div class="row card-moves">
     <article
-      v-for="(movie, id) in moviesArr"
-      :key="id"
+      v-for="(movie, index) in moviesArr"
+      :key="index"
       class="col-md-3 col-sm-6 _card"
     >
-      <nuxt-link :to="{ name: 'movies-detail', params: movie }">
+      <nuxt-link :to="'movies/detail/' + linkname">
+        <!-- <nuxt-link :to="{ name: 'movies-detail-1', params: movie }"> -->
         <div>
           <figure class="Objf TpMvPlay AAIco-play_arrow">
             <img
-              :src="movie.image"
+              :src="movie.thumbnail"
               :alt="movie.name"
               :title="movie.name"
               class="_image"
@@ -18,8 +19,8 @@
           </figure>
         </div>
         <div class="_episodes">
-          <span>{{ movie.episodes }}</span>
           <span>tập</span>
+          <span>{{ movie.episodes }}</span>
         </div>
         <h2 class="_title m-0">{{ movie.name }}</h2>
         <div class="_rate-group">
@@ -43,11 +44,17 @@
 <script>
 export default {
   name: 'ListCardMovies',
+  filters: {},
   props: {
     moviesArr: {
       type: Array,
       default() {},
     },
+  },
+  data() {
+    return {
+      linkname: 'âsbc-b-c',
+    }
   },
 }
 </script>
@@ -97,7 +104,7 @@ export default {
     color: white;
     margin: 5px;
     box-shadow: rgb(2 2 2 / 30%) 0 3px 8px;
-    & :first-child {
+    & :not(:first-child) {
       font-size: 16px;
       font-weight: bold;
     }

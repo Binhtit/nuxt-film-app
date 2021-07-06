@@ -15,13 +15,31 @@
     <div class="row home__filter bg-component py-2">
       <CommonFilterMoviesNavbar
         :movies-types="moviesTypes"
-        @moviesCodeType="getMoviesCodeType"
-      />
+        @moviesCodeType="getMoviesCodeType($event, '2d')"
+      >
+        <template slot="category"> 2D </template>
+      </CommonFilterMoviesNavbar>
     </div>
 
     <div class="row bg-component">
       <section class="col-md-9 p-0 p-3">
-        <CommonListCardMovies :movies-arr="moviesSorted" />
+        <CommonListCardMovies :movies-arr="moviesSorted2d" />
+      </section>
+      <div class="col-md-3"></div>
+    </div>
+
+    <div class="row home__filter bg-component py-2">
+      <CommonFilterMoviesNavbar
+        :movies-types="moviesTypes"
+        @moviesCodeType="getMoviesCodeType($event, '3d')"
+      >
+        <template slot="category"> 3D </template>
+      </CommonFilterMoviesNavbar>
+    </div>
+
+    <div class="row bg-component">
+      <section class="col-md-9 p-0 p-3">
+        <CommonListCardMovies :movies-arr="moviesSorted3d" />
       </section>
       <div class="col-md-3"></div>
     </div>
@@ -49,24 +67,38 @@ export default {
       moviesSlideArr,
       moviesLatestArr,
       moviesTypes,
-      moviesSorted: [],
+      moviesSorted2d: [],
+      moviesSorted3d: [],
     }
   },
   computed: {},
   created() {},
   mounted() {
-    this.moviesSorted = this.moviesArr
+    this.moviesSorted2d = this.getMoviesByCategory('1')
+    this.moviesSorted3d = this.getMoviesByCategory('2')
   },
-  // watch() {},
   methods: {
-    getMoviesCodeType(codeType) {
+    getMoviesCodeType(codeType, category) {
       if (codeType === MOVIE_CONSTANT.MOVIE_TYPE.MOVIE_TYPE_ALL) {
-        this.moviesSorted = this.moviesArr
+        if (category === '2d') {
+          this.moviesSorted2d = this.getMoviesByCategory('1')
+        } else {
+          this.moviesSorted3d = this.getMoviesByCategory('2')
+        }
+      } else if (category === '2d') {
+        this.moviesSorted2d = this.getMoviesByCategory('1').filter(
+          (movie) => movie.type === codeType
+        )
       } else {
-        this.moviesSorted = this.moviesArr.filter(
+        this.moviesSorted3d = this.getMoviesByCategory('2').filter(
           (movie) => movie.type === codeType
         )
       }
+    },
+    getMoviesByCategory(code) {
+      return this.moviesArr.filter((movie) => {
+        return movie.categories === code
+      })
     },
   },
 }

@@ -33,7 +33,7 @@
           </p>
           <p class="_director">
             <span class="text-warning font-weight-bold">Đạo diễn:</span>
-            {{ movie.auth }}
+            {{ movie.author }}
           </p>
           <p class="_genre">
             <span class="text-warning font-weight-bold">Thể loại:</span>

@@ -2,7 +2,7 @@ const moviesSlideArr = [
   {
     id: 1,
     name: 'Vệt nắng cuối trời',
-    auth: 'N/A',
+    author: 'N/A',
     country: 'Nhật Bản',
     category: 'Kiếm hiệp, Tình cảm',
     episodes: 25,
@@ -18,7 +18,7 @@ const moviesSlideArr = [
   {
     id: 2,
     name: 'Ngày mai trời lại sáng',
-    auth: 'Abx-xxxx',
+    author: 'Abx-xxxx',
     country: 'Mỷ',
     category: 'Kiếm hiệp, Tình cảm',
     episodes: 25,
@@ -34,7 +34,7 @@ const moviesSlideArr = [
   {
     id: 3,
     name: 'Vệt nắng cuối trời',
-    auth: 'N/A',
+    author: 'N/A',
     country: 'Nhật Bản',
     category: 'Kiếm hiệp, Tình cảm',
     episodes: 25,
@@ -50,7 +50,7 @@ const moviesSlideArr = [
   {
     id: 4,
     name: 'Ngày mai trời lại sáng',
-    auth: 'N/A',
+    author: 'N/A',
     country: 'Mỷ',
     category: 'Kiếm hiệp, Tình cảm',
     episodes: 25,
@@ -66,7 +66,7 @@ const moviesSlideArr = [
   {
     id: 5,
     name: 'Vệt nắng cuối trời',
-    auth: 'N/A',
+    author: 'N/A',
     country: 'Nhật Bản',
     category: 'Kiếm hiệp, Tình cảm',
     episodes: 25,

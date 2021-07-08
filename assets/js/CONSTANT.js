@@ -6,6 +6,10 @@ const MOVIE_CONSTANT = {
     MOVIE_TYPE_MAGIC: '2',
     MOVIE_TYPE_HAREM: '3',
   },
+  MOVIE_CATEGORY: {
+    MOVIE_2D: '1',
+    MOVIE_3D: '2',
+  },
 }
 
 const constant = {

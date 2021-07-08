@@ -1,12 +1,17 @@
 <template>
   <!-- ListCardMovies -->
   <div class="row card-moves">
+    <div v-show="!(moviesArr.length > 0)" class="col-12 text-center text-muted">
+      <p>Đang cập nhật dữ liệu ...</p>
+    </div>
     <article
       v-for="(movie, index) in moviesArr"
       :key="index"
       class="col-md-3 col-sm-6 _card"
     >
-      <nuxt-link :to="'movies/detail/' + linkname">
+      <nuxt-link
+        :to="('movies/detail/' + movie.name + '?id=' + movie.id) | removeMark"
+      >
         <!-- <nuxt-link :to="{ name: 'movies-detail-1', params: movie }"> -->
         <div>
           <figure class="Objf TpMvPlay AAIco-play_arrow">
@@ -44,7 +49,16 @@
 <script>
 export default {
   name: 'ListCardMovies',
-  filters: {},
+  filters: {
+    removeMark(value) {
+      return value
+        .normalize('NFD')
+        .replace(/[\u0300-\u036F]/g, '')
+        .replace(/đ/g, 'd')
+        .replace(/Đ/g, 'D')
+        .replace(/ /g, '-')
+    },
+  },
   props: {
     moviesArr: {
       type: Array,

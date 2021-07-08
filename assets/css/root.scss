@@ -71,6 +71,23 @@ body {
 	background-color: var(--dark1);
 }
 
+/**  SCROLL yellow */
+.scroll-yellow--small::-webkit-scrollbar {
+	width: 8px;
+	// background-color: var(--yellow1);
+}
+.scroll-yellow--small::-webkit-scrollbar-thumb {
+	border-radius: 3px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: var(--yellow1);
+}
+
+.scroll-yellow--small::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 3px;
+	// background-color: var(--yellow1);
+}
+
 :root {
     --mainbackground: #78909c;
     --componentbackground: #313534;

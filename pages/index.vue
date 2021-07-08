@@ -74,25 +74,33 @@ export default {
   computed: {},
   created() {},
   mounted() {
-    this.moviesSorted2d = this.getMoviesByCategory('1')
-    this.moviesSorted3d = this.getMoviesByCategory('2')
+    this.moviesSorted2d = this.getMoviesByCategory(
+      MOVIE_CONSTANT.MOVIE_CATEGORY.MOVIE_2D
+    )
+    this.moviesSorted3d = this.getMoviesByCategory(
+      MOVIE_CONSTANT.MOVIE_CATEGORY.MOVIE_3D
+    )
   },
   methods: {
     getMoviesCodeType(codeType, category) {
       if (codeType === MOVIE_CONSTANT.MOVIE_TYPE.MOVIE_TYPE_ALL) {
         if (category === '2d') {
-          this.moviesSorted2d = this.getMoviesByCategory('1')
+          this.moviesSorted2d = this.getMoviesByCategory(
+            MOVIE_CONSTANT.MOVIE_CATEGORY.MOVIE_2D
+          )
         } else {
-          this.moviesSorted3d = this.getMoviesByCategory('2')
+          this.moviesSorted3d = this.getMoviesByCategory(
+            MOVIE_CONSTANT.MOVIE_CATEGORY.MOVIE_3D
+          )
         }
       } else if (category === '2d') {
-        this.moviesSorted2d = this.getMoviesByCategory('1').filter(
-          (movie) => movie.type === codeType
-        )
+        this.moviesSorted2d = this.getMoviesByCategory(
+          MOVIE_CONSTANT.MOVIE_CATEGORY.MOVIE_2D
+        ).filter((movie) => movie.type === codeType)
       } else {
-        this.moviesSorted3d = this.getMoviesByCategory('2').filter(
-          (movie) => movie.type === codeType
-        )
+        this.moviesSorted3d = this.getMoviesByCategory(
+          MOVIE_CONSTANT.MOVIE_CATEGORY.MOVIE_3D
+        ).filter((movie) => movie.type === codeType)
       }
     },
     getMoviesByCategory(code) {

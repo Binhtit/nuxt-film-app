@@ -6,7 +6,7 @@
       </div>
       <div class="col-md-3 p-0">
         <div class="home__movies-latest ml-2">
-          <CommonListMoviesLatest :movies-latest-arr="moviesLatestArr" />
+          <CommonListMoviesLatest />
         </div>
       </div>
     </div>
@@ -47,11 +47,7 @@
 </template>
 
 <script>
-import {
-  moviesTypes,
-  moviesSlideArr,
-  moviesLatestArr,
-} from '@/dummy_data/movies.js'
+import { moviesTypes, moviesSlideArr } from '@/dummy_data/movies.js'
 import { MOVIE_CONSTANT } from '~/assets/js/CONSTANT.js'
 export default {
   name: 'Home',
@@ -65,13 +61,11 @@ export default {
   data() {
     return {
       moviesSlideArr,
-      moviesLatestArr,
       moviesTypes,
       moviesSorted2d: [],
       moviesSorted3d: [],
     }
   },
-  computed: {},
   created() {},
   mounted() {
     this.moviesSorted2d = this.getMoviesByCategory(
@@ -122,7 +116,7 @@ export default {
     ._filter-btn {
       cursor: pointer;
       color: var(--gray2);
-      transition: 0.3s ease;
+      transition: 0.3s all ease;
       &:hover {
         color: var(--white);
       }

@@ -1,13 +1,12 @@
 <template>
   <div class="container detail-movie">
-    <!-- <h1>{{ slug }}</h1> -->
     <div class="row">
       <div class="col-md-9 p-0">
         <div class="_banner-wrap">
           <div class="_banner-bg">
             <img
               class="_banner-bg__img"
-              src="https://hoathinh247.tv/timthumb.php?src=https://img.vncdn.xyz/static/images/1625072053-thien-hoang-chien-than-f3290.jpg&w=800&h=320"
+              src="https://hoathinh247.tv/timthumb.php?src=https://img.vncdn.xyz/static/images/1625072053-thien-hoang-chien-than-f3290.jpg&w=800&h=420"
               alt="banner-movie"
             />
             <div class="_banner-bg__blur"></div>
@@ -20,7 +19,10 @@
                 alt="thumbnail"
               />
               <div class="btn-wrap">
-                <button class="btn btn-outline-warning font-weight-bold">
+                <button
+                  class="btn btn-outline-warning font-weight-bold"
+                  @click="watchComponent = 'ParticularWatch'"
+                >
                   XEM PHIM
                 </button>
               </div>
@@ -67,11 +69,13 @@
       </div>
       <div class="col-md-3 p-0">
         <div class="home__movies-latest ml-2">
-          <CommonListMoviesLatest :movies-latest-arr="moviesLatestArr" />
+          <CommonListMoviesLatest />
         </div>
       </div>
     </div>
+    <!-- <div class="row bg-component mt-2 _watch"></div> -->
     <div class="row bg-component mt-2">
+      <component :is="watchComponent" class="col-md-12 mb-4"></component>
       <div class="detail-movie__navbar col-md-12">
         <span>Thông tin phim</span>
       </div>
@@ -118,14 +122,15 @@
 <script>
 export default {
   async asyncData(context) {
-    // eslint-disable-next-line no-console
-    // console.log('param is' + params)
-    // eslint-disable-next-line no-debugger
-    debugger
-    // const slug = await params.slug // When calling /abc the slug will be "abc"
-    const slug = await context.query.id // When calling /abc the slug will be "abc"
-    return { slug }
+    const idMovie = await context.query.id
+    return { idMovie }
   },
+  data() {
+    return {
+      watchComponent: '',
+    }
+  },
+  mounted() {},
 }
 </script>
 
@@ -136,6 +141,7 @@ export default {
     ._banner-bg {
       &__img {
         width: 100%;
+        height: 448px;
       }
       &__blur {
         height: 100%;
@@ -204,6 +210,13 @@ export default {
     width: 100%;
     height: 45px;
     border-bottom: 2px solid var(--mainbackground);
+  }
+  &__infor-movie {
+    ul {
+      li {
+        margin: 10px 0;
+      }
+    }
   }
 }
 </style>

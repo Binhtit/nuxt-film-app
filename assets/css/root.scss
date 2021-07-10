@@ -9,12 +9,16 @@ body {
         }
     }
 
+    ul {
+        list-style: none;
+    }
+
     .bg-component{
         background: var(--componentbackground);
     }
 
     ._t-hover-yellow {
-        transition: 0.3s ease;
+        transition: 0.3s all ease;
         &:hover {
             color: var(--yellow2) !important;
             text-decoration: none;

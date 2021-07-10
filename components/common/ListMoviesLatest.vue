@@ -13,14 +13,13 @@
 
 <script>
 export default {
-  props: {
-    moviesLatestArr: {
-      type: Array,
-      default() {},
-    },
-  },
   data() {
     return {}
+  },
+  computed: {
+    moviesLatestArr() {
+      return this.$store.state.moviesLatestArr
+    },
   },
 }
 </script>
@@ -57,7 +56,7 @@ export default {
       white-space: nowrap;
       vertical-align: middle;
       color: #ce9090;
-      transition: 0.3s ease;
+      transition: 0.3s all ease;
       cursor: pointer;
       &:hover {
         color: var(--white);

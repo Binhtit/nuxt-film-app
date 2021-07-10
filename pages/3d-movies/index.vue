@@ -40,7 +40,7 @@ export default {
     ._filter-btn {
       cursor: pointer;
       color: var(--gray2);
-      transition: 0.3s ease;
+      transition: 0.3s all ease;
       &:hover {
         color: var(--white);
       }

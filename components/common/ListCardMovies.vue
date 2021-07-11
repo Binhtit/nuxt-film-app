@@ -57,6 +57,7 @@ export default {
         .replace(/đ/g, 'd')
         .replace(/Đ/g, 'D')
         .replace(/ /g, '-')
+        .toLowerCase()
     },
   },
   props: {

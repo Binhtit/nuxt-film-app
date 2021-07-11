@@ -2,10 +2,16 @@
   <div class="row mt-2 p-2 footer bg-component">
     <div class="footer--border col-md-12 d-flex">
       <div class="_policy col-md-7">
-        <a class="text-white text-hover-yellow" href="#">XEM PHIM</a>
-        <a class="text-white text-hover-yellow" href="#">THUẬT NGỬ</a>
-        <a class="text-white text-hover-yellow" href="#">CHÍNH SÁCH RIÊNG TƯ</a>
-        <a class="text-white text-hover-yellow" href="#">ĐIỀU KHOẢN SỬ DỤNG</a>
+        <a class="text-white text-hover-yellow" href="/">XEM PHIM</a>
+        <nuxt-link class="text-white text-hover-yellow" to="/language-anime"
+          >THUẬT NGỬ</nuxt-link
+        >
+        <nuxt-link class="text-white text-hover-yellow" to="/privacy-policy"
+          >CHÍNH SÁCH RIÊNG TƯ</nuxt-link
+        >
+        <nuxt-link class="text-white text-hover-yellow" to="/terms-of-use"
+          >ĐIỀU KHOẢN SỬ DỤNG</nuxt-link
+        >
       </div>
       <div class="_contact col-md-5">
         <a

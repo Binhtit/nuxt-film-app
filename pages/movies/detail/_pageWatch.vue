@@ -18,11 +18,9 @@
                 src="https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg"
                 alt="thumbnail"
               />
-              <div class="btn-wrap">
-                <button
-                  class="btn btn-outline-warning font-weight-bold"
-                  @click="watchComponent = 'ParticularWatch'"
-                >
+              <div class="btn-wrap" @click="watchComponent = 'ParticularWatch'">
+                <i class="far fa-play-circle"></i>
+                <button class="btn btn-outline-warning font-weight-bold">
                   XEM PHIM
                 </button>
               </div>
@@ -168,14 +166,30 @@ export default {
           position: absolute;
           left: 0;
           bottom: 0;
-          background: #00000096;
-          height: 57px;
-
+          height: 100%;
+          transition: 0.5s all ease;
+          cursor: pointer;
+          i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 75px;
+            color: var(--yellow1);
+            opacity: 0;
+            transition: 0.5s all ease;
+          }
           .btn {
             position: absolute;
-            bottom: 10px;
+            bottom: -50px;
             left: 50%;
             transform: translate(-50%);
+          }
+          &:hover {
+            background: #00000096;
+          }
+          &:hover i {
+            opacity: 1;
           }
         }
       }

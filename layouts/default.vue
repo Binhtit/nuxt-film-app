@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div @mousedown="eventClick()">
     <div class="container-fluid bg-component">
       <div class="container p-0 bg-component">
         <CommonHeader />
@@ -14,7 +14,17 @@
 
 <script>
 export default {
+  computed: {
+    countClick() {
+      return this.$store.state.countClick
+    },
+  },
   mounted() {},
+  methods: {
+    eventClick() {
+      return this.$store.dispatch('countClick')
+    },
+  },
 }
 </script>
 

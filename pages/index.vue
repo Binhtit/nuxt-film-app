@@ -68,6 +68,7 @@ export default {
   },
   created() {},
   mounted() {
+    this.$store.commit('addMoviesArr', this.moviesArr)
     this.moviesSorted2d = this.getMoviesByCategory(
       MOVIE_CONSTANT.MOVIE_CATEGORY.MOVIE_2D
     )

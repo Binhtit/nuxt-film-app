@@ -12,11 +12,10 @@
       <nuxt-link
         :to="('movies/detail/' + movie.name + '?id=' + movie.id) | removeMark"
       >
-        <!-- <nuxt-link :to="{ name: 'movies-detail-1', params: movie }"> -->
         <div>
           <figure class="Objf TpMvPlay AAIco-play_arrow">
             <img
-              :src="movie.thumbnail"
+              :src="movie.image"
               :alt="movie.name"
               :title="movie.name"
               class="_image"
@@ -38,7 +37,8 @@
             ></i>
           </div>
           <span class="_date">
-            <i class="far fa-calendar-alt"></i>{{ movie.date }}</span
+            <i class="far fa-calendar-alt"></i
+            >{{ movie.release_date | getYear }}</span
           >
         </div>
       </nuxt-link>
@@ -47,19 +47,11 @@
 </template>
 
 <script>
+import filters from '~/mixins/filters.js'
+
 export default {
   name: 'ListCardMovies',
-  filters: {
-    removeMark(value) {
-      return value
-        .normalize('NFD')
-        .replace(/[\u0300-\u036F]/g, '')
-        .replace(/đ/g, 'd')
-        .replace(/Đ/g, 'D')
-        .replace(/ /g, '-')
-        .toLowerCase()
-    },
-  },
+  mixins: [filters],
   props: {
     moviesArr: {
       type: Array,

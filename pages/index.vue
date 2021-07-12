@@ -47,28 +47,31 @@
 </template>
 
 <script>
-import { moviesTypes, moviesSlideArr } from '@/dummy_data/movies.js'
+import { moviesTypes } from '@/dummy_data/movies.js'
 import { MOVIE_CONSTANT } from '~/assets/js/CONSTANT.js'
 export default {
   name: 'Home',
   components: {},
   async asyncData({ $axios }) {
-    const moviesArr = await $axios.$get(
-      'https://nuxt-movies-app-default-rtdb.asia-southeast1.firebasedatabase.app/movies.json'
-    )
+    const moviesArr = await $axios.$get('http://127.0.0.1:8000/api/home')
     return { moviesArr }
   },
   data() {
     return {
-      moviesSlideArr,
       moviesTypes,
       moviesSorted2d: [],
       moviesSorted3d: [],
     }
   },
+  computed: {
+    moviesSlideArr() {
+      return this.moviesArr.top_5_newest_films
+    },
+  },
   created() {},
   mounted() {
-    this.$store.commit('addMoviesArr', this.moviesArr)
+    // for header use
+    this.$store.commit('addMoviesArr', this.moviesArr.top_40_newest_eps)
     this.moviesSorted2d = this.getMoviesByCategory(
       MOVIE_CONSTANT.MOVIE_CATEGORY.MOVIE_2D
     )
@@ -99,8 +102,8 @@ export default {
       }
     },
     getMoviesByCategory(code) {
-      return this.moviesArr.filter((movie) => {
-        return movie.categories === code
+      return this.moviesArr.top_40_newest_eps.filter((movie) => {
+        return movie.category_id === code
       })
     },
   },

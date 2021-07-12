@@ -24,7 +24,7 @@
           </span>
           <span class="_date"
             ><i class="far fa-calendar-alt mr-1 text-warning"></i
-            >{{ movie.date }}</span
+            >{{ movie.release_date }}</span
           >
         </div>
         <div class="_description mt-2">
@@ -37,15 +37,15 @@
           </p>
           <p class="_genre">
             <span class="text-warning font-weight-bold">Thể loại:</span>
-            <i class="">{{ movie.category }}</i>
+            <i class="">{{ movie.type_name }}</i>
           </p>
         </div>
       </div>
-      <img class="_image-bg" :src="movie.image" alt="image-slide" />
-      <a
-        href="https://hoathinh247.com/phim-tham-tu-lung-danh-conan-73.html"
+      <img class="_image-bg" :src="movie.banner" :alt="movie.name" />
+      <nuxt-link
+        :to="('movies/detail/' + movie.name + '?id=' + movie.id) | removeMark"
         class="carousel__button btn btn-warning shadow"
-        ><strong>Xem Phim</strong></a
+        ><strong>Xem Phim</strong></nuxt-link
       >
     </div>
   </VueSlickCarousel>
@@ -53,6 +53,8 @@
 
 <script>
 import VueSlickCarousel from 'vue-slick-carousel'
+import removeMark from '~/mixins/filters.js'
+
 import 'vue-slick-carousel/dist/vue-slick-carousel.css'
 // optional style for arrows & dots
 import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
@@ -60,6 +62,7 @@ export default {
   components: {
     VueSlickCarousel,
   },
+  mixins: [removeMark],
   props: {
     moviesSlideArr: {
       type: Array,

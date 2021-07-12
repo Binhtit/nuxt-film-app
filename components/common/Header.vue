@@ -58,7 +58,7 @@
             >
               <div>
                 <img
-                  :src="rs.thumbnail"
+                  :src="rs.image"
                   :alt="rs.name"
                   :title="rs.name"
                   class="_image"
@@ -141,9 +141,9 @@ export default {
       return (this.EmptySearch = false)
     },
     countClick() {
-      if (this.searchName) {
-        return (this.EmptySearch = true)
-      }
+      // if (this.searchName) {
+      //   return (this.EmptySearch = true)
+      // }
     },
   },
   methods: {
@@ -156,9 +156,11 @@ export default {
         .toLowerCase()
     },
     removeSearchRs() {
-      // this.searchResult.splice(0, this.searchResult.length)
-      // this.searchName = ''
-      // this.EmptySearch = true
+      this.searchResult.splice(0, this.searchResult.length)
+      this.searchName = ''
+      setTimeout(() => {
+        this.EmptySearch = true
+      }, 0)
     },
   },
 }
@@ -207,6 +209,7 @@ export default {
           }
           ._image {
             height: 100%;
+            width: 90px;
           }
           ._detail {
             color: var(--gray2);

@@ -4,15 +4,24 @@
       <p class="text-center">ANIME MỚI CẬP NHẬT</p>
     </div>
     <ul class="_list scroll-dark">
-      <li v-for="(movies, id) in moviesLatestArr" :key="id">
-        {{ movies.name }}
-      </li>
+      <nuxt-link
+        v-for="(movie, id) in moviesLatestArr"
+        :key="id"
+        :to="('movies/detail/' + movie.name + '?id=' + movie.id) | removeMark"
+      >
+        <li>
+          {{ movie.name }}
+        </li>
+      </nuxt-link>
     </ul>
   </div>
 </template>
 
 <script>
+import removeMark from '~/mixins/filters.js'
+
 export default {
+  mixins: [removeMark],
   data() {
     return {}
   },

@@ -26,9 +26,7 @@ export default {
   mixins: [cardMoviesController],
 
   async asyncData({ $axios }) {
-    const moviesArr = await $axios.$get(
-      'https://nuxt-movies-app-default-rtdb.asia-southeast1.firebasedatabase.app/movies2d.json'
-    )
+    const moviesArr = await $axios.$get('http://127.0.0.1:8000/api/movies/1')
     return { moviesArr }
   },
 }

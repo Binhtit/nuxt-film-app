@@ -20,7 +20,7 @@ export const mutations = {
 export const actions = {
   async nuxtServerInit(contextVue, context) {
     const moviesLatestArr = await context.$axios.$get(
-      'https://nuxt-movies-app-default-rtdb.asia-southeast1.firebasedatabase.app/moviesLatestArr.json'
+      'http://127.0.0.1:8000/api/top20newest'
     )
     if (moviesLatestArr) {
       contextVue.state.moviesLatestArr = moviesLatestArr

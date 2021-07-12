@@ -7,7 +7,7 @@
       <nuxt-link
         v-for="(movie, id) in moviesLatestArr"
         :key="id"
-        :to="('movies/detail/' + movie.name + '?id=' + movie.id) | removeMark"
+        :to="('/movies/detail/' + movie.name + '?id=' + movie.id) | removeMark"
       >
         <li>
           {{ movie.name }}

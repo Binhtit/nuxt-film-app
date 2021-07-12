@@ -10,7 +10,7 @@
       class="col-md-3 col-sm-6 _card"
     >
       <nuxt-link
-        :to="('movies/detail/' + movie.name + '?id=' + movie.id) | removeMark"
+        :to="('/movies/detail/' + movie.name + '?id=' + movie.id) | removeMark"
       >
         <div>
           <figure class="Objf TpMvPlay AAIco-play_arrow">

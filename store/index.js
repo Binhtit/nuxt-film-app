@@ -2,6 +2,7 @@ export const state = () => ({
   moviesTypes: [],
   moviesArr: [],
   moviesLatestArr: [],
+  movie: [],
   countClick: 0,
 })
 
@@ -11,6 +12,9 @@ export const mutations = {
   },
   addMoviesLatestArr(state, payload) {
     state.moviesLatestArr = payload
+  },
+  addMovie(state, payload) {
+    state.movie = payload
   },
   countClick(state) {
     state.countClick++

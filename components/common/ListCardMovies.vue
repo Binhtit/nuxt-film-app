@@ -1,9 +1,9 @@
 <template>
   <!-- ListCardMovies -->
   <div class="row card-moves">
-    <div v-show="!(moviesArr.length > 0)" class="col-12 text-center text-muted">
+    <!-- <div v-show="!(moviesArr.length > 0)" class="col-12 text-center text-muted">
       <p>Đang cập nhật dữ liệu ...</p>
-    </div>
+    </div> -->
     <article
       v-for="(movie, index) in moviesArr"
       :key="index"
@@ -23,8 +23,9 @@
           </figure>
         </div>
         <div class="_episodes">
-          <span>tập</span>
-          <span>{{ movie.episodes }}</span>
+          <span class="font-weight-bold">{{
+            movie.ep_name || movie.episodes + ' Tập'
+          }}</span>
         </div>
         <h2 class="_title m-0">{{ movie.name }}</h2>
         <div class="_rate-group">
@@ -59,9 +60,7 @@ export default {
     },
   },
   data() {
-    return {
-      linkname: 'âsbc-b-c',
-    }
+    return {}
   },
 }
 </script>
@@ -108,7 +107,7 @@ export default {
     background: #ffc107;
     padding: 3px 8px;
     border-radius: 20px;
-    color: white;
+    color: #e91e63;
     margin: 5px;
     box-shadow: rgb(2 2 2 / 30%) 0 3px 8px;
     & :not(:first-child) {

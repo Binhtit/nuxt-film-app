@@ -6,7 +6,7 @@
           <div class="_banner-bg">
             <img
               class="_banner-bg__img"
-              src="https://hoathinh247.tv/timthumb.php?src=https://img.vncdn.xyz/static/images/1625072053-thien-hoang-chien-than-f3290.jpg&w=800&h=420"
+              :src="movie.film.banner"
               alt="banner-movie"
             />
             <div class="_banner-bg__blur"></div>
@@ -15,49 +15,36 @@
             <div class="col-md-3 p-0 _avatar">
               <img
                 class="_img-thumbnail"
-                src="https://img.vncdn.xyz/uploads/images/kyuukyoku-shinka-shita-full-dive-rpg-ga-genjitsu-yori-mo-kusoge-dattara-f3357.jpg"
+                :src="movie.film.image"
                 alt="thumbnail"
               />
-              <div class="btn-wrap" @click="watchComponent = 'ParticularWatch'">
-                <i class="far fa-play-circle"></i>
-                <button class="btn btn-outline-warning font-weight-bold">
-                  XEM PHIM
-                </button>
-              </div>
             </div>
             <div class="col-md-9 _content">
-              <h2 class="_content__title">Thiên Hoang Chiến Thần</h2>
-              <p class="_content__subtitle">Thiên Hoang Chiến Thần</p>
+              <h2 class="_content__title">{{ movie.film.name }}</h2>
+              <p class="_content__subtitle">{{ movie.film.name }}</p>
               <div class="_content__description scroll-yellow--small">
-                Cốt truyện trong phim Thiên Hoang Chiến Thần được lấy bối cảnh
-                trong một thế giới hoang dã, khi đó loài người chỉ là một chủng
-                tộc cực kỳ yếu ớt, đối mặt với nguy cơ sinh tồn khắc nghiệt, và
-                nó là huyết thống của các chủng tộc khác. Cũng bởi vì bốn vị
-                thần bảo vệ của loài người đã già, chưa tìm được người kế vị phù
-                hợp, bốn vị cuối cùng đã quyết định hòa nhập máu thịt của mình
-                vào thiên hạ hoang dã, chọn người kế vị mới theo ý trời, để mong
-                rằng sau này có thể tìm được người được chọn, để nắm giữ vận
-                mệnh bảo vệ loài người
+                {{ movie.film.description }}
               </div>
               <div class="row mt-4 text-white">
                 <div class="col-md-6 _rate">
                   <div class="_rate__label mr-2 text-warning">Đánh giá:</div>
-                  <div class="_rate__star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
+                  <div class="_star">
+                    <i
+                      v-for="star in 5"
+                      :key="star"
+                      :class="{ active: star <= movie.film.star }"
+                      class="fas fa-star"
+                    ></i>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <span class="_episodes mx-3"
-                    ><i class="fab fa-stack-overflow mr-2 text-warning"></i>25
-                    Tập
+                    ><i class="fab fa-stack-overflow mr-2 text-warning"></i>
+                    {{ movie.film.episodes }} Tập
                   </span>
                   <span class="_date"
                     ><i class="far fa-calendar-alt mr-2 text-warning"></i
-                    >2001</span
+                    >{{ movie.film.release_date | getYear }}</span
                   >
                 </div>
               </div>
@@ -73,7 +60,8 @@
     </div>
     <!-- <div class="row bg-component mt-2 _watch"></div> -->
     <div class="row bg-component mt-2">
-      <component :is="watchComponent" class="col-md-12 mb-4"></component>
+      <!-- <component :is="watchComponent" class="col-md-12 mb-4"></component> -->
+      <ParticularWatchMovie class="col-md-12 mb-4" :eps="movie.eps" />
       <div class="detail-movie__navbar col-md-12">
         <span>Thông tin phim</span>
       </div>
@@ -82,16 +70,16 @@
           <div class="col-md-6">
             <ul>
               <li>
-                <span class="text-warning mr-2">Trạng thái: </span
-                ><span class="text-white">N/A</span>
+                <span class="text-warning mr-2">Danh mục: </span
+                ><span class="text-white">{{ movie.film.category_name }}</span>
               </li>
               <li>
                 <span class="text-warning mr-2">Thể loại:</span>
-                <span class="text-white">N/A</span>
+                <span class="text-white">{{ movie.film.type_name }}</span>
               </li>
               <li>
                 <span class="text-warning mr-2">Quốc gia:</span>
-                <span class="text-white">N/A</span>
+                <span class="text-white">{{ movie.film.country_name }}</span>
               </li>
             </ul>
           </div>
@@ -99,7 +87,7 @@
             <ul>
               <li>
                 <span class="text-warning mr-2">Độ phân giải:</span
-                ><span class="text-white">N/A</span>
+                ><span class="text-white">{{ movie.film.type_name }}</span>
               </li>
               <li>
                 <span class="text-warning mr-2">Ngôn ngữ:</span
@@ -107,7 +95,7 @@
               </li>
               <li>
                 <span class="text-warning mr-2">IMDb:</span>
-                <span class="text-white">N/A</span>
+                <span class="text-white">{{ movie.film.imdb }}</span>
               </li>
             </ul>
           </div>
@@ -118,17 +106,23 @@
 </template>
 
 <script>
+import filters from '~/mixins/filters.js'
+
 export default {
+  mixins: [filters],
   async asyncData(context) {
-    const idMovie = await context.query.id
-    return { idMovie }
+    const idMovie = context.query.id
+    const movie = await context.$axios.$get(
+      `http://127.0.0.1:8000/api/movies/detail/episodes/${idMovie}`
+    )
+    return { movie }
   },
   data() {
     return {
-      watchComponent: '',
+      watchComponent: 'ParticularWatchWatchMovie',
+      movie: [],
     }
   },
-  mounted() {},
 }
 </script>
 
@@ -160,37 +154,6 @@ export default {
         position: relative;
         ._img-thumbnail {
           width: 100%;
-        }
-        .btn-wrap {
-          width: 100%;
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          height: 100%;
-          transition: 0.5s all ease;
-          cursor: pointer;
-          i {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 75px;
-            color: var(--yellow1);
-            opacity: 0;
-            transition: 0.5s all ease;
-          }
-          .btn {
-            position: absolute;
-            bottom: -50px;
-            left: 50%;
-            transform: translate(-50%);
-          }
-          &:hover {
-            background: #00000096;
-          }
-          &:hover i {
-            opacity: 1;
-          }
         }
       }
       ._content {

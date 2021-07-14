@@ -44,8 +44,8 @@
       <img class="_image-bg" :src="movie.banner" :alt="movie.name" />
       <nuxt-link
         :to="('movies/detail/' + movie.name + '?id=' + movie.id) | removeMark"
-        class="carousel__button btn btn-warning shadow"
-        ><strong>Xem Phim</strong></nuxt-link
+        class="carousel__button btn btn-warning text-danger shadow"
+        ><i class="fas fa-play-circle"></i><strong>Xem Phim</strong></nuxt-link
       >
     </div>
   </VueSlickCarousel>
@@ -108,10 +108,18 @@ export default {
   }
   &__button {
     position: absolute;
+    padding: 10px 20px;
     right: 10px;
     bottom: 40px;
     box-shadow: rgba(0, 0, 0, 0.5) 0 3px 8px;
     z-index: 1;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    i {
+      font-size: 25px;
+      margin-right: 10px;
+    }
   }
 }
 // slick-slider customization

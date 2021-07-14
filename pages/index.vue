@@ -2,7 +2,7 @@
   <div class="container home__wrapper">
     <div class="row mb-2">
       <div class="col-md-9 p-0">
-        <ParticularCarousel :movies-slide-arr="moviesSlideArr" />
+        <ParticularHomeCarousel :movies-slide-arr="moviesSlideArr" />
       </div>
       <div class="col-md-3 p-0">
         <div class="home__movies-latest ml-2">

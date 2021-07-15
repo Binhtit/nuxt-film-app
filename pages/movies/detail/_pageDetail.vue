@@ -16,7 +16,7 @@
               <img class="_img-thumbnail" :src="movie.image" alt="thumbnail" />
               <nuxt-link
                 class="btn-wrap"
-                :to="`/movies/detail/watch?id=${movie.id}`"
+                :to="`/movies/detail/watch?id=${idMovie}&tap=`"
               >
                 <i class="far fa-play-circle"></i>
                 <button class="btn btn-outline-warning font-weight-bold">
@@ -44,12 +44,12 @@
                 </div>
                 <div class="col-md-6">
                   <span class="_episodes mx-3"
-                    ><i class="fab fa-stack-overflow mr-2 text-warning"></i>25
-                    Tập
+                    ><i class="fab fa-stack-overflow mr-2 text-warning"></i
+                    >{{ movie.episodes }} Tập
                   </span>
                   <span class="_date"
                     ><i class="far fa-calendar-alt mr-2 text-warning"></i
-                    >2001</span
+                    >{{ movie.release_date | getYear }}</span
                   >
                 </div>
               </div>
@@ -110,15 +110,19 @@
 </template>
 
 <script>
+import filters from '~/mixins/filters.js'
+
 export default {
+  mixins: [filters],
   async asyncData(context) {
     const idMovie = context.query.id
+    const epMovie = context.query.id
     const movie = await context.$axios.$get(
       `http://127.0.0.1:8000/api/movies/detail/${idMovie}`
     )
-    return { movie }
+    return { movie, epMovie, idMovie }
   },
-  data() {
+  data(context) {
     return {
       watchComponent: '',
     }

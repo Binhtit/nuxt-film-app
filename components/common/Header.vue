@@ -46,8 +46,7 @@
           </button>
           <div
             v-show="searchName && !EmptySearch"
-            class="_search-result bg-component"
-            :class="{ 'scroll-yellow--small': searchResult.length >= 3 }"
+            class="_search-result bg-component scroll-yellow--small"
             @click="removeSearchRs()"
           >
             <nuxt-link
@@ -141,9 +140,9 @@ export default {
       return (this.EmptySearch = false)
     },
     countClick() {
-      // if (this.searchName) {
-      //   return (this.EmptySearch = true)
-      // }
+      if (this.searchName) {
+        return (this.EmptySearch = true)
+      }
     },
   },
   methods: {

@@ -13,7 +13,7 @@
         <div class="col-md-12 d-flex p-0">
           <div
             class="_server col-md-3"
-            :class="{ _active: !isServerTwo, '_server-active': !isServerTwo }"
+            :class="{ '_active _server-active': !isServerTwo }"
             @click="changeServerTwo(false)"
           >
             <p class="text-center">Server VIP</p>

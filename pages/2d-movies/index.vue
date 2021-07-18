@@ -29,6 +29,11 @@ export default {
     const moviesArr = await $axios.$get('http://127.0.0.1:8000/api/movies/1')
     return { moviesArr }
   },
+  head() {
+    return {
+      title: 'Phim hoạt hình 2D',
+    }
+  },
 }
 </script>
 

@@ -4,14 +4,18 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'nuxt-film-app',
+    title: 'Phim hoạt hình Trung Quốc',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Phim hoạt hình Trung Quốc',
+      },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon2.ico' },
       {
         rel: 'stylesheet',
         href: 'https://fonts.googleapis.com/css?family=Roboto:100,300,regular,italic,500,700,900%7CCatamaran:100,200,300,regular,500,600,700,800,900%7CNunito:regular&amp;subset=latin,vietnamese',
@@ -48,8 +52,9 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    // 'jquery/',
     // https://go.nuxtjs.dev/bootstrap
-    // 'bootstrap-vue/nuxt',
+    // 'bootstrap/',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa

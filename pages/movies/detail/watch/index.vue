@@ -1,5 +1,5 @@
 <template>
-  <div class="container detail-movie">
+  <div class="container detail-movie" :class="{ _ismobile: $device.isMobile }">
     <div class="row">
       <div class="col-md-9 p-0">
         <div class="_banner-wrap">
@@ -12,14 +12,14 @@
             <div class="_banner-bg__blur"></div>
           </div>
           <div class="row _content-wrap">
-            <div class="col-md-3 p-0 _avatar">
+            <div class="col-md-3 col-sm-3 col-3 p-0 _avatar">
               <img
                 class="_img-thumbnail"
                 :src="movie.film.image"
                 alt="thumbnail"
               />
             </div>
-            <div class="col-md-9 _content">
+            <div class="col-md-9 col-9 _content">
               <h2 class="_content__title">{{ movie.film.name }}</h2>
               <p class="_content__subtitle">{{ movie.film.name }}</p>
               <div class="_content__description scroll-yellow--small">
@@ -37,7 +37,7 @@
                     ></i>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-6 mb-subinfo">
                   <span class="_episodes mx-3"
                     ><i class="fab fa-stack-overflow mr-2 text-warning"></i>
                     {{ movie.film.episodes }} Tập
@@ -54,7 +54,7 @@
       </div>
       <div class="col-md-3 p-0">
         <div class="home__movies-latest ml-2">
-          <CommonListMoviesLatest />
+          <CommonListMoviesLatest v-if="!$device.isMobile" />
         </div>
       </div>
     </div>
@@ -67,33 +67,33 @@
       </div>
       <div class="detail-movie__infor-movie col-md-12">
         <div class="row pt-2">
-          <div class="col-md-6">
-            <ul>
-              <li>
+          <div class="col-md-6 _infor-level-1">
+            <ul class="_infor-level-2">
+              <li class="_infor-level-3">
                 <span class="text-warning mr-2">Danh mục: </span
                 ><span class="text-white">{{ movie.film.category_name }}</span>
               </li>
-              <li>
+              <li class="_infor-level-3">
                 <span class="text-warning mr-2">Thể loại:</span>
                 <span class="text-white">{{ movie.film.type_name }}</span>
               </li>
-              <li>
+              <li class="_infor-level-3">
                 <span class="text-warning mr-2">Quốc gia:</span>
                 <span class="text-white">{{ movie.film.country_name }}</span>
               </li>
             </ul>
           </div>
-          <div class="col-md-6">
-            <ul>
-              <li>
+          <div class="col-md-6 _infor-level-1">
+            <ul class="_infor-level-2">
+              <li class="_infor-level-3">
                 <span class="text-warning mr-2">Độ phân giải:</span
                 ><span class="text-white">{{ movie.film.type_name }}</span>
               </li>
-              <li>
+              <li class="_infor-level-3">
                 <span class="text-warning mr-2">Ngôn ngữ:</span
                 ><span class="text-white">Việt sub</span>
               </li>
-              <li>
+              <li class="_infor-level-3">
                 <span class="text-warning mr-2">IMDb:</span>
                 <span class="text-white">{{ movie.film.imdb }}</span>
               </li>
@@ -192,6 +192,42 @@ export default {
     ul {
       li {
         margin: 10px 0;
+      }
+    }
+  }
+  &._ismobile {
+    ._banner-wrap {
+      ._content-wrap {
+        ._content {
+          ._content__title {
+            font-size: 20px;
+          }
+          ._rate {
+            justify-content: flex-end;
+          }
+          .mb-subinfo {
+            display: flex;
+            justify-content: flex-end;
+          }
+        }
+      }
+    }
+    .detail-movie__infor-movie {
+      font-size: 12px;
+      ._infor-level {
+        &-2 {
+          padding: 0 !important;
+        }
+        &-3 {
+          text-align: center;
+        }
+      }
+    }
+    ._watch {
+      ._eps-control {
+        ._eps {
+          font-size: 12px !important;
+        }
       }
     }
   }

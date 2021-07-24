@@ -8,7 +8,7 @@
       align-items-center
     "
   >
-    <span class="filter-nav__label"
+    <span v-if="!$device.isMobile" class="filter-nav__label"
       >ANIME
       <span class="font-weight-bold"><slot name="category"></slot></span>
       MỚI CẬP NHẬT <i class="fas fa-chevron-right pl-2"></i

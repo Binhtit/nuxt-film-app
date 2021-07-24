@@ -11,7 +11,8 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'Phim hoạt hình Trung Quốc',
+        content:
+          'Những bộ phim hoạt hình 3D 2D Trung Quốc với đồ họa đẹp mắt, nội dung hấp hẫn. Top những bộ phim hoạt hình 3D 2D Trung Quốc kinh điển, hay nhất mọi thời đại!',
       },
     ],
     link: [
@@ -48,6 +49,7 @@ export default {
     '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/stylelint
     '@nuxtjs/stylelint-module',
+    '@nuxtjs/device',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules

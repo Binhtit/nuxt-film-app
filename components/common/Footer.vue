@@ -1,36 +1,47 @@
 <template>
-  <div class="row mt-2 p-2 footer bg-component">
+  <div
+    class="row mt-2 p-2 footer bg-component"
+    :class="{ _ismobile: $device.isMobile }"
+  >
     <div class="footer--border col-md-12 d-flex">
-      <div class="_policy col-md-7">
-        <a class="text-white text-hover-yellow" href="/">XEM PHIM</a>
-        <nuxt-link class="text-white text-hover-yellow" to="/language-anime"
-          >THUẬT NGỬ</nuxt-link
-        >
-        <nuxt-link class="text-white text-hover-yellow" to="/privacy-policy"
-          >CHÍNH SÁCH RIÊNG TƯ</nuxt-link
-        >
-        <nuxt-link class="text-white text-hover-yellow" to="/terms-of-use"
-          >ĐIỀU KHOẢN SỬ DỤNG</nuxt-link
-        >
-      </div>
-      <div class="_contact col-md-5">
-        <a
-          class="_contact--icon text-hover-yellow"
-          href="https://www.facebook.com/thitsot.cachua"
-          ><i class="fab fa-facebook-square"></i
-        ></a>
-        <a
-          class="_contact--icon text-hover-yellow"
-          href="https://twitter.com/Binh40821629"
-          ><i class="fab fa-twitter-square"></i
-        ></a>
-        <a class="_contact--icon text-hover-yellow" href="#"
-          ><i class="fab fa-youtube-square"></i
-        ></a>
+      <div class="row px-0">
+        <div class="_policy col-md-7 col-12">
+          <a class="_link text-white text-hover-yellow" href="/">XEM PHIM</a>
+          <nuxt-link
+            class="_link text-white text-hover-yellow"
+            to="/language-anime"
+            >THUẬT NGỬ</nuxt-link
+          >
+          <nuxt-link
+            class="_link text-white text-hover-yellow"
+            to="/privacy-policy"
+            >CHÍNH SÁCH RIÊNG TƯ</nuxt-link
+          >
+          <nuxt-link
+            class="_link text-white text-hover-yellow"
+            to="/terms-of-use"
+            >ĐIỀU KHOẢN SỬ DỤNG</nuxt-link
+          >
+        </div>
+        <div class="_contact col-md-5 col-12">
+          <a
+            class="_contact--icon text-hover-yellow"
+            href="https://www.facebook.com/thitsot.cachua"
+            ><i class="fab fa-facebook-square"></i
+          ></a>
+          <a
+            class="_contact--icon text-hover-yellow"
+            href="https://twitter.com/Binh40821629"
+            ><i class="fab fa-twitter-square"></i
+          ></a>
+          <a class="_contact--icon text-hover-yellow" href="#"
+            ><i class="fab fa-youtube-square"></i
+          ></a>
+        </div>
       </div>
     </div>
     <div class="col-md-12">
-      <div class="_web-description py-4">
+      <div v-if="!$device.isMobile" class="_web-description py-4">
         <a href="#" rel="nofollow" title="Anime"> Anime</a
         ><a href="#" rel="nofollow" title="anime vietsub"> Anime vietsub</a
         ><a href="#" rel="nofollow" title="anime online"> Anime online</a
@@ -96,6 +107,21 @@
       transition: 0.3s ease;
       &:hover {
         color: var(--white);
+      }
+    }
+  }
+  &._ismobile {
+    .footer--border {
+      justify-content: center;
+    }
+    ._policy {
+      flex-direction: column;
+      justify-content: stretch;
+      ._link {
+        width: 100%;
+        text-align: center;
+        padding: 10px 0;
+        border-bottom: 1px solid #78909c;
       }
     }
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="container detail-movie">
+  <div class="container detail-movie" :class="{ _ismobile: $device.isMobile }">
     <div class="row">
       <div class="col-md-9 p-0">
         <div class="_banner-wrap">
@@ -12,7 +12,7 @@
             <div class="_banner-bg__blur"></div>
           </div>
           <div class="row _content-wrap">
-            <div class="col-md-3 p-0 _avatar">
+            <div class="col-md-3 col-sm-3 col-12 p-0 _avatar">
               <img class="_img-thumbnail" :src="movie.image" alt="thumbnail" />
               <nuxt-link
                 class="btn-wrap"
@@ -24,13 +24,13 @@
                 </button>
               </nuxt-link>
             </div>
-            <div class="col-md-9 _content">
+            <div class="col-md-9 col-sm-3 col-12 _content">
               <h2 class="_content__title">{{ movie.name }}</h2>
               <p class="_content__subtitle">{{ movie.name }}</p>
               <div class="_content__description scroll-yellow--small">
                 {{ movie.description }}
               </div>
-              <div class="row mt-4 text-white">
+              <div class="row mt-4 text-white _mb-star">
                 <div class="col-md-6 _rate">
                   <div class="_rate__label mr-2 text-warning">Đánh giá:</div>
                   <div class="_star">
@@ -43,7 +43,7 @@
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <span class="_episodes mx-3"
+                  <span class="_episodes mr-3"
                     ><i class="fab fa-stack-overflow mr-2 text-warning"></i
                     >{{ movie.episodes }} Tập
                   </span>
@@ -59,7 +59,7 @@
       </div>
       <div class="col-md-3 p-0">
         <div class="home__movies-latest ml-2">
-          <CommonListMoviesLatest />
+          <CommonListMoviesLatest v-if="!$device.isMobile" />
         </div>
       </div>
     </div>
@@ -71,33 +71,33 @@
       </div>
       <div class="detail-movie__infor-movie col-md-12">
         <div class="row pt-2">
-          <div class="col-md-6">
-            <ul>
-              <li>
+          <div class="col-md-6 _infor-level-1">
+            <ul class="_infor-level-2">
+              <li class="_infor-level-3">
                 <span class="text-warning mr-2">Trạng thái: </span
                 ><span class="text-white">{{ movie.film_status }}</span>
               </li>
-              <li>
+              <li class="_infor-level-3">
                 <span class="text-warning mr-2">Thể loại:</span>
                 <span class="text-white">{{ movie.type_name }}</span>
               </li>
-              <li>
+              <li class="_infor-level-3">
                 <span class="text-warning mr-2">Quốc gia:</span>
                 <span class="text-white">{{ movie.country_name }}</span>
               </li>
             </ul>
           </div>
-          <div class="col-md-6">
-            <ul>
-              <li>
+          <div class="col-md-6 _infor-level-1">
+            <ul class="_infor-level-2">
+              <li class="_infor-level-3">
                 <span class="text-warning mr-2">Độ phân giải:</span
                 ><span class="text-white">{{ movie.type_name }}</span>
               </li>
-              <li>
+              <li class="_infor-level-3">
                 <span class="text-warning mr-2">Ngôn ngữ:</span
                 ><span class="text-white">Việt sub</span>
               </li>
-              <li>
+              <li class="_infor-level-3">
                 <span class="text-warning mr-2">IMDb:</span>
                 <span class="text-white">{{ movie.imdb }}</span>
               </li>
@@ -106,6 +106,7 @@
         </div>
       </div>
     </div>
+    <CommonListMoviesLatest v-if="$device.isMobile" class="mt-2" />
   </div>
 </template>
 
@@ -230,6 +231,50 @@ export default {
     ul {
       li {
         margin: 10px 0;
+      }
+    }
+  }
+  &._ismobile {
+    ._banner-wrap {
+      ._banner-bg__img {
+        height: 525px;
+      }
+      ._banner-bg__blur {
+        height: 525px;
+      }
+      ._content-wrap {
+        height: 100%;
+        ._avatar {
+          display: flex;
+          justify-content: center;
+          ._img-thumbnail {
+            width: 125px;
+            padding-top: 20px;
+          }
+        }
+        ._content {
+          ._content__title {
+            margin-top: 60px;
+          }
+          ._mb-star {
+            margin: 0 !important;
+            text-align: center;
+            ._rate {
+              justify-content: center;
+            }
+          }
+        }
+      }
+    }
+    .detail-movie__infor-movie {
+      font-size: 12px;
+      ._infor-level {
+        &-2 {
+          padding: 0 !important;
+        }
+        &-3 {
+          text-align: center;
+        }
       }
     }
   }

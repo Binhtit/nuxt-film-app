@@ -1,19 +1,25 @@
 <template>
-  <div class="header _navbar mb-2">
+  <div class="header _navbar mb-2" :class="{ _ismobile: $device.isMobile }">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <nuxt-link class="_logo navbar-brand" to="/"
         ><img src="/logo.png" alt="hoạt hình trung quốc"
       /></nuxt-link>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
+      <button class="navbar-toggler bar-stack">
+        <span class="navbar-toggler-icon" @click="controllMenuMobile()"></span>
+        <div v-show="menuMobile" class="menu-mobile">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active ml-3" @click="controllMenuMobile(false)">
+              <nuxt-link to="/2d-movies" class="_t-hover-yellow _link"
+                >HOẠT HÌNH 2D<span class="sr-only">(current)</span></nuxt-link
+              >
+            </li>
+            <li class="nav-item ml-4" @click="controllMenuMobile(false)">
+              <nuxt-link to="/3d-movies" class="_t-hover-yellow _link"
+                >HOẠT HÌNH 3D<span class="sr-only">(current)</span></nuxt-link
+              >
+            </li>
+          </ul>
+        </div>
       </button>
 
       <div id="navbarSupportedContent" class="collapse navbar-collapse">
@@ -118,6 +124,7 @@ export default {
     return {
       searchName: '',
       EmptySearch: false,
+      menuMobile: false,
     }
   },
   computed: {
@@ -161,6 +168,12 @@ export default {
         this.EmptySearch = true
       }, 0)
     },
+    controllMenuMobile(value = 'toggle') {
+      if (value === 'toggle') {
+        return (this.menuMobile = !this.menuMobile)
+      }
+      return (this.menuMobile = value)
+    },
   },
 }
 </script>
@@ -168,6 +181,9 @@ export default {
 <style lang="scss">
 .header {
   height: 66px;
+  position: relative;
+  // .bar-stack {
+  // }
   &._navbar {
     .navbar {
       background: var(--componentbackground);
@@ -231,6 +247,42 @@ export default {
                 color: var(--yellow1);
                 margin-right: 10px;
               }
+            }
+          }
+        }
+      }
+    }
+  }
+  &._ismobile {
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 3;
+    }
+    .bar-stack {
+      .menu-mobile {
+        position: absolute;
+        right: 0;
+        width: 100%;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        z-index: 3;
+        top: 100%;
+        background: #313534e0;
+        border-radius: 0 0 20px 20px;
+        padding: 12px;
+        .navbar-nav {
+          width: 100%;
+          .nav-item {
+            margin: 0 !important;
+            width: 100%;
+            padding: 25px 0;
+            border: 2px solid;
+            border-radius: 10px;
+            ._link {
+              // padding: 15px 0;
             }
           }
         }

@@ -1,5 +1,8 @@
 <template>
-  <div class="container movies2d__wrapper">
+  <div
+    class="container movies2d__wrapper"
+    :class="{ _ismobile: $device.isMobile }"
+  >
     <div class="row movies2d__filter bg-component py-2">
       <CommonFilterMoviesNavbar
         :movies-types="moviesTypes"

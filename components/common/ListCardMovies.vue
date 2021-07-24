@@ -7,7 +7,7 @@
     <article
       v-for="(movie, index) in moviesArr"
       :key="index"
-      class="col-md-3 col-sm-6 _card"
+      class="col-md-3 col-sm-6 col-6 _card"
     >
       <nuxt-link
         :to="

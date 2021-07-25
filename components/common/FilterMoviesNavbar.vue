@@ -9,7 +9,7 @@
     "
   >
     <span v-if="!$device.isMobile" class="filter-nav__label"
-      >ANIME
+      >PHIM
       <span class="font-weight-bold"><slot name="category"></slot></span>
       MỚI CẬP NHẬT <i class="fas fa-chevron-right pl-2"></i
     ></span>

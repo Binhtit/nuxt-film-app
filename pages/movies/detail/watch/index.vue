@@ -12,21 +12,21 @@
             <div class="_banner-bg__blur"></div>
           </div>
           <div class="row _content-wrap">
-            <div class="col-md-3 col-sm-3 col-3 p-0 _avatar">
+            <div class="col-md-3 col-sm-3 col-12 p-0 _avatar">
               <img
                 class="_img-thumbnail"
                 :src="movie.film.image"
                 alt="thumbnail"
               />
             </div>
-            <div class="col-md-9 col-9 _content">
+            <div class="col-md-9 col-sm-3 col-12 _content">
               <h2 class="_content__title">{{ movie.film.name }}</h2>
               <p class="_content__subtitle">{{ movie.film.name }}</p>
               <div class="_content__description scroll-yellow--small">
                 {{ movie.film.description }}
               </div>
-              <div class="row mt-4 text-white">
-                <div class="col-md-6 _rate">
+              <div class="row mt-4 text-white _mb-star">
+                <div class="col-md-6 col-6 _rate">
                   <div class="_rate__label mr-2 text-warning">Đánh giá:</div>
                   <div class="_star">
                     <i
@@ -37,8 +37,8 @@
                     ></i>
                   </div>
                 </div>
-                <div class="col-md-6 mb-subinfo">
-                  <span class="_episodes mx-3"
+                <div class="col-md-6 col-6">
+                  <span class="_episodes mr-3"
                     ><i class="fab fa-stack-overflow mr-2 text-warning"></i>
                     {{ movie.film.episodes }} Tập
                   </span>
@@ -61,7 +61,13 @@
     <!-- <div class="row bg-component mt-2 _watch"></div> -->
     <div class="row bg-component mt-2">
       <!-- <component :is="watchComponent" class="col-md-12 mb-4"></component> -->
-      <ParticularWatchMovie class="col-md-12 mb-4" :eps="movie.eps" />
+      <div class="watch-wrap">
+        <ParticularWatchMovie
+          class="col-md-12 mb-4"
+          :eps="movie.eps"
+          :film="movie.film"
+        />
+      </div>
       <div class="detail-movie__navbar col-md-12">
         <span>Thông tin phim</span>
       </div>
@@ -112,10 +118,11 @@ export default {
   mixins: [filters],
   async asyncData(context) {
     const idMovie = context.query.id
+    const epMovie = context.query.tap || 1
     const movie = await context.$axios.$get(
       `http://127.0.0.1:8000/api/movies/detail/episodes/${idMovie}`
     )
-    return { movie }
+    return { movie, epMovie }
   },
   data() {
     return {
@@ -157,6 +164,7 @@ export default {
         }
       }
       ._content {
+        padding: 0;
         &__title {
           color: var(--yellow1);
           font-weight: bold;
@@ -195,10 +203,32 @@ export default {
       }
     }
   }
+  .watch-wrap {
+    width: 100%;
+    ._watch {
+      padding: 0;
+    }
+  }
   &._ismobile {
     ._banner-wrap {
       ._content-wrap {
+        ._avatar {
+          position: relative;
+          margin-top: 0 !important;
+          ._img-thumbnail {
+            width: 150px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+            border-radius: 10px;
+          }
+        }
         ._content {
+          padding-top: 20px;
+          ._mb-star {
+            font-size: 13px;
+            margin-top: 15px !important;
+          }
           ._content__title {
             font-size: 20px;
           }
@@ -208,6 +238,9 @@ export default {
           .mb-subinfo {
             display: flex;
             justify-content: flex-end;
+          }
+          &__description {
+            height: auto;
           }
         }
       }
@@ -224,6 +257,7 @@ export default {
       }
     }
     ._watch {
+      margin-top: 0 !important;
       ._eps-control {
         ._eps {
           font-size: 12px !important;

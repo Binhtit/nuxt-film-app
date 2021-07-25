@@ -1,7 +1,7 @@
 <template>
   <div class="list-name-movies text-white">
     <div class="_title mx-auto">
-      <p class="text-center">ANIME MỚI CẬP NHẬT</p>
+      <p class="text-center">PHIM MỚI CẬP NHẬT</p>
     </div>
     <ul class="_list scroll-dark">
       <nuxt-link

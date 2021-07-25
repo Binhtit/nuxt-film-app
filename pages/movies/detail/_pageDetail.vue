@@ -16,7 +16,7 @@
               <img class="_img-thumbnail" :src="movie.image" alt="thumbnail" />
               <nuxt-link
                 class="btn-wrap"
-                :to="`/movies/detail/watch?id=${idMovie}&tap=`"
+                :to="`/movies/detail/watch?id=${idMovie}&tap=${epMovie}`"
               >
                 <i class="far fa-play-circle"></i>
                 <button class="btn btn-outline-warning font-weight-bold">
@@ -116,8 +116,9 @@ import filters from '~/mixins/filters.js'
 export default {
   mixins: [filters],
   async asyncData(context) {
+    debugger
     const idMovie = context.query.id
-    const epMovie = context.query.id
+    const epMovie = context.query.tap || 1
     const movie = await context.$axios.$get(
       `http://127.0.0.1:8000/api/movies/detail/${idMovie}`
     )
@@ -171,6 +172,7 @@ export default {
           height: 100%;
           transition: 0.5s all ease;
           cursor: pointer;
+          z-index: 3;
           i {
             position: absolute;
             top: 50%;

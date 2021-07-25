@@ -13,11 +13,14 @@
 
     <!-- --NOTE-- Current coding _filter logic to optimize performance. but will not be suitable when using paging in case large data. -->
     <div class="row home__filter bg-component py-2">
+      <h5 v-if="$device.isMobile" class="col-12 text-muted text-center">
+        Phim 3D
+      </h5>
       <CommonFilterMoviesNavbar
         :movies-types="moviesTypes"
         @moviesCodeType="getMoviesCodeType($event, '2d')"
       >
-        <template slot="category"> 2D </template>
+        <template slot="category"> 3D </template>
       </CommonFilterMoviesNavbar>
     </div>
 
@@ -29,11 +32,14 @@
     </div>
 
     <div class="row home__filter bg-component py-2">
+      <h5 v-if="$device.isMobile" class="col-12 text-muted text-center">
+        Phim 2D
+      </h5>
       <CommonFilterMoviesNavbar
         :movies-types="moviesTypes"
         @moviesCodeType="getMoviesCodeType($event, '3d')"
       >
-        <template slot="category"> 3D </template>
+        <template slot="category"> 2D </template>
       </CommonFilterMoviesNavbar>
     </div>
 

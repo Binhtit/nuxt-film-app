@@ -16,7 +16,7 @@
               <img class="_img-thumbnail" :src="movie.image" alt="thumbnail" />
               <nuxt-link
                 class="btn-wrap"
-                :to="`/movies/detail/watch?id=${idMovie}&tap=${epMovie}`"
+                :to="`/movies/detail/watch?id=${idMovie}`"
               >
                 <i class="far fa-play-circle"></i>
                 <button class="btn btn-outline-warning font-weight-bold">
@@ -129,6 +129,18 @@ export default {
       watchComponent: '',
     }
   },
+  head() {
+    return {
+      title: this.movie.name,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.movie.description,
+        },
+      ],
+    }
+  },
   mounted() {
     this.$store.commit('addMovie', this.movie)
   },
@@ -207,6 +219,7 @@ export default {
         }
         &__description {
           height: 100px;
+          max-height: 117px;
           font-size: 13px;
           overflow-y: scroll;
           color: var(--gray2);
@@ -239,11 +252,11 @@ export default {
   &._ismobile {
     ._banner-wrap {
       ._banner-bg__img {
-        height: 525px;
+        height: 580px;
       }
-      ._banner-bg__blur {
-        height: 525px;
-      }
+      // ._banner-bg__blur {
+      //   height: 525px;
+      // }
       ._content-wrap {
         height: 100%;
         ._avatar {

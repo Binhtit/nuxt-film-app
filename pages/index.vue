@@ -18,15 +18,14 @@
       </h5>
       <CommonFilterMoviesNavbar
         :movies-types="moviesTypes"
-        @moviesCodeType="getMoviesCodeType($event, '2d')"
+        @moviesCodeType="getMoviesCodeType($event, '3d')"
       >
         <template slot="category"> 3D </template>
       </CommonFilterMoviesNavbar>
     </div>
-
     <div class="row bg-component">
       <section class="col-md-9 p-0 p-3">
-        <CommonListCardMovies :movies-arr="moviesSorted2d" />
+        <CommonListCardMovies :movies-arr="moviesSorted3d" />
       </section>
       <div class="col-md-3"></div>
     </div>
@@ -37,15 +36,14 @@
       </h5>
       <CommonFilterMoviesNavbar
         :movies-types="moviesTypes"
-        @moviesCodeType="getMoviesCodeType($event, '3d')"
+        @moviesCodeType="getMoviesCodeType($event, '2d')"
       >
         <template slot="category"> 2D </template>
       </CommonFilterMoviesNavbar>
     </div>
-
     <div class="row bg-component">
       <section class="col-md-9 p-0 p-3">
-        <CommonListCardMovies :movies-arr="moviesSorted3d" />
+        <CommonListCardMovies :movies-arr="moviesSorted2d" />
       </section>
       <div class="col-md-3"></div>
     </div>

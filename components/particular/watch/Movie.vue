@@ -14,25 +14,40 @@
       <div>
         <div class="col-md-12 d-flex p-0">
           <div
-            class="_server col-md-3"
-            :class="{ '_active _server-active': !isServerTwo }"
-            @click="changeServerTwo(false)"
+            class="_server col-3"
+            :class="{ '_active _server-active': serverName === 1 }"
+            @click="changeServer(1)"
           >
-            <p class="text-center">Server VIP</p>
+            <p class="text-center">Server 1</p>
           </div>
           <div
-            class="_server col-md-3"
-            :class="{ _active: isServerTwo, '_server-active': isServerTwo }"
-            @click="changeServerTwo(true)"
+            class="_server col-3"
+            :class="{ '_active _server-active': serverName === 2 }"
+            @click="changeServer(2)"
           >
-            <p class="text-center">Server II</p>
+            <p class="text-center">Server 2</p>
+          </div>
+          <div
+            class="_server col-3"
+            :class="{ '_active _server-active': serverName === 3 }"
+            @click="changeServer(3)"
+          >
+            <p class="text-center">Server 3</p>
+          </div>
+          <div
+            class="_server col-3"
+            :class="{ '_active _server-active': serverName === 4 }"
+            @click="changeServer(4)"
+          >
+            <p class="text-center">Server 4</p>
           </div>
         </div>
         <div class="_eps">
-          <div v-show="!isServerTwo" class="_ep">
+          <div v-show="serverName === 1" class="_ep">
             <div
               v-for="(ep, index) in eps"
               :key="index"
+              :ref="`sv1-${index}`"
               class="_sub"
               :class="{ _active: linkActive == index }"
               @click="selectLink(ep.link_1, index)"
@@ -40,13 +55,38 @@
               {{ ep.name }}
             </div>
           </div>
-          <div v-show="isServerTwo" class="_ep">
+          <div v-show="serverName === 2" class="_ep">
             <div
               v-for="(ep, index) in eps"
               :key="index"
+              :ref="`sv2-${index}`"
               class="_sub"
               :class="{ _active: linkActive == index }"
               @click="selectLink(ep.link_2, index)"
+            >
+              {{ ep.name }}
+            </div>
+          </div>
+          <div v-show="serverName === 3" class="_ep">
+            <div
+              v-for="(ep, index) in eps"
+              :key="index"
+              :ref="`sv2-${index}`"
+              class="_sub"
+              :class="{ _active: linkActive == index }"
+              @click="selectLink(ep.link_3, index)"
+            >
+              {{ ep.name }}
+            </div>
+          </div>
+          <div v-show="serverName === 4" class="_ep">
+            <div
+              v-for="(ep, index) in eps"
+              :key="index"
+              :ref="`sv3-${index}`"
+              class="_sub"
+              :class="{ _active: linkActive == index }"
+              @click="selectLink(ep.link_4, index)"
             >
               {{ ep.name }}
             </div>
@@ -71,12 +111,11 @@ export default {
   },
   data() {
     return {
-      isServerTwo: false,
+      serverName: 1,
       hideYoutobeLogo: '?modestbranding=1',
-      // movieSrc: 'https://www.youtube.com/embed/YKSNBIlM_bY',
-      // ep: '',
       link: null,
       linkActive: 0,
+      epActive: 0,
     }
   },
   computed: {
@@ -89,32 +128,17 @@ export default {
       }
       return this.eps[0].link_1
     },
-    // movieSrc() {
-    //   debugger
-    //   const ep = this.film.id
-    //   return this.eps.find((element) => {
-    //     // debugger
-    //     if (element.film_id === ep) {
-    //       return element.link_1
-    //     }
-    //     return false
-    //   })
-    //   // return 'https://www.youtube.com/embed/YKSNBIlM_bY'
-    // },
   },
-  // mounted(ctx) {
-  //   this.ep = this.$route.query.tap
-  // },
   methods: {
-    changeServerTwo(serverTwo) {
-      if (serverTwo) {
-        return (this.isServerTwo = true)
-      }
-      return (this.isServerTwo = false)
+    changeServer(server) {
+      const ref = this.$refs
+      ref[`sv${server}-${this.epActive}`][0].click()
+      return (this.serverName = server)
     },
-    selectLink(link, index) {
+    selectLink(link = '', index) {
       this.link = link
       this.linkActive = index
+      this.epActive = index
     },
   },
 }
@@ -152,18 +176,14 @@ export default {
       }
       ._ep {
         color: var(--yellow1) !important;
-        display: flex;
         padding: 15px;
         ._sub {
+          display: inline-block !important;
           background: var(--dark3);
           padding: 8px 10px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          margin: 0 5px;
+          margin: 5px;
           border-radius: 5px;
           cursor: pointer;
-
           &:hover {
             background: var(--yellow2);
             color: var(--dark3);

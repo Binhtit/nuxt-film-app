@@ -140,7 +140,7 @@ export default {
     ._banner-bg {
       &__img {
         width: 100%;
-        height: 448px;
+        height: 585px;
       }
       &__blur {
         height: 100%;
@@ -219,7 +219,6 @@ export default {
             width: 150px;
             display: block;
             margin: 0 auto;
-            margin-top: 20px;
             border-radius: 10px;
           }
         }
@@ -240,7 +239,7 @@ export default {
             justify-content: flex-end;
           }
           &__description {
-            height: auto;
+            height: 212px;
           }
         }
       }

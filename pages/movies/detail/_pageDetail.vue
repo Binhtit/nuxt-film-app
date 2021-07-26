@@ -116,7 +116,6 @@ import filters from '~/mixins/filters.js'
 export default {
   mixins: [filters],
   async asyncData(context) {
-    debugger
     const idMovie = context.query.id
     const epMovie = context.query.tap || 1
     const movie = await context.$axios.$get(

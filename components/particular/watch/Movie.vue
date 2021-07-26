@@ -71,7 +71,7 @@
             <div
               v-for="(ep, index) in eps"
               :key="index"
-              :ref="`sv2-${index}`"
+              :ref="`sv3-${index}`"
               class="_sub"
               :class="{ _active: linkActive == index }"
               @click="selectLink(ep.link_3, index)"
@@ -83,7 +83,7 @@
             <div
               v-for="(ep, index) in eps"
               :key="index"
-              :ref="`sv3-${index}`"
+              :ref="`sv4-${index}`"
               class="_sub"
               :class="{ _active: linkActive == index }"
               @click="selectLink(ep.link_4, index)"

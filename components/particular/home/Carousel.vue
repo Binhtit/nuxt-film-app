@@ -85,7 +85,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .carousel {
   &__slide-atom {
     position: relative;

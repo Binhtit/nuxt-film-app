@@ -130,10 +130,22 @@ export default {
       movie: [],
     }
   },
+  head() {
+    return {
+      title: this.movie.film.name,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.movie.description,
+        },
+      ],
+    }
+  },
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .detail-movie {
   ._banner-wrap {
     position: relative;

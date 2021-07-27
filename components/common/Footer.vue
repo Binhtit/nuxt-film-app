@@ -26,44 +26,33 @@
         <div class="_contact col-md-5 col-12">
           <a
             class="_contact--icon text-hover-yellow"
-            href="https://www.facebook.com/thitsot.cachua"
+            href="https://www.facebook.com/HHTQAnimation/"
             ><i class="fab fa-facebook-square"></i
+          ></a>
+          <a class="_contact--icon text-hover-yellow" href=""
+            ><i class="fab fa-twitter-square"></i
           ></a>
           <a
             class="_contact--icon text-hover-yellow"
-            href="https://twitter.com/Binh40821629"
-            ><i class="fab fa-twitter-square"></i
-          ></a>
-          <a class="_contact--icon text-hover-yellow" href="#"
+            href="https://www.youtube.com/channel/UCY9Ew7Ma9OCSXKvt-uAzjQg"
             ><i class="fab fa-youtube-square"></i
           ></a>
         </div>
       </div>
     </div>
-    <div class="col-md-12">
-      <div v-if="!$device.isMobile" class="_web-description py-4">
-        <a href="#" rel="nofollow" title="Anime"> Anime</a
-        ><a href="#" rel="nofollow" title="anime vietsub"> Anime vietsub</a
-        ><a href="#" rel="nofollow" title="anime online"> Anime online</a
-        ><a href="#" rel="nofollow" title="anime hay"> Anime hay</a
-        ><a href="#" rel="nofollow" title="anime hot"> Anime hot</a
-        ><a href="#" rel="nofollow" title="One Piece"> One Piece</a
-        ><a href="#" rel="nofollow" title="Naruto"> Naruto</a
-        ><a href="#" rel="nofollow" title="Conan"> Conan</a
-        ><a href="#" rel="nofollow" title="anime nhanh"> Anime nhanh</a
-        ><a href="#" rel="nofollow" title="hoat hinh"> Hoat hinh</a
-        ><a href="#" rel="nofollow" title="xem hoat hinh"> Xem hoat hinh</a
-        ><a href="#" rel="nofollow" title="hoat hinh vietsub">
-          Hoat hinh vietsub</a
-        >
-      </div>
+    <div class="col-md-12 p-2 _content-intro">
+      Để mang đến những bộ phim mới nhất, đội ngũ quản trị viên, biên tập viên
+      cũng như cộng tác viên của Website hhtq.tv sẽ đảm bảo cập nhật, việt hóa
+      những phim mới nhất một cách nhanh chóng và chính xác nhất. Nếu các bạn
+      không tìm thấy bộ phim ưa thích, hãy liên hệ với bọn mình qua fanpage
+      https://www.facebook.com/HHTQAnimation hoặc email ads@hhtq.tv nhé.
       <p class="_copy pb-2">
         <a class="_content" target="_blank" href="#"
           >xxxx không chịu trách nhiệm đối với bất kỳ nội dung nào được đăng tải
           trong trang web này. Mọi nội dung đều được sưu tầm và nhúng vào
           website tương tự như công cụ tìm kiếm Google. Nếu có vấn đề liên quan
-          đến bản quyền, vui lòng email xxxxcom@gmail.com. Copyright ® 2018
-          xxxx. All Rights Reserved.</a
+          đến bản quyền, vui lòng email ads@hhtq.tv. Copyright ® 2018
+          ads@hhtq.tv. All Rights Reserved.</a
         >
       </p>
     </div>
@@ -99,10 +88,14 @@
       }
     }
   }
+  ._content-intro {
+    color: var(--yellow1);
+  }
   ._copy {
     text-align: center;
     ._content {
-      font-size: 12px;
+      padding-top: 10px;
+      font-size: 11px;
       color: var(--gray2);
       transition: 0.3s ease;
       &:hover {

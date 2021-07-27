@@ -4,10 +4,18 @@
     :class="{ _ismobile: $device.isMobile }"
   >
     <div class="row movies2d__filter bg-component py-2">
+      <h5
+        v-if="$device.isMobile"
+        class="col-12 text-muted text-center font-weight-bold"
+      >
+        Phim 2D
+      </h5>
       <CommonFilterMoviesNavbar
         :movies-types="moviesTypes"
         @moviesCodeType="getMoviesCodeType"
-      />
+      >
+        <template slot="category"> 2D </template>
+      </CommonFilterMoviesNavbar>
     </div>
 
     <div class="row bg-component">

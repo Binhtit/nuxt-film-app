@@ -3,14 +3,14 @@
     class="row mt-2 p-2 footer bg-component"
     :class="{ _ismobile: $device.isMobile }"
   >
-    <div class="footer--border col-md-12 d-flex">
+    <div class="footer--border col-md-12 contaier px-0">
       <div class="row px-0">
-        <div class="_policy col-md-7 col-12">
+        <div class="_policy col-md-9 col-12">
           <a class="_link text-white text-hover-yellow" href="/">XEM PHIM</a>
           <nuxt-link
             class="_link text-white text-hover-yellow"
             to="/language-anime"
-            >THUẬT NGỬ</nuxt-link
+            >LIÊN HỆ</nuxt-link
           >
           <nuxt-link
             class="_link text-white text-hover-yellow"
@@ -23,7 +23,7 @@
             >ĐIỀU KHOẢN SỬ DỤNG</nuxt-link
           >
         </div>
-        <div class="_contact col-md-5 col-12">
+        <div class="_contact col-md-3 col-12">
           <a
             class="_contact--icon text-hover-yellow"
             href="https://www.facebook.com/HHTQAnimation/"
@@ -40,21 +40,12 @@
         </div>
       </div>
     </div>
-    <div class="col-md-12 p-2 _content-intro">
+    <div class="col-md-12 p-2 _content-intro text-center">
       Để mang đến những bộ phim mới nhất, đội ngũ quản trị viên, biên tập viên
       cũng như cộng tác viên của Website hhtq.tv sẽ đảm bảo cập nhật, việt hóa
       những phim mới nhất một cách nhanh chóng và chính xác nhất. Nếu các bạn
       không tìm thấy bộ phim ưa thích, hãy liên hệ với bọn mình qua fanpage
       https://www.facebook.com/HHTQAnimation hoặc email ads@hhtq.tv nhé.
-      <p class="_copy pb-2">
-        <a class="_content" target="_blank" href="#"
-          >xxxx không chịu trách nhiệm đối với bất kỳ nội dung nào được đăng tải
-          trong trang web này. Mọi nội dung đều được sưu tầm và nhúng vào
-          website tương tự như công cụ tìm kiếm Google. Nếu có vấn đề liên quan
-          đến bản quyền, vui lòng email ads@hhtq.tv. Copyright ® 2018
-          ads@hhtq.tv. All Rights Reserved.</a
-        >
-      </p>
     </div>
   </div>
 </template>

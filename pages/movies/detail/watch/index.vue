@@ -152,7 +152,7 @@ export default {
     ._banner-bg {
       &__img {
         width: 100%;
-        height: 585px;
+        height: 448px;
       }
       &__blur {
         height: 100%;

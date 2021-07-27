@@ -220,7 +220,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .privacy-policy {
   color: var(--gray2);
 }

@@ -251,7 +251,7 @@ export default {
             justify-content: flex-end;
           }
           &__description {
-            height: 212px;
+            max-height: 212px;
           }
         }
       }

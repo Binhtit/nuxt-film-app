@@ -47,7 +47,7 @@ export default {
   },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .movies3d {
   &__filter {
     border-bottom: 2px solid var(--mainbackground);

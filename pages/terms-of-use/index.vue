@@ -650,7 +650,7 @@
   </div>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .terms-of-use {
   color: var(--gray2);
 }

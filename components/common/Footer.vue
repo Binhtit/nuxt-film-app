@@ -49,7 +49,7 @@
     </div>
   </div>
 </template>
-<style lang="scss">
+<style lang="scss" scoped>
 .footer {
   &--border {
     border-bottom: 2px solid var(--mainbackground);

@@ -146,7 +146,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .detail-movie {
   ._banner-wrap {
     position: relative;

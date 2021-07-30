@@ -37,7 +37,7 @@ export default {
   mixins: [cardMoviesController],
 
   async asyncData({ $axios }) {
-    const moviesArr = await $axios.$get('http://127.0.0.1:8000/api/movies/1')
+    const moviesArr = await $axios.$get('https://hhtq.tv/api/movies/1')
     return { moviesArr }
   },
   head() {

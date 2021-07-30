@@ -57,7 +57,7 @@ export default {
   name: 'Home',
   components: {},
   async asyncData({ $axios }) {
-    const moviesArr = await $axios.$get('http://127.0.0.1:8000/api/home')
+    const moviesArr = await $axios.$get('https://hhtq.tv/api/home')
     return { moviesArr }
   },
   data() {

@@ -119,7 +119,7 @@ export default {
     const idMovie = context.query.id
     const epMovie = context.query.tap || 1
     const movie = await context.$axios.$get(
-      `http://127.0.0.1:8000/api/movies/detail/${idMovie}`
+      `https://hhtq.tv/api/movies/detail/${idMovie}`
     )
     return { movie, epMovie, idMovie }
   },

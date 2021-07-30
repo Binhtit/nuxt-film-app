@@ -76,7 +76,7 @@
                 </div>
                 <div class="d-flex mt-3">
                   <i class="_icon far fa-calendar-alt"></i>
-                  <span>{{ rs.date }}</span>
+                  <span>{{ rs.release_date | getYear }}</span>
                 </div>
                 <div class="_star">
                   <span class="_star__label">Sao:</span>
@@ -108,6 +108,8 @@
 </template>
 
 <script>
+import filter from '~/mixins/filters.js'
+
 export default {
   filters: {
     removeMark(value) {
@@ -120,6 +122,7 @@ export default {
         .toLowerCase()
     },
   },
+  mixins: [filter],
   data() {
     return {
       searchName: '',
@@ -128,11 +131,11 @@ export default {
     }
   },
   computed: {
-    moviesArr() {
-      return this.$store.state.moviesArr
+    allMoviesArr() {
+      return this.$store.state.allMoviesArr
     },
     searchResult() {
-      return this.$store.state.moviesArr.filter((movie) => {
+      return this.$store.state.allMoviesArr.filter((movie) => {
         const newName = this.removeMarkLowerCase(movie.name)
         const newSearchName = this.removeMarkLowerCase(this.searchName)
         return newName.includes(newSearchName)

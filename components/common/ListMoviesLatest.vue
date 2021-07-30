@@ -23,13 +23,24 @@ import removeMark from '~/mixins/filters.js'
 export default {
   mixins: [removeMark],
   data() {
-    return {}
+    return {
+      moviesLatestArr: [],
+    }
   },
-  computed: {
-    moviesLatestArr() {
-      return this.$store.state.moviesLatestArr
-    },
+  async mounted() {
+    const latestArr = this.$store.state.moviesLatestArr
+    if (Array.isArray(latestArr) && latestArr.length > 0)
+      return (this.moviesLatestArr = latestArr)
+    this.moviesLatestArr = await this.$axios.$get(
+      'https://hhtq.tv/api/top20newest'
+    )
   },
+  // computed: {
+  //   moviesLatestArr() {
+  //     const moviesLatestArr = this.$store.state.moviesLatestArr
+  //     return moviesLatestArr
+  //   },
+  // },
 }
 </script>
 

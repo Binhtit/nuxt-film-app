@@ -1,14 +1,14 @@
 export const state = () => ({
   moviesTypes: [],
-  moviesArr: [],
+  allMoviesArr: [],
   moviesLatestArr: [],
   movie: [],
   countClick: 0,
 })
 
 export const mutations = {
-  addMoviesArr(state, payload) {
-    state.moviesArr = payload
+  addAllMoviesArr(state, payload) {
+    state.allMoviesArr = payload
   },
   addMoviesLatestArr(state, payload) {
     state.moviesLatestArr = payload
@@ -24,7 +24,7 @@ export const mutations = {
 export const actions = {
   async nuxtServerInit(contextVue, context) {
     const moviesLatestArr = await context.$axios.$get(
-      'https://hhtq.tv/api/top20newest'
+      'https://hhtq.tv/api/top20newesta'
     )
     if (moviesLatestArr) {
       contextVue.state.moviesLatestArr = moviesLatestArr

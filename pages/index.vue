@@ -75,7 +75,7 @@ export default {
   created() {},
   mounted() {
     // for header use
-    this.$store.commit('addMoviesArr', this.moviesArr.top_40_newest_eps)
+    this.$store.commit('addAllMoviesArr', this.moviesArr.all_film)
     this.moviesSorted2d = this.getMoviesByCategory(
       MOVIE_CONSTANT.MOVIE_CATEGORY.MOVIE_2D
     )

@@ -49,7 +49,7 @@ export default {
 <style lang="scss" scoped>
 .filter-nav {
   &__label {
-    color: var(--gray2);
+    color: var(--yellow1);
     font-size: 24px;
     text-transform: uppercase;
     i {

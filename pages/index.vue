@@ -13,7 +13,7 @@
 
     <!-- --NOTE-- Current coding _filter logic to optimize performance. but will not be suitable when using paging in case large data. -->
     <div class="row home__filter bg-component py-2">
-      <h5 v-if="$device.isMobile" class="col-12 text-muted text-center">
+      <h5 v-if="$device.isMobile" class="col-12 text-center text-warning">
         Phim 3D
       </h5>
       <CommonFilterMoviesNavbar
@@ -31,7 +31,7 @@
     </div>
 
     <div class="row home__filter bg-component py-2">
-      <h5 v-if="$device.isMobile" class="col-12 text-muted text-center">
+      <h5 v-if="$device.isMobile" class="col-12 text-center text-warning">
         Phim 2D
       </h5>
       <CommonFilterMoviesNavbar

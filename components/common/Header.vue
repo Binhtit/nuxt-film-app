@@ -13,7 +13,7 @@
                 >HOẠT HÌNH 2D<span class="sr-only">(current)</span></nuxt-link
               >
             </li>
-            <li class="nav-item ml-4" @click="controllMenuMobile(false)">
+            <li class="nav-item ml-4 _mt-mb" @click="controllMenuMobile(false)">
               <nuxt-link to="/3d-movies" class="_t-hover-yellow _link"
                 >HOẠT HÌNH 3D<span class="sr-only">(current)</span></nuxt-link
               >
@@ -284,6 +284,9 @@ export default {
             padding: 25px 0;
             border: 2px solid;
             border-radius: 10px;
+            &._mt-mb {
+              margin-top: 20px !important;
+            }
             ._link {
               // padding: 15px 0;
             }

@@ -114,7 +114,6 @@ export default {
       serverName: 1,
       hideYoutobeLogo: '?modestbranding=1',
       link: null,
-      linkActive: 0,
       epActive: 0,
     }
   },
@@ -126,7 +125,11 @@ export default {
       if (this.link != null) {
         return this.link
       }
-      return this.eps[0].link_1
+      const lastEp = this.eps.length - 1
+      return this.eps[lastEp].link_1
+    },
+    linkActive() {
+      return this.eps.length - 1 || 0
     },
   },
   methods: {
@@ -162,9 +165,7 @@ export default {
       color: var(--gray2);
       font-weight: bold;
       border-bottom: 5px solid;
-      // margin-bottom: 16px;
       padding-top: 15px;
-      // margin-left: 15px;
       cursor: pointer;
     }
     ._eps {

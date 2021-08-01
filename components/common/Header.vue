@@ -213,8 +213,9 @@ export default {
     countClick() {
       if (this.searchName) {
         setTimeout(() => {
+          this.searchName = ''
           return (this.EmptySearch = true)
-        }, 0)
+        }, 200)
       }
     },
   },

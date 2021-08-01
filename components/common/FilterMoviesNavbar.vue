@@ -16,7 +16,7 @@
     <span
       v-for="(type, index) in moviesTypes"
       :key="index"
-      class="_filter-btn"
+      class="_filter-btn text-muted"
       :class="{ _active: filterActiveCode == type.code }"
       @click="setMoviesCodeType(type.code)"
       >{{ type.value }}</span

@@ -12,7 +12,7 @@
       <nuxt-link
         :to="
           `/movies/detail/${movie.name}?id=${movie.film_id}&tap=${
-            movie.ep_name || all
+            movie.ep_name || 'all'
           }` | removeMark
         "
       >

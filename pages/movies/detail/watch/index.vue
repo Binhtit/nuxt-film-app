@@ -20,7 +20,7 @@
               />
             </div>
             <div class="col-md-9 col-sm-3 col-12 _content">
-              <h4 class="_content__title">{{ movie.film.name }}</h4>
+              <h5 class="_content__title">{{ movie.film.name }}</h5>
               <p class="_content__subtitle">{{ movie.film.name }}</p>
               <div class="_content__description scroll-yellow--small">
                 {{ movie.film.description }}
@@ -173,6 +173,7 @@ export default {
         position: relative;
         ._img-thumbnail {
           width: 100%;
+          height: fit-content;
         }
       }
       ._content {

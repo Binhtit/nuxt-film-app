@@ -2,7 +2,7 @@
   <div class="header _navbar mb-2" :class="{ _ismobile: $device.isMobile }">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <nuxt-link class="_logo navbar-brand" to="/"
-        ><img src="/logo.png" alt="hoạt hình trung quốc"
+        ><img class="_logoimg" src="/logo.png" alt="hoạt hình trung quốc"
       /></nuxt-link>
       <button class="navbar-toggler bar-stack">
         <span class="navbar-toggler-icon" @click="controllMenuMobile()"></span>
@@ -59,7 +59,7 @@
               v-for="(rs, index) in searchResult"
               :key="index"
               class="d-flex _movie-rs"
-              :to="('movies/detail/' + rs.name + '?id=' + rs.id) | removeMark"
+              :to="('/movies/detail/' + rs.name + '?id=' + rs.id) | removeMark"
             >
               <div>
                 <img
@@ -103,6 +103,67 @@
           </div>
         </div>
       </div>
+      <form
+        v-if="$device.isMobile"
+        class="search-form _mb form-inline my-lg-0 w-100"
+      >
+        <div class="d-flex align-items-center w-100">
+          <input
+            v-model="searchName"
+            class="form-control mr-sm-2"
+            type="search"
+            placeholder="Tìm kiếm tên anime"
+            aria-label="Search"
+          />
+          <button
+            class="btn btn-outline-warning my-2 px-4 my-sm-0 ml-2"
+            type="submit"
+            @click.prevent="removeSearchRs()"
+          >
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+        <div
+          v-show="searchName && !EmptySearch"
+          class="_search-result bg-component scroll-yellow--small"
+          @click="removeSearchRs()"
+        >
+          <nuxt-link
+            v-for="(rs, index) in searchResult"
+            :key="index"
+            class="d-flex _movie-rs"
+            :to="('/movies/detail/' + rs.name + '?id=' + rs.id) | removeMark"
+          >
+            <div>
+              <img
+                :src="rs.image"
+                :alt="rs.name"
+                :title="rs.name"
+                class="_image"
+              />
+            </div>
+            <div class="_detail">
+              <div class="mt-2 d-flex">
+                <i class="_icon fas fa-video"></i>
+                <div class="_detail__name">{{ rs.name }}</div>
+              </div>
+              <div class="d-flex mt-3">
+                <i class="_icon far fa-calendar-alt"></i>
+                <span>{{ rs.release_date | getYear }}</span>
+              </div>
+              <div class="_star">
+                <span class="_star__label">Sao:</span>
+                <i
+                  v-for="star in 5"
+                  :key="star"
+                  :class="{ active: star <= rs.star }"
+                  class="fas fa-star"
+                ></i>
+              </div>
+            </div>
+          </nuxt-link>
+        </div>
+      </form>
     </nav>
   </div>
 </template>
@@ -151,7 +212,9 @@ export default {
     },
     countClick() {
       if (this.searchName) {
-        return (this.EmptySearch = true)
+        setTimeout(() => {
+          return (this.EmptySearch = true)
+        }, 0)
       }
     },
   },
@@ -183,7 +246,7 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  height: 66px;
+  height: 96px;
   position: relative;
   // .bar-stack {
   // }
@@ -192,7 +255,7 @@ export default {
       background: var(--componentbackground);
       width: 100%;
       ._logo {
-        img {
+        ._logoimg {
           height: 38px;
         }
       }
@@ -262,6 +325,30 @@ export default {
       top: 0;
       left: 0;
       z-index: 3;
+      ._logo {
+        ._logoimg {
+          height: 27px;
+        }
+      }
+      .search-form {
+        &._mb {
+          .form-control {
+            height: 32px;
+          }
+          .btn {
+            height: 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            i {
+              font-size: 12px;
+            }
+          }
+          ._search-result {
+            top: 100%;
+          }
+        }
+      }
     }
     .bar-stack {
       .menu-mobile {
@@ -271,8 +358,8 @@ export default {
         height: 300px;
         display: flex;
         align-items: center;
-        z-index: 3;
-        top: 100%;
+        z-index: 100;
+        top: 50px;
         background: #313534e0;
         border-radius: 0 0 20px 20px;
         padding: 12px;

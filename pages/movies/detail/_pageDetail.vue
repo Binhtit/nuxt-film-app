@@ -25,7 +25,7 @@
               </nuxt-link>
             </div>
             <div class="col-md-9 col-sm-3 col-12 _content">
-              <h2 class="_content__title">{{ movie.name }}</h2>
+              <h5 class="_content__title">{{ movie.name }}</h5>
               <p class="_content__subtitle">{{ movie.name }}</p>
               <div class="_content__description scroll-yellow--small">
                 {{ movie.description }}
@@ -174,6 +174,7 @@ export default {
         position: relative;
         ._img-thumbnail {
           width: 100%;
+          height: fit-content;
         }
         .btn-wrap {
           width: 100%;

@@ -174,7 +174,7 @@ export default {
         position: relative;
         ._img-thumbnail {
           width: 100%;
-          height: fit-content;
+          max-height: 200px;
         }
         .btn-wrap {
           width: 100%;

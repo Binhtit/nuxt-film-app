@@ -173,7 +173,7 @@ export default {
         position: relative;
         ._img-thumbnail {
           width: 100%;
-          height: fit-content;
+          max-height: 210px;
         }
       }
       ._content {
@@ -273,6 +273,26 @@ export default {
       ._eps-control {
         ._eps {
           font-size: 12px !important;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .detail-movie {
+    &._ismobile {
+      ._banner-wrap {
+        ._content-wrap {
+          ._content {
+            ._mb-star {
+              font-size: 11px;
+              margin-top: 13px !important;
+              ._star {
+                font-size: 10px;
+              }
+            }
+          }
         }
       }
     }

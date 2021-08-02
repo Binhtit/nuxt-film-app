@@ -12,7 +12,7 @@
             <div class="_banner-bg__blur"></div>
           </div>
           <div class="row _content-wrap">
-            <div class="col-md-3 col-sm-3 col-12 p-0 _avatar">
+            <div class="col-md-3 col-sm-3 col-12 _avatar">
               <img
                 class="_img-thumbnail"
                 :src="movie.film.image"
@@ -21,7 +21,7 @@
             </div>
             <div class="col-md-9 col-sm-3 col-12 _content">
               <h5 class="_content__title">{{ movie.film.name }}</h5>
-              <p class="_content__subtitle">{{ movie.film.name }}</p>
+              <!-- <p class="_content__subtitle">{{ movie.film.name }}</p> -->
               <div class="_content__description scroll-yellow--small">
                 {{ movie.film.description }}
               </div>

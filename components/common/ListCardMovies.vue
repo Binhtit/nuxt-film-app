@@ -28,10 +28,10 @@
         </div>
         <div class="_episodes">
           <span class="font-weight-bold">{{
-            movie.ep_name || movie.episodes + ' Tập'
+            movie.ep_name || movie.episodes || 'NaN' + ' Tập'
           }}</span>
         </div>
-        <h2 class="_title m-0">{{ movie.name }}</h2>
+        <h2 :title="movie.name" class="_title m-0">{{ movie.name }}</h2>
         <div class="_rate-group">
           <div class="_star">
             <i

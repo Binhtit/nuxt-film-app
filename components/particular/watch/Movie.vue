@@ -115,6 +115,7 @@ export default {
       hideYoutobeLogo: '?modestbranding=1',
       link: null,
       epActive: 0,
+      linkActive: this.eps.length - 1,
     }
   },
   computed: {
@@ -127,9 +128,6 @@ export default {
       }
       const lastEp = this.eps.length - 1
       return this.eps[lastEp].link_1
-    },
-    linkActive() {
-      return this.eps.length - 1 || 0
     },
   },
   methods: {

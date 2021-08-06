@@ -107,6 +107,14 @@
       </div>
     </div>
     <CommonListMoviesLatest v-if="$device.isMobile" class="mt-2" />
+    <div class="col-12 d-flex justify-content-center">
+      <div
+        class="fb-comments"
+        data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
+        data-width=""
+        data-numposts="5"
+      ></div>
+    </div>
   </div>
 </template>
 
@@ -136,6 +144,18 @@ export default {
           hid: 'description',
           name: 'description',
           content: this.movie.description,
+        },
+        {
+          property: 'og:title',
+          content: this.movie.name,
+        },
+        {
+          property: 'og:description',
+          content: this.movie.description,
+        },
+        {
+          property: 'og:image',
+          content: this.movie.banner,
         },
       ],
     }

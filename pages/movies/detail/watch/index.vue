@@ -108,6 +108,14 @@
         </div>
       </div>
     </div>
+    <div class="col-12 d-flex justify-content-center">
+      <div
+        class="fb-comments"
+        data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
+        data-width=""
+        data-numposts="5"
+      ></div>
+    </div>
   </div>
 </template>
 
@@ -135,9 +143,26 @@ export default {
       title: this.movie.film.name,
       meta: [
         {
-          hid: 'description',
-          name: 'description',
-          content: this.movie.description,
+          property: 'og:title',
+          content: this.movie.film.name,
+        },
+        {
+          property: 'og:description',
+          content: this.movie.film.description,
+        },
+        {
+          property: 'og:image',
+          content: this.movie.film.banner,
+        },
+      ],
+      script: [
+        {
+          type: 'text/javascript',
+          src: 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=766566871423551&autoLogAppEvents=1',
+          async: true,
+          defer: true,
+          crossorigin: 'anonymous',
+          nonce: 'D0kcS3T7',
         },
       ],
     }

@@ -10,7 +10,25 @@
         </div>
       </div>
     </div>
-
+    <div class="row mb-3">
+      <div v-if="!$device.isMobile" class="col-12">
+        <div
+          class="fb-like"
+          data-share="true"
+          data-width="450"
+          data-height="27"
+          data-show-faces="true"
+        ></div>
+      </div>
+      <div v-else class="col-12">
+        <div
+          class="fb-like"
+          data-share="true"
+          data-width="350"
+          data-show-faces="true"
+        ></div>
+      </div>
+    </div>
     <!-- --NOTE-- Current coding _filter logic to optimize performance. but will not be suitable when using paging in case large data. -->
     <div class="row home__filter bg-component py-2">
       <h5 v-if="$device.isMobile" class="col-12 text-center text-warning">
@@ -51,11 +69,13 @@
 </template>
 
 <script>
-import { moviesTypes } from '@/dummy_data/movies.js'
+import pluginCommon from '@/mixins/plugin.js'
+import { moviesTypes } from '@/commonjs/movies.js'
 import { MOVIE_CONSTANT } from '~/assets/js/CONSTANT.js'
 export default {
   name: 'Home',
   components: {},
+  mixins: [pluginCommon],
   async asyncData({ $axios }) {
     const moviesArr = await $axios.$get('https://hhtq.tv/api/home')
     return { moviesArr }

@@ -9,6 +9,19 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:title', content: 'Phim hoạt hình Trung Quốc mới' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: 'https://hhtq.tv' },
+      { property: 'fb:app_id', content: '766566871423551' },
+      {
+        property: 'og:image:url',
+        content: 'https://i.ibb.co/Hzkt1m7/logo.png',
+      },
+      {
+        property: 'og:description',
+        content:
+          'Những bộ phim hoạt hình 3D 2D Trung Quốc với đồ họa đẹp mắt, nội dung hấp hẫn. Top những bộ phim hoạt hình 3D 2D Trung Quốc kinh điển, hay nhất mọi thời đại!',
+      },
       {
         hid: 'description',
         name: 'description',
@@ -25,6 +38,26 @@ export default {
       {
         rel: 'stylesheet',
         href: 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css',
+      },
+    ],
+    script: [
+      {
+        type: 'text/javascript',
+        src: 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=766566871423551&autoLogAppEvents=1',
+        async: true,
+        defer: true,
+        crossorigin: 'anonymous',
+        nonce: 'D0kcS3T7',
+      },
+      {
+        type: 'text/javascript',
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-DS9GNTH1W1',
+        async: true,
+      },
+      {
+        type: 'text/javascript',
+        src: '/plugin/google.js',
+        body: true,
       },
     ],
   },

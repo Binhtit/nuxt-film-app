@@ -1,4 +1,4 @@
-import { moviesTypes, moviesLatestArr } from '@/dummy_data/movies.js'
+import { moviesTypes, moviesLatestArr } from '@/commonjs/movies.js'
 import { MOVIE_CONSTANT } from '~/assets/js/CONSTANT.js'
 export default {
   data() {

@@ -15,7 +15,7 @@
         <div
           class="fb-like"
           data-share="true"
-          data-width="450"
+          data-width="550"
           data-height="27"
           data-show-faces="true"
         ></div>
@@ -45,7 +45,15 @@
       <section class="col-md-9 p-0 p-3">
         <CommonListCardMovies :movies-arr="moviesSorted3d" />
       </section>
-      <div class="col-md-3"></div>
+      <div class="col-md-3 pt-3">
+        <div
+          v-if="!$device.isMobile"
+          class="fb-comments"
+          data-href="https://hhtq.tv/"
+          data-width="100%"
+          data-numposts="5"
+        ></div>
+      </div>
     </div>
 
     <div class="row home__filter bg-component py-2">
@@ -63,19 +71,27 @@
       <section class="col-md-9 p-0 p-3">
         <CommonListCardMovies :movies-arr="moviesSorted2d" />
       </section>
-      <div class="col-md-3"></div>
+      <div class="col-md-3 pt-3">
+        <div
+          v-if="$device.isMobile"
+          class="fb-comments"
+          data-href="https://hhtq.tv/"
+          data-width="100%"
+          data-numposts="5"
+        ></div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import pluginCommon from '@/mixins/plugin.js'
+import facebookConfig from '@/mixins/facebookConfig'
 import { moviesTypes } from '@/commonjs/movies.js'
 import { MOVIE_CONSTANT } from '~/assets/js/CONSTANT.js'
 export default {
   name: 'Home',
   components: {},
-  mixins: [pluginCommon],
+  mixins: [facebookConfig],
   async asyncData({ $axios }) {
     const moviesArr = await $axios.$get('https://hhtq.tv/api/home')
     return { moviesArr }
@@ -148,6 +164,11 @@ export default {
       &:hover {
         color: var(--white);
       }
+    }
+  }
+  &__wrapper {
+    .fb-comments {
+      background: var(--mainbackground);
     }
   }
 }

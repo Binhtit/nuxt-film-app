@@ -1,7 +1,7 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'server',
-  // ssr: false,
+  ssr: false,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -43,14 +43,6 @@ export default {
     script: [
       {
         type: 'text/javascript',
-        src: 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=766566871423551&autoLogAppEvents=1',
-        async: true,
-        defer: true,
-        crossorigin: 'anonymous',
-        nonce: 'D0kcS3T7',
-      },
-      {
-        type: 'text/javascript',
         src: 'https://www.googletagmanager.com/gtag/js?id=G-DS9GNTH1W1',
         async: true,
       },
@@ -58,6 +50,14 @@ export default {
         type: 'text/javascript',
         src: '/plugin/google.js',
         body: true,
+      },
+      {
+        type: 'text/javascript',
+        async: true,
+        defer: true,
+        crossorigin: 'anonymous',
+        src: 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=766566871423551&autoLogAppEvents=1',
+        nonce: 'lkWHkJaC',
       },
     ],
   },

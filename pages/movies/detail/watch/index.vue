@@ -111,8 +111,8 @@
     <div class="col-12 d-flex justify-content-center">
       <div
         class="fb-comments"
-        data-href="https://developers.facebook.com/docs/plugins/comments#configurator"
-        data-width=""
+        :data-href="`https://hhtq.tv/movies/detail/watch?id=${idMovie}`"
+        data-width="100%"
         data-numposts="5"
       ></div>
     </div>
@@ -120,17 +120,18 @@
 </template>
 
 <script>
+import facebookConfig from '@/mixins/facebookConfig'
 import filters from '~/mixins/filters.js'
 
 export default {
-  mixins: [filters],
+  mixins: [filters, facebookConfig],
   async asyncData(context) {
     const idMovie = context.query.id
     const epMovie = context.query.tap || 1
     const movie = await context.$axios.$get(
       `https://hhtq.tv/api/movies/detail/episodes/${idMovie}`
     )
-    return { movie, epMovie }
+    return { movie, epMovie, idMovie }
   },
   data() {
     return {

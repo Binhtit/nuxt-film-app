@@ -112,6 +112,7 @@
         class="fb-comments"
         :data-href="`https://hhtq.tv/movies/detail?id=${idMovie}`"
         data-width="100%"
+        data-order-by="reverse_time"
         data-numposts="5"
       ></div>
     </div>

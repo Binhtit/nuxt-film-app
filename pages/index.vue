@@ -45,11 +45,12 @@
       <section class="col-md-9 p-0 p-3">
         <CommonListCardMovies :movies-arr="moviesSorted3d" />
       </section>
-      <div class="col-md-3 pt-3">
+      <div class="col-md-3 pt-3" :class="{ '_bg-fb': !$device.isMobile }">
         <div
           v-if="!$device.isMobile"
           class="fb-comments"
           data-href="https://hhtq.tv/"
+          data-order-by="reverse_time"
           data-width="100%"
           data-numposts="5"
         ></div>
@@ -71,11 +72,12 @@
       <section class="col-md-9 p-0 p-3">
         <CommonListCardMovies :movies-arr="moviesSorted2d" />
       </section>
-      <div class="col-md-3 pt-3">
+      <div class="col-md-3 pt-3" :class="{ '_bg-fb': $device.isMobile }">
         <div
           v-if="$device.isMobile"
           class="fb-comments"
           data-href="https://hhtq.tv/"
+          data-order-by="reverse_time"
           data-width="100%"
           data-numposts="5"
         ></div>
@@ -167,8 +169,11 @@ export default {
     }
   }
   &__wrapper {
+    ._bg-fb {
+      background: #6c757d;
+    }
     .fb-comments {
-      background: var(--mainbackground);
+      // background: var(--mainbackground);
     }
   }
 }

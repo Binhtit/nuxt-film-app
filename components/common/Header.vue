@@ -189,6 +189,7 @@ export default {
       searchName: '',
       EmptySearch: false,
       menuMobile: false,
+      allMovies: this.$store.state.allMoviesArr,
     }
   },
   computed: {
@@ -196,7 +197,7 @@ export default {
       return this.$store.state.allMoviesArr
     },
     searchResult() {
-      return this.$store.state.allMoviesArr.filter((movie) => {
+      return this.allMovies.filter((movie) => {
         const newName = this.removeMarkLowerCase(movie.name)
         const newSearchName = this.removeMarkLowerCase(this.searchName)
         return newName.includes(newSearchName)
@@ -218,6 +219,16 @@ export default {
         }, 200)
       }
     },
+  },
+  async created() {
+    let movies = ''
+    if (this.allMovies.length === 0) {
+      if (!localStorage.getItem('allMoviesArr')) {
+        movies = await this.$axios.get('https://hhtq.tv/api/home')
+        return (this.allMovies = movies.data.all_film)
+      }
+      this.allMovies = JSON.parse(localStorage.getItem('allMoviesArr'))
+    }
   },
   methods: {
     removeMarkLowerCase(value) {

@@ -13,9 +13,9 @@
 
         <p>
           - Mọi thông tin vui lòng liên hệ qua email ads@hhtq.tv hoặc
-          https://www.facebook.com/HHTQAnimation Liên Hệ Chính Sách Bản Quyền.
+          https://www.facebook.com/HHTQAnimation
         </p>
-
+        <h1 class="title text-warning">Liên Hệ Chính Sách Bản Quyền.</h1>
         <p>
           - Mọi chính sách liên quan tới bản quyền chúng tôi sẽ tháo gỡ theo
           đúng yêu cầu bên sản xuất.

@@ -258,7 +258,7 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  height: 96px;
+  height: auto;
   position: relative;
   // .bar-stack {
   // }
@@ -391,6 +391,23 @@ export default {
             }
           }
         }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 991px) and (orientation: landscape) {
+  .header {
+    .navbar {
+      ._logo {
+        order: 1;
+      }
+      .search-form {
+        width: auto !important;
+        order: 2;
+      }
+      .bar-stack {
+        order: 3;
       }
     }
   }

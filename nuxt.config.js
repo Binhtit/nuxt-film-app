@@ -41,6 +41,7 @@ export default {
       },
     ],
     script: [
+      // api google
       {
         type: 'text/javascript',
         src: 'https://www.googletagmanager.com/gtag/js?id=G-DS9GNTH1W1',
@@ -51,6 +52,7 @@ export default {
         src: '/plugin/google.js',
         body: true,
       },
+      // facebook plugin
       {
         type: 'text/javascript',
         async: true,
@@ -58,6 +60,13 @@ export default {
         crossorigin: 'anonymous',
         src: 'https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v11.0&appId=766566871423551&autoLogAppEvents=1',
         nonce: 'lkWHkJaC',
+      },
+      // ads
+      {
+        type: 'text/javascript',
+        async: true,
+        src: 'https://api.flygame.io/sdk/widget/hhtq.1141.js',
+        body: true,
       },
     ],
   },

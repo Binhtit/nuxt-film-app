@@ -114,7 +114,7 @@ export default {
       serverName: 1,
       hideYoutobeLogo: '?modestbranding=1',
       link: null,
-      epActive: 0,
+      epActive: this.eps.length - 1,
       linkActive: this.eps.length - 1,
     }
   },

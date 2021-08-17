@@ -45,7 +45,10 @@
       <section class="col-md-9 p-0 p-3">
         <CommonListCardMovies :movies-arr="moviesSorted3d" />
       </section>
-      <div class="col-md-3 pt-3" :class="{ '_bg-fb': !$device.isMobile }">
+      <div
+        class="col-md-3 pt-3"
+        :class="{ '_bg-fb _height-fb scroll-yellow--small': !$device.isMobile }"
+      >
         <div
           v-if="!$device.isMobile"
           class="fb-comments"
@@ -72,7 +75,13 @@
       <section class="col-md-9 p-0 p-3">
         <CommonListCardMovies :movies-arr="moviesSorted2d" />
       </section>
-      <div class="col-md-3 pt-3" :class="{ '_bg-fb': $device.isMobile }">
+      <div
+        class="pt-3"
+        :class="{
+          '_bg-fb col-md-12': $device.isMobile,
+          'col-md-3': !$device.isMobile,
+        }"
+      >
         <div
           v-if="$device.isMobile"
           class="fb-comments"
@@ -171,6 +180,10 @@ export default {
   &__wrapper {
     ._bg-fb {
       background: #6c757d;
+    }
+    ._height-fb {
+      max-height: 1700px;
+      overflow-y: scroll;
     }
     .fb-comments {
       // background: var(--mainbackground);

@@ -4,7 +4,7 @@
     :class="{ _ismobile: $device.isMobile }"
   >
     <div class="footer--border col-md-12 contaier px-0">
-      <div class="row px-0">
+      <div class="row mx-0 px-0">
         <div class="_policy col-md-9 col-12">
           <a class="_link text-white text-hover-yellow" href="/">XEM PHIM</a>
           <nuxt-link

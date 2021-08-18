@@ -1,10 +1,10 @@
 <template>
   <div class="container home__wrapper" :class="{ _ismobile: $device.isMobile }">
     <div class="row mb-2">
-      <div class="col-md-9 p-0">
+      <div class="col-lg-9 p-0">
         <ParticularHomeCarousel :movies-slide-arr="moviesSlideArr" />
       </div>
-      <div class="col-md-3 p-0">
+      <div class="col-lg-3 p-0">
         <div v-if="!$device.isMobile" class="home__movies-latest ml-2">
           <CommonListMoviesLatest />
         </div>

@@ -258,7 +258,7 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  height: auto;
+  height: 96px;
   position: relative;
   // .bar-stack {
   // }
@@ -397,8 +397,10 @@ export default {
 }
 
 @media screen and (min-width: 320px) and (max-width: 991px) and (orientation: landscape) {
-  .header {
+  .header._ismobile {
+    height: 56px;
     .navbar {
+      position: inherit;
       ._logo {
         order: 1;
       }

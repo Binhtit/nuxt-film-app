@@ -2,6 +2,18 @@
   <div class="mt-2 _watch">
     <!-- idea: truyền vào 1 prop chứa các link frame. khi click vào mỗi tập sẽ thay thế frame vào -->
     <div class="_wrap">
+      <div v-if="!$device.isMobile">
+        <div class="_previous btn btn-warning">
+          <span @click="previousEp()"
+            ><i class="fas fa-step-backward mr-2"></i>Tập trước</span
+          >
+        </div>
+        <div class="_next btn btn-warning">
+          <span @click="nextEp()"
+            >Tập tiếp<i class="fas fa-step-forward ml-2"></i
+          ></span>
+        </div>
+      </div>
       <iframe
         :src="frameSrc"
         title="YouTube video player"
@@ -10,7 +22,19 @@
         allowfullscreen
       ></iframe>
     </div>
-    <div class="_eps-control mt-3">
+    <div class="_eps-control mt-2">
+      <div v-if="$device.isMobile">
+        <div class="float-left ml-2 mb-2 btn btn-sm btn-warning">
+          <span @click="previousEp()"
+            ><i class="fas fa-step-backward mr-2"></i>Tập trước</span
+          >
+        </div>
+        <div class="float-right mr-2 mb-2 btn btn-sm btn-warning">
+          <span @click="nextEp()"
+            >Tập tiếp<i class="fas fa-step-forward ml-2"></i
+          ></span>
+        </div>
+      </div>
       <div>
         <div class="col-md-12 d-flex p-0">
           <div
@@ -141,6 +165,18 @@ export default {
       this.linkActive = index
       this.epActive = index
     },
+    previousEp() {
+      if (this.epActive === 0) return
+      this.epActive = this.epActive - 1
+      const ref = this.$refs
+      ref[`sv${this.serverName}-${this.epActive}`][0].click()
+    },
+    nextEp() {
+      if (this.epActive === this.eps.length - 1) return
+      this.epActive = this.epActive + 1
+      const ref = this.$refs
+      ref[`sv${this.serverName}-${this.epActive}`][0].click()
+    },
   },
 }
 </script>
@@ -150,12 +186,40 @@ export default {
     position: relative;
     padding-bottom: 56.25%;
     height: 0;
+    ._previous {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin: 0 10px 10px 10px;
+      visibility: hidden;
+      opacity: 0;
+      z-index: 9999;
+      transition: all 0.3s ease 0s;
+    }
+    ._next {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      margin: 0 10px 10px 10px;
+      visibility: hidden;
+      opacity: 0;
+      z-index: 9999;
+      transition: all 0.3s ease 0s;
+    }
     iframe {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
+    }
+    &:hover ._previous {
+      visibility: unset;
+      opacity: 1;
+    }
+    &:hover ._next {
+      visibility: unset;
+      opacity: 1;
     }
   }
   ._eps-control {

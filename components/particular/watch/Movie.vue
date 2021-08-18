@@ -3,12 +3,18 @@
     <!-- idea: truyền vào 1 prop chứa các link frame. khi click vào mỗi tập sẽ thay thế frame vào -->
     <div class="_wrap">
       <div v-if="!$device.isMobile">
-        <div class="_previous btn btn-warning">
+        <div
+          class="_previous btn"
+          :class="{ 'btn-secondary': isEpMin, 'btn-warning': !isEpMin }"
+        >
           <span @click="previousEp()"
             ><i class="fas fa-step-backward mr-2"></i>Tập trước</span
           >
         </div>
-        <div class="_next btn btn-warning">
+        <div
+          class="_next btn"
+          :class="{ 'btn-secondary': isEpMax, 'btn-warning': !isEpMax }"
+        >
           <span @click="nextEp()"
             >Tập tiếp<i class="fas fa-step-forward ml-2"></i
           ></span>
@@ -140,6 +146,8 @@ export default {
       link: null,
       epActive: this.eps.length - 1,
       linkActive: this.eps.length - 1,
+      isEpMax: false,
+      isEpMin: false,
     }
   },
   computed: {
@@ -166,13 +174,17 @@ export default {
       this.epActive = index
     },
     previousEp() {
-      if (this.epActive === 0) return
+      if (this.epActive === 0) return (this.isEpMin = true)
+      this.isEpMin = false
+      this.isEpMax = false
       this.epActive = this.epActive - 1
       const ref = this.$refs
       ref[`sv${this.serverName}-${this.epActive}`][0].click()
     },
     nextEp() {
-      if (this.epActive === this.eps.length - 1) return
+      if (this.epActive === this.eps.length - 1) return (this.isEpMax = true)
+      this.isEpMax = false
+      this.isEpMin = false
       this.epActive = this.epActive + 1
       const ref = this.$refs
       ref[`sv${this.serverName}-${this.epActive}`][0].click()
@@ -188,9 +200,10 @@ export default {
     height: 0;
     ._previous {
       position: absolute;
-      bottom: 0;
+      top: 0;
       left: 0;
-      margin: 0 10px 10px 10px;
+      margin-left: 10px;
+      margin-top: 10px;
       visibility: hidden;
       opacity: 0;
       z-index: 9999;
@@ -198,9 +211,10 @@ export default {
     }
     ._next {
       position: absolute;
-      bottom: 0;
+      top: 0;
       right: 0;
-      margin: 0 10px 10px 10px;
+      margin-right: 10px;
+      margin-top: 10px;
       visibility: hidden;
       opacity: 0;
       z-index: 9999;

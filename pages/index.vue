@@ -98,7 +98,7 @@
 <script>
 import facebookConfig from '@/mixins/facebookConfig'
 import { moviesTypes } from '@/commonjs/movies.js'
-import { MOVIE_CONSTANT } from '~/assets/js/CONSTANT.js'
+import { MOVIE_CONSTANT } from '@/assets/js/CONSTANT.js'
 export default {
   name: 'Home',
   components: {},
@@ -145,11 +145,11 @@ export default {
       } else if (category === '2d') {
         this.moviesSorted2d = this.getMoviesByCategory(
           MOVIE_CONSTANT.MOVIE_CATEGORY.MOVIE_2D
-        ).filter((movie) => movie.type === codeType)
+        ).filter((movie) => movie.type_id === parseInt(codeType))
       } else {
         this.moviesSorted3d = this.getMoviesByCategory(
           MOVIE_CONSTANT.MOVIE_CATEGORY.MOVIE_3D
-        ).filter((movie) => movie.type === codeType)
+        ).filter((movie) => movie.type_id === parseInt(codeType))
       }
     },
     getMoviesByCategory(code) {

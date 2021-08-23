@@ -11,7 +11,7 @@
     >
       <nuxt-link
         :to="
-          `/movies/detail/${movie.name}?id=${movie.film_id}&tap=${
+          `/movies/detail/${movie.name}?id=${movie.film_id || movie.id}&tap=${
             movie.ep_name || 'all'
           }` | removeMark
         "
@@ -28,7 +28,7 @@
         </div>
         <div class="_episodes">
           <span class="font-weight-bold">{{
-            movie.ep_name || movie.episodes || 'NaN' + ' Tập'
+            movie.ep_name || movie.episodes || ''
           }}</span>
         </div>
         <h2 :title="movie.name" class="_title m-0">{{ movie.name }}</h2>

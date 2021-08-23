@@ -1,5 +1,6 @@
 <template>
-  <div @mousedown="eventClick()">
+  <!-- <div @mousedown="eventClick()"> -->
+  <div>
     <div class="container-fluid bg-component">
       <div class="container p-0 bg-component">
         <CommonHeader />
@@ -9,6 +10,11 @@
     <div class="container">
       <CommonFooter />
     </div>
+    <div
+      v-show="sink"
+      class="_sink"
+      @click="$store.dispatch('sink', false)"
+    ></div>
   </div>
 </template>
 
@@ -18,17 +24,20 @@ export default {
     countClick() {
       return this.$store.state.countClick
     },
+    sink() {
+      return this.$store.state.sink
+    },
   },
   mounted() {},
   methods: {
-    eventClick() {
-      return this.$store.dispatch('countClick')
-    },
+    // eventClick() {
+    //   return this.$store.dispatch('countClick')
+    // },
   },
 }
 </script>
 
-<style>
+<style lang="scss">
 html {
   font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
     Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -75,5 +84,19 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+._sink {
+  height: calc(100vh - 96px);
+  width: 100vw;
+  position: fixed;
+  overflow-y: scroll;
+  top: 96px;
+  left: 0;
+  // background: #444;
+  background: #000000c4;
+  z-index: 1;
+  &_layout {
+    padding-top: 60px;
+  }
 }
 </style>

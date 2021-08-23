@@ -4,6 +4,7 @@ export const state = () => ({
   moviesLatestArr: [],
   movie: [],
   countClick: 0,
+  sink: false,
 })
 
 export const mutations = {
@@ -20,6 +21,9 @@ export const mutations = {
   countClick(state) {
     state.countClick++
   },
+  sink(state, payload) {
+    state.sink = payload
+  },
 }
 
 export const actions = {
@@ -33,5 +37,8 @@ export const actions = {
   },
   countClick({ commit }) {
     commit('countClick')
+  },
+  setSink({ commit }, payload) {
+    commit('sink', payload)
   },
 }

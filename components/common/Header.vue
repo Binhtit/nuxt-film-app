@@ -46,12 +46,12 @@
           <button
             class="btn btn-outline-warning my-2 px-4 my-sm-0"
             type="submit"
-            @click.prevent="removeSearchRs()"
+            @click.prevent="searchMovie()"
           >
             <i class="fas fa-search"></i>
           </button>
           <div
-            v-show="searchName && !EmptySearch"
+            v-show="searchName && !EmptySearch && !isClickSearch"
             class="_search-result bg-component scroll-yellow--small"
             @click="removeSearchRs()"
           >
@@ -91,7 +91,7 @@
             </nuxt-link>
           </div>
         </form>
-        <div>
+        <!-- <div>
           <div class="nav-item dropdown">
             <a class="nav-lang dropdown-toggle" href="#" role="button">
               Lang
@@ -101,7 +101,7 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
       <form
         v-if="$device.isMobile"
@@ -118,14 +118,14 @@
           <button
             class="btn btn-outline-warning my-2 px-4 my-sm-0 ml-2"
             type="submit"
-            @click.prevent="removeSearchRs()"
+            @click.prevent="searchMovie()"
           >
             <i class="fas fa-search"></i>
           </button>
         </div>
         <div
-          v-show="searchName && !EmptySearch"
-          class="_search-result bg-component scroll-yellow--small"
+          v-show="searchName && !EmptySearch && !isClickSearch"
+          class="_search-result bg-component scroll-yellow--small __mb"
           @click="removeSearchRs()"
         >
           <nuxt-link
@@ -164,6 +164,24 @@
           </nuxt-link>
         </div>
       </form>
+      <div
+        v-show="searchResult.length > 0"
+        class="_full-screen"
+        @click="closeSubSearchResult()"
+      ></div>
+      <div v-show="sink" class="result-search" @click="closeSubSearchResult()">
+        <i class="_close fas fa-times"></i>
+        <div class="container result-search_layout">
+          <h3 class="mb-5 text-warning text-center">Kết quả tìm kiếm</h3>
+          <p
+            v-show="searchResult.length === 0"
+            class="text-center font-weight-bold text-muted"
+          >
+            không tìm thấy kết quả.
+          </p>
+          <CommonListCardMovies :movies-arr="searchResult" />
+        </div>
+      </div>
     </nav>
   </div>
 </template>
@@ -187,6 +205,7 @@ export default {
   data() {
     return {
       searchName: '',
+      isClickSearch: false,
       EmptySearch: false,
       menuMobile: false,
       allMovies: this.$store.state.allMoviesArr,
@@ -197,28 +216,34 @@ export default {
       return this.$store.state.allMoviesArr
     },
     searchResult() {
+      if (this.searchName === '') {
+        return false
+      }
       return this.allMovies.filter((movie) => {
         const newName = this.removeMarkLowerCase(movie.name)
         const newSearchName = this.removeMarkLowerCase(this.searchName)
         return newName.includes(newSearchName)
       })
     },
-    countClick() {
-      return this.$store.state.countClick
+    // countClick() {
+    //   return this.$store.state.countClick
+    // },
+    sink() {
+      return this.$store.state.sink
     },
   },
   watch: {
     searchName() {
       return (this.EmptySearch = false)
     },
-    countClick() {
-      if (this.searchName) {
-        setTimeout(() => {
-          this.searchName = ''
-          return (this.EmptySearch = true)
-        }, 200)
-      }
-    },
+    // countClick() {
+    //   if (this.searchName) {
+    //     setTimeout(() => {
+    //       this.searchName = ''
+    //       return (this.EmptySearch = true)
+    //     }, 200)
+    //   }
+    // },
   },
   async created() {
     let movies = ''
@@ -239,6 +264,12 @@ export default {
         .replace(/Đ/g, 'D')
         .toLowerCase()
     },
+    searchMovie() {
+      if (this.searchName === '') return
+
+      this.$store.dispatch('setSink', true)
+      this.isClickSearch = true
+    },
     removeSearchRs() {
       this.searchResult.splice(0, this.searchResult.length)
       this.searchName = ''
@@ -251,6 +282,13 @@ export default {
         return (this.menuMobile = !this.menuMobile)
       }
       return (this.menuMobile = value)
+    },
+    closeSubSearchResult() {
+      // return this.$store.dispatch('countClick')
+      this.isClickSearch = false
+      this.searchName = ''
+      this.$store.dispatch('setSink', false)
+      this.EmptySearch = true
     },
   },
 }
@@ -327,6 +365,38 @@ export default {
               }
             }
           }
+        }
+      }
+      ._full-screen {
+        height: calc(100vh - 96px);
+        width: 100vw;
+        position: fixed;
+        overflow-y: scroll;
+        top: 96px;
+        left: 0;
+        // background: #444;
+        background: #0000003d;
+        z-index: 1;
+      }
+      .result-search {
+        height: calc(100vh - 96px);
+        width: 100vw;
+        position: fixed;
+        overflow-y: scroll;
+        top: 96px;
+        left: 0;
+        z-index: 3;
+        ._close {
+          font-size: 30px;
+          color: #fff;
+          padding: 15px;
+          position: absolute;
+          right: 0;
+          top: 0;
+          margin: 10px 10px 0 0;
+        }
+        &_layout {
+          padding-top: 60px;
         }
       }
     }

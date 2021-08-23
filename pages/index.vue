@@ -118,6 +118,9 @@ export default {
     moviesSlideArr() {
       return this.moviesArr.top_5_newest_films
     },
+    sink() {
+      return this.$store.state.sink
+    },
   },
   created() {},
   mounted() {

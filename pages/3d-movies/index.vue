@@ -22,7 +22,8 @@
       <section class="col-md-9 p-0 p-3 movies3d__card-moves">
         <CommonListCardMovies :movies-arr="moviesSorted" />
       </section>
-      <div class="movies3d__movies-latest scroll-dark col-md-3">
+      <div class="movies3d__movies-latest scroll-dark col-md-3 pt-2">
+        <AdsAdmicro />
         <CommonListMoviesLatest :movies-latest-arr="moviesLatestArr" />
       </div>
     </div>

@@ -108,6 +108,9 @@
         </div>
       </div>
     </div>
+    <div class="row pt-2">
+      <AdsAdmicro />
+    </div>
     <div class="col-12 d-flex justify-content-center">
       <div
         class="fb-comments"

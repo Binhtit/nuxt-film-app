@@ -63,6 +63,9 @@
         </div>
       </div>
     </div>
+    <div class="row">
+      <AdsAdmicro />
+    </div>
     <!-- <div class="row bg-component mt-2 _watch"></div> -->
     <div class="row bg-component mt-2">
       <component :is="watchComponent" class="col-md-12 mb-4"></component>

@@ -49,6 +49,7 @@
         class="col-md-3 pt-3"
         :class="{ '_bg-fb _height-fb scroll-yellow--small': !$device.isMobile }"
       >
+        <AdsAdmicro />
         <div
           v-if="!$device.isMobile"
           class="fb-comments"

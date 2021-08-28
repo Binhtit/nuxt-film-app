@@ -245,7 +245,8 @@ export default {
     //   }
     // },
   },
-  async created() {
+  // async created() {},
+  async mounted() {
     let movies = ''
     if (this.allMovies.length === 0) {
       if (!localStorage.getItem('allMoviesArr')) {

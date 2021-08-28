@@ -10,7 +10,7 @@ export const state = () => ({
 export const mutations = {
   addAllMoviesArr(state, payload) {
     state.allMoviesArr = payload
-    localStorage.setItem('allMoviesArr', JSON.stringify(payload))
+    // localStorage.setItem('allMoviesArr', JSON.stringify(payload))
   },
   addMoviesLatestArr(state, payload) {
     state.moviesLatestArr = payload

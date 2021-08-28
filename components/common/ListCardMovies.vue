@@ -59,7 +59,7 @@ export default {
   mixins: [filters],
   props: {
     moviesArr: {
-      type: Array,
+      type: [Array, Boolean],
       default() {},
     },
   },

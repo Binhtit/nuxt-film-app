@@ -127,6 +127,10 @@ export default {
   mounted() {
     // for header use
     this.$store.commit('addAllMoviesArr', this.moviesArr.all_film)
+    localStorage.setItem(
+      'allMoviesArr',
+      JSON.stringify(this.moviesArr.all_film)
+    )
     this.moviesSorted2d = this.getMoviesByCategory(
       MOVIE_CONSTANT.MOVIE_CATEGORY.MOVIE_2D
     )

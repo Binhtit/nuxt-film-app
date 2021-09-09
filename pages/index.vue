@@ -1,8 +1,13 @@
 <template>
   <div class="container home__wrapper" :class="{ _ismobile: $device.isMobile }">
     <div class="row mb-2">
+      <AdsXbet />
+      <CommonScrollUp />
       <div class="col-lg-9 p-0">
-        <ParticularHomeCarousel :movies-slide-arr="moviesSlideArr" />
+        <ParticularHomeCarousel
+          v-if="!$device.isMobile"
+          :movies-slide-arr="moviesSlideArr"
+        />
       </div>
       <div class="col-lg-3 p-0">
         <div v-if="!$device.isMobile" class="home__movies-latest ml-2">
@@ -176,14 +181,6 @@ export default {
   }
   &__filter {
     border-bottom: 2px solid var(--mainbackground);
-    ._filter-btn {
-      cursor: pointer;
-      color: var(--gray2);
-      transition: 0.3s all ease;
-      &:hover {
-        color: var(--white);
-      }
-    }
   }
   &__wrapper {
     ._bg-fb {
@@ -192,9 +189,6 @@ export default {
     ._height-fb {
       max-height: 1700px;
       overflow-y: scroll;
-    }
-    .fb-comments {
-      // background: var(--mainbackground);
     }
   }
 }

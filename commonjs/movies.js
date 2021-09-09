@@ -83,9 +83,9 @@ const moviesSlideArr = [
 
 const moviesTypes = [
   { code: '0', value: 'Tất cả' },
-  { code: '1', value: 'Kiếm hiệp' },
-  { code: '2', value: 'Phép thuật' },
-  { code: '3', value: 'Harem' },
+  { code: '1', value: 'Hot' },
+  { code: '2', value: 'Xem nhiều' },
+  { code: '3', value: 'Hoàn thành' },
 ]
 
 const moviesLatestArr = [

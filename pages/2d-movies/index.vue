@@ -4,6 +4,8 @@
     :class="{ _ismobile: $device.isMobile }"
   >
     <div class="row movies2d__filter bg-component py-2">
+      <CommonScrollUp />
+      <AdsXbet class="mb-2" />
       <h5
         v-if="$device.isMobile"
         class="col-12 text-muted text-center font-weight-bold"
@@ -32,19 +34,48 @@
 
 <script>
 import cardMoviesController from '@/mixins/cardMoviesController.js'
+import filterMovies2d3dpage from '@/mixins/filterMovies2d3dpage.js'
 
 export default {
   name: 'Movies3d',
-  mixins: [cardMoviesController],
+  mixins: [cardMoviesController, filterMovies2d3dpage],
 
   async asyncData({ $axios }) {
     const moviesArr = await $axios.$get('https://hhtq.tv/api/movies/1')
     return { moviesArr }
   },
+  data() {
+    return {
+      moviesSorted: [],
+    }
+  },
   head() {
     return {
       title: 'Phim hoạt hình 2D',
     }
+  },
+  mounted() {
+    ;(function (w, d, a) {
+      // debugger
+      if (w.ccnads) {
+        // eslint-disable-next-line no-undef
+        return ccnads(a)
+      }
+      if (w.ccnAdsQueue) {
+        return w.ccnAdsQueue.push(a)
+      }
+      w.ccnAdsQueue = []
+      w.ccnAdsQueue.push(a)
+      // eslint-disable-next-line no-var
+      var s = d.createElement('script')
+      s.async = true
+      s.src = 'https://static.adconnect.vn/main.js'
+      d.head.appendChild(s)
+    })(window, document, {
+      id: 'ccadnet_362_599',
+      // eslint-disable-next-line object-shorthand
+      fallback: function () {},
+    })
   },
 }
 </script>
@@ -53,14 +84,6 @@ export default {
 .movies2d {
   &__filter {
     border-bottom: 2px solid var(--mainbackground);
-    ._filter-btn {
-      cursor: pointer;
-      color: var(--gray2);
-      transition: 0.3s ease;
-      &:hover {
-        color: var(--white);
-      }
-    }
   }
   &__card-moves {
     border-right: 2px solid var(--mainbackground);

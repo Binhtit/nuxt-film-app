@@ -58,6 +58,12 @@ export default {
   }
   ._filter-btn {
     font-size: 17px;
+    cursor: pointer;
+    color: var(--gray2);
+    transition: 0.3s all ease;
+    &:hover {
+      color: var(--white);
+    }
   }
 }
 </style>

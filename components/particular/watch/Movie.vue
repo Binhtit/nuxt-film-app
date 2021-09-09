@@ -72,7 +72,7 @@
             <p class="text-center">Server 4</p>
           </div>
         </div>
-        <div class="_eps">
+        <div class="_eps scroll-yellow--small">
           <div v-show="serverName === 1" class="_ep">
             <div
               v-for="(ep, index) in eps"
@@ -247,6 +247,8 @@ export default {
     ._eps {
       min-height: 160px;
       background: var(--dark1);
+      max-height: 350px;
+      overflow-y: scroll;
       ._active {
         background: #ffc107 !important;
         color: #335666 !important;

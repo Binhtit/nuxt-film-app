@@ -1,6 +1,8 @@
 <template>
   <div class="container detail-movie" :class="{ _ismobile: $device.isMobile }">
     <div class="row">
+      <CommonScrollUp />
+      <AdsXbet />
       <div class="col-md-9 p-0">
         <div class="_banner-wrap">
           <div class="_banner-bg">
@@ -25,7 +27,7 @@
               <div class="_content__description scroll-yellow--small">
                 {{ movie.film.description }}
               </div>
-              <div class="row mt-4 text-white _mb-star">
+              <div class="row pt-2 text-white _mb-star">
                 <div class="col-md-6 col-6 _rate">
                   <div class="_rate__label mr-2 text-warning">Đánh giá:</div>
                   <div class="_star">
@@ -73,7 +75,7 @@
       </div>
       <div class="detail-movie__infor-movie col-md-12">
         <div class="row pt-2">
-          <div class="col-md-6 _infor-level-1">
+          <div class="col-6 _infor-level-1">
             <ul class="_infor-level-2">
               <li class="_infor-level-3">
                 <span class="text-warning mr-2">Danh mục: </span
@@ -89,7 +91,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-md-6 _infor-level-1">
+          <div class="col-6 _infor-level-1">
             <ul class="_infor-level-2">
               <li class="_infor-level-3">
                 <span class="text-warning mr-2">Độ phân giải:</span
@@ -292,9 +294,6 @@ export default {
       ._infor-level {
         &-2 {
           padding: 0 !important;
-        }
-        &-3 {
-          text-align: center;
         }
       }
     }

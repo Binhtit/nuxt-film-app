@@ -26,14 +26,16 @@
         <div class="_contact col-md-3 col-12">
           <a
             class="_contact--icon text-hover-yellow"
+            target="_blank"
             href="https://www.facebook.com/HHTQAnimation/"
             ><i class="fab fa-facebook-square"></i
           ></a>
-          <a class="_contact--icon text-hover-yellow" href=""
+          <a class="_contact--icon text-hover-yellow" target="_blank" href=""
             ><i class="fab fa-twitter-square"></i
           ></a>
           <a
             class="_contact--icon text-hover-yellow"
+            target="_blank"
             href="https://www.youtube.com/channel/UCY9Ew7Ma9OCSXKvt-uAzjQg"
             ><i class="fab fa-youtube-square"></i
           ></a>

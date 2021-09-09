@@ -1,6 +1,8 @@
 <template>
   <div class="container detail-movie" :class="{ _ismobile: $device.isMobile }">
     <div class="row">
+      <CommonScrollUp />
+      <AdsXbet />
       <div class="col-md-9 p-0">
         <div class="_banner-wrap">
           <div class="_banner-bg">
@@ -26,11 +28,10 @@
             </div>
             <div class="col-md-9 col-sm-3 col-12 _content">
               <h5 class="_content__title">{{ movie.name }}</h5>
-              <!-- <p class="_content__subtitle">{{ movie.name }}</p> -->
               <div class="_content__description scroll-yellow--small">
                 {{ movie.description }}
               </div>
-              <div class="row mt-4 text-white _mb-star">
+              <div class="row pt-2 text-white _mb-star">
                 <div class="col-md-6 _rate">
                   <div class="_rate__label mr-2 text-warning">Đánh giá:</div>
                   <div class="_star">
@@ -66,7 +67,6 @@
     <div class="row">
       <AdsAdmicro />
     </div>
-    <!-- <div class="row bg-component mt-2 _watch"></div> -->
     <div class="row bg-component mt-2">
       <component :is="watchComponent" class="col-md-12 mb-4"></component>
       <div class="detail-movie__navbar col-md-12">
@@ -74,11 +74,11 @@
       </div>
       <div class="detail-movie__infor-movie col-md-12">
         <div class="row pt-2">
-          <div class="col-md-6 _infor-level-1">
+          <div class="col-6 _infor-level-1">
             <ul class="_infor-level-2">
               <li class="_infor-level-3">
                 <span class="text-warning mr-2">Trạng thái: </span
-                ><span class="text-white">{{ movie.film_status }}</span>
+                ><span class="text-white">{{ film_status }}</span>
               </li>
               <li class="_infor-level-3">
                 <span class="text-warning mr-2">Thể loại:</span>
@@ -90,7 +90,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-md-6 _infor-level-1">
+          <div class="col-6 _infor-level-1">
             <ul class="_infor-level-2">
               <li class="_infor-level-3">
                 <span class="text-warning mr-2">Độ phân giải:</span
@@ -164,6 +164,15 @@ export default {
         },
       ],
     }
+  },
+  computed: {
+    film_status() {
+      const ep = this.movie.episodes.split('/')
+      if (ep[0] === ep[1]) {
+        return 'Hoàn thành'
+      }
+      return 'Đang cập nhật'
+    },
   },
   mounted() {
     this.$store.commit('addMovie', this.movie)
@@ -277,7 +286,7 @@ export default {
   &._ismobile {
     ._banner-wrap {
       ._banner-bg__img {
-        height: 580px;
+        height: 450px;
       }
       // ._banner-bg__blur {
       //   height: 525px;
@@ -287,14 +296,24 @@ export default {
         ._avatar {
           display: flex;
           justify-content: center;
+          max-height: 200px;
           ._img-thumbnail {
             width: 125px;
             padding-top: 20px;
+            max-height: 180px;
+          }
+          .btn-wrap {
+            i {
+              opacity: 0.5;
+            }
+            .btn {
+              bottom: -30px;
+            }
           }
         }
         ._content {
           ._content__title {
-            margin-top: 60px;
+            margin-top: 50px;
           }
           ._mb-star {
             margin: 0 !important;
@@ -311,9 +330,6 @@ export default {
       ._infor-level {
         &-2 {
           padding: 0 !important;
-        }
-        &-3 {
-          text-align: center;
         }
       }
     }

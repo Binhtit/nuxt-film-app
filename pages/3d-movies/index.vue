@@ -4,6 +4,8 @@
     :class="{ _ismobile: $device.isMobile }"
   >
     <div class="row movies3d__filter bg-component py-2">
+      <CommonScrollUp />
+      <AdsXbet class="mb-2" />
       <h5
         v-if="$device.isMobile"
         class="col-12 text-muted text-center font-weight-bold"
@@ -32,14 +34,20 @@
 
 <script>
 import cardMoviesController from '@/mixins/cardMoviesController.js'
+import filterMovies2d3dpage from '@/mixins/filterMovies2d3dpage.js'
 
 export default {
   name: 'Movies3d',
-  mixins: [cardMoviesController],
+  mixins: [cardMoviesController, filterMovies2d3dpage],
 
   async asyncData({ $axios }) {
     const moviesArr = await $axios.$get('https://hhtq.tv/api/movies/2')
     return { moviesArr }
+  },
+  data() {
+    return {
+      moviesSorted: [],
+    }
   },
   head() {
     return {
@@ -52,14 +60,6 @@ export default {
 .movies3d {
   &__filter {
     border-bottom: 2px solid var(--mainbackground);
-    ._filter-btn {
-      cursor: pointer;
-      color: var(--gray2);
-      transition: 0.3s all ease;
-      &:hover {
-        color: var(--white);
-      }
-    }
   }
   &__card-moves {
     border-right: 2px solid var(--mainbackground);

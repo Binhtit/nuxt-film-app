@@ -1,5 +1,4 @@
 <template>
-  <!-- <div @mousedown="eventClick()"> -->
   <div>
     <div class="container-fluid bg-component">
       <div class="container p-0 bg-component">
@@ -8,6 +7,7 @@
     </div>
     <Nuxt />
     <div class="container">
+      <AdsLixitt />
       <CommonFooter />
     </div>
     <div
@@ -29,11 +29,6 @@ export default {
     },
   },
   mounted() {},
-  methods: {
-    // eventClick() {
-    //   return this.$store.dispatch('countClick')
-    // },
-  },
 }
 </script>
 

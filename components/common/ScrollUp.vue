@@ -41,12 +41,12 @@ export default {
   0% {
     opacity: 0;
     right: 45px;
-    bottom: 35px;
+    bottom: 65px;
     transform: translateY(10px);
   }
   100% {
     right: 45px;
-    bottom: 35px;
+    bottom: 65px;
     opacity: 0.9;
     transform: translateY(0);
   }
@@ -55,7 +55,7 @@ export default {
   font-size: 50px;
   position: fixed;
   right: 45px;
-  bottom: 35px;
+  bottom: 65px;
   color: var(--yellow1) !important;
   z-index: 1;
   opacity: 0;

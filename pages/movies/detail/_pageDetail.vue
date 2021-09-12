@@ -125,15 +125,14 @@
 <script>
 import facebookConfig from '@/mixins/facebookConfig'
 import filters from '~/mixins/filters.js'
+import commonMixin from '~/mixins/commonMixin.js'
 
 export default {
-  mixins: [filters, facebookConfig],
+  mixins: [commonMixin, filters, facebookConfig],
   async asyncData(context) {
     const idMovie = context.query.id
     const epMovie = context.query.tap || 1
-    const movie = await context.$axios.$get(
-      `https://hhtq.tv/api/movies/detail/${idMovie}`
-    )
+    const movie = await context.$axios.$get(`/api/movies/detail/${idMovie}`)
     return { movie, epMovie, idMovie }
   },
   data(context) {

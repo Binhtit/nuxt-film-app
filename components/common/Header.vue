@@ -1,5 +1,5 @@
 <template>
-  <div class="header _navbar mb-2" :class="{ _ismobile: $device.isMobile }">
+  <div class="header _navbar" :class="{ _ismobile: $device.isMobile }">
     <nav class="navbar navbar-expand-lg navbar-dark">
       <nuxt-link class="_logo navbar-brand" to="/"
         ><img class="_logoimg" src="/logo.png" alt="hoạt hình trung quốc"
@@ -250,7 +250,7 @@ export default {
     let movies = ''
     if (this.allMovies.length === 0) {
       if (!localStorage.getItem('allMoviesArr')) {
-        movies = await this.$axios.get('https://hhtq.tv/api/home')
+        movies = await this.$axios.get('/api/home')
         return (this.allMovies = movies.data.all_film)
       }
       this.allMovies = JSON.parse(localStorage.getItem('allMoviesArr'))
@@ -299,8 +299,6 @@ export default {
 .header {
   height: 96px;
   position: relative;
-  // .bar-stack {
-  // }
   &._navbar {
     .navbar {
       background: var(--componentbackground);

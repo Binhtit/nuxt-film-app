@@ -1,7 +1,8 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'server',
-  // ssr: false,
+  // target: 'server',
+  target: 'static',
+  ssr: false,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -45,6 +46,11 @@ export default {
       {
         type: 'text/javascript',
         src: 'https://www.googletagmanager.com/gtag/js?id=G-DS9GNTH1W1',
+        async: true,
+      },
+      {
+        type: 'text/javascript',
+        src: 'https://www.googletagmanager.com/gtag/js?id=UA-207050834-1',
         async: true,
       },
       {
@@ -107,7 +113,7 @@ export default {
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
-  axios: {},
+  axios: { baseURL: process.env.API_URL },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {

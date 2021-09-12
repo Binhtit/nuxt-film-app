@@ -31,9 +31,7 @@ export default {
     const latestArr = this.$store.state.moviesLatestArr
     if (Array.isArray(latestArr) && latestArr.length > 0)
       return (this.moviesLatestArr = latestArr)
-    this.moviesLatestArr = await this.$axios.$get(
-      'https://hhtq.tv/api/top20newest'
-    )
+    this.moviesLatestArr = await this.$axios.$get('/api/top20newest')
   },
   // computed: {
   //   moviesLatestArr() {

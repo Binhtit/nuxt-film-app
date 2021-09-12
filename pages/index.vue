@@ -1,6 +1,6 @@
 <template>
   <div class="container home__wrapper" :class="{ _ismobile: $device.isMobile }">
-    <div class="row mb-2">
+    <div class="row">
       <AdsXbet />
       <CommonScrollUp />
       <div class="col-lg-9 p-0">
@@ -37,7 +37,7 @@
     <!-- --NOTE-- Current coding _filter logic to optimize performance. but will not be suitable when using paging in case large data. -->
     <div class="row home__filter bg-component py-2">
       <h5 v-if="$device.isMobile" class="col-12 text-center text-warning">
-        Phim 3D
+        Phim 3D mới cập nhật
       </h5>
       <CommonFilterMoviesNavbar
         :movies-types="moviesTypes"
@@ -68,7 +68,7 @@
 
     <div class="row home__filter bg-component py-2">
       <h5 v-if="$device.isMobile" class="col-12 text-center text-warning">
-        Phim 2D
+        Phim 2D mới cập nhật
       </h5>
       <CommonFilterMoviesNavbar
         :movies-types="moviesTypes"
@@ -105,12 +105,14 @@
 import facebookConfig from '@/mixins/facebookConfig'
 import { moviesTypes } from '@/commonjs/movies.js'
 import { MOVIE_CONSTANT } from '@/assets/js/CONSTANT.js'
+import commonMixin from '~/mixins/commonMixin.js'
+
 export default {
   name: 'Home',
   components: {},
-  mixins: [facebookConfig],
+  mixins: [commonMixin, facebookConfig],
   async asyncData({ $axios }) {
-    const moviesArr = await $axios.$get('https://hhtq.tv/api/home')
+    const moviesArr = await $axios.$get('/api/home')
     return { moviesArr }
   },
   data() {

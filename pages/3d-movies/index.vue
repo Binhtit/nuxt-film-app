@@ -5,7 +5,7 @@
   >
     <div class="row movies3d__filter bg-component py-2">
       <CommonScrollUp />
-      <AdsXbet class="mb-2" />
+      <AdsXbet />
       <h5
         v-if="$device.isMobile"
         class="col-12 text-muted text-center font-weight-bold"
@@ -35,13 +35,14 @@
 <script>
 import cardMoviesController from '@/mixins/cardMoviesController.js'
 import filterMovies2d3dpage from '@/mixins/filterMovies2d3dpage.js'
+import commonMixin from '~/mixins/commonMixin.js'
 
 export default {
   name: 'Movies3d',
-  mixins: [cardMoviesController, filterMovies2d3dpage],
+  mixins: [commonMixin, cardMoviesController, filterMovies2d3dpage],
 
   async asyncData({ $axios }) {
-    const moviesArr = await $axios.$get('https://hhtq.tv/api/movies/2')
+    const moviesArr = await $axios.$get('/api/movies/2')
     return { moviesArr }
   },
   data() {
@@ -58,6 +59,9 @@ export default {
 </script>
 <style lang="scss" scoped>
 .movies3d {
+  &__wrapper {
+    border-top: 2px solid var(--mainbackground);
+  }
   &__filter {
     border-bottom: 2px solid var(--mainbackground);
   }

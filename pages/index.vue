@@ -111,6 +111,12 @@ export default {
   name: 'Home',
   components: {},
   mixins: [commonMixin, facebookConfig],
+  props: {
+    baseUrl: {
+      type: Object,
+      default() {},
+    },
+  },
   async asyncData({ $axios }) {
     const moviesArr = await $axios.$get('/api/home')
     return { moviesArr }

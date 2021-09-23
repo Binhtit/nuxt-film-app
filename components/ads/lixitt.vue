@@ -5,7 +5,10 @@
         <div class="toggle-btn text-white bg-warning" @click="openAds(false)">
           Đóng quảng cáo
         </div>
-        <div v-if="!$device.isMobile" class="d-flex">
+        <div
+          v-if="!$device.isMobile"
+          class="d-flex flex-column align-items-center"
+        >
           <!-- e66 -->
           <a
             href="https://ee66.com/?inviteCode=0349653"
@@ -89,7 +92,7 @@ export default {
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 5px;
-    top: -35%;
+    top: -20px;
     cursor: pointer;
     &._open {
       transform: translate(0%, -65%);

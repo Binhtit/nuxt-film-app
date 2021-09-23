@@ -47,7 +47,7 @@
       cũng như cộng tác viên của Website hhtq.tv sẽ đảm bảo cập nhật, việt hóa
       những phim mới nhất một cách nhanh chóng và chính xác nhất. Nếu các bạn
       không tìm thấy bộ phim ưa thích, hãy liên hệ với bọn mình qua fanpage
-      https://www.facebook.com/HHTQAnimation hoặc email ads@hhtq.tv nhé.
+      https://www.facebook.com/HHTQAnimation hoặc email hhtqads@gmail.com nhé.
     </div>
   </div>
 </template>

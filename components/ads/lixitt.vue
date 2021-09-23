@@ -5,28 +5,48 @@
         <div class="toggle-btn text-white bg-warning" @click="openAds(false)">
           Đóng quảng cáo
         </div>
-        <a
-          v-if="!$device.isMobile"
-          href="https://lixi88vip.com/reg.shtml?id=5359840"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            :src="require('@/assets/image/Banner_lixi-desktop.gif')"
-            alt="ads"
-          />
-        </a>
-        <a
-          v-else
-          href="https://lixi88vip.com/reg.shtml?id=5359840"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            :src="require('@/assets/image/Banner_14062021_320x50.gif')"
-            alt="ads"
-          />
-        </a>
+        <div v-if="!$device.isMobile" class="d-flex">
+          <!-- e66 -->
+          <a
+            href="https://ee66.com/?inviteCode=0349653"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img :src="require('@/assets/image/ee88-desktop.gif')" alt="ads" />
+          </a>
+          <!-- lixi -->
+          <a
+            href="https://lixi88vip.com/reg.shtml?id=5359840"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              :src="require('@/assets/image/Banner_lixi-desktop.gif')"
+              alt="ads"
+            />
+          </a>
+        </div>
+        <div v-else class="d-flex flex-column">
+          <!-- e66 -->
+          <a
+            href="https://ee66.com/?inviteCode=0349653"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img :src="require('@/assets/image/ee88-mb.gif')" alt="ads" />
+          </a>
+          <!-- lixi -->
+          <a
+            href="https://lixi88vip.com/reg.shtml?id=5359840"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              :src="require('@/assets/image/Banner_14062021_320x50.gif')"
+              alt="ads"
+            />
+          </a>
+        </div>
       </div>
     </div>
     <span

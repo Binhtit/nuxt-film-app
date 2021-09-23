@@ -12,7 +12,7 @@
         <p>- Các dạng quảng cáo như đặt link đặt banner….</p>
 
         <p>
-          - Mọi thông tin vui lòng liên hệ qua email ads@hhtq.tv hoặc
+          - Mọi thông tin vui lòng liên hệ qua email hhtqads@gmail.com hoặc
           https://www.facebook.com/HHTQAnimation
         </p>
         <h1 class="title text-warning">Liên Hệ Chính Sách Bản Quyền.</h1>
@@ -22,7 +22,7 @@
         </p>
 
         <p>
-          - Mọi thông tin vui lòng liên hệ qua email ads@hhtq.tv hoặc
+          - Mọi thông tin vui lòng liên hệ qua email hhtqads@gmail.com hoặc
           https://www.facebook.com/HHTQAnimation
         </p>
 

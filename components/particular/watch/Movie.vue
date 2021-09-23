@@ -42,6 +42,9 @@
         </div>
       </div>
       <div>
+        <div class="text-warning text-center _fsize-13 px-1">
+          Chuyển server khác nếu có tình trạng giật lắc
+        </div>
         <div class="col-md-12 d-flex p-0">
           <div
             class="_server col-3"

@@ -15,7 +15,7 @@
         </div>
       </div>
     </div>
-    <div class="row mb-3">
+    <!-- <div class="row mb-3">
       <div v-if="!$device.isMobile" class="col-12">
         <div
           class="fb-like"
@@ -33,7 +33,7 @@
           data-show-faces="true"
         ></div>
       </div>
-    </div>
+    </div> -->
     <!-- --NOTE-- Current coding _filter logic to optimize performance. but will not be suitable when using paging in case large data. -->
     <div class="row home__filter bg-component py-2">
       <h5 v-if="$device.isMobile" class="col-12 text-center text-warning">
@@ -120,6 +120,11 @@ export default {
       moviesTypes,
       moviesSorted2d: [],
       moviesSorted3d: [],
+      // typeMovie: String,
+      // episodes: String,
+      // limitEpNum: 10,
+      // epNumLoadMore: 10,
+      // noMoreEp: false,
     }
   },
   computed: {
@@ -172,6 +177,24 @@ export default {
         return movie.category_id === code
       })
     },
+    // async loadmore(value) {
+    //   if (value.loadmore) {
+    //     console.log('api/home/' + value.epi + '/' + this.epNumLoadMore)
+    //     debugger
+    //     this.epNumLoadMore = this.epNumLoadMore + this.limitEpNum
+    //     const moviesArr = await this.$axios.$get(
+    //       `api/home/${value.epi}/${this.epNumLoadMore}`
+    //     )
+    //     if (moviesArr.length === 0 && !moviesArr) {
+    //       this.noMoreEp = true
+    //     }
+    //     if (value.epi === MOVIE_CONSTANT.MOVIE_CATEGORY.MOVIE_2D) {
+    //       this.moviesSorted2d.push(moviesArr)
+    //     } else {
+    //       this.moviesSorted3d.push(moviesArr)
+    //     }
+    //   }
+    // },
   },
 }
 </script>

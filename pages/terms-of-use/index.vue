@@ -10,7 +10,7 @@
           tải trong trang web này. Mọi nội dung đều được sưu tầm và nhúng vào
           website tương tự như công cụ tìm kiếm Google hay những trang web tìm
           kiếm khác. Nếu có vấn đề liên quan đến bản quyền, vui lòng phản hồi
-          (ads@hhtq.tv) để chúng tôi tiến hành gỡ bỏ.
+          (hhtqads@gmail.com) để chúng tôi tiến hành gỡ bỏ.
         </p>
 
         <p>
@@ -84,7 +84,7 @@
           đồng ý và không muốn bị ràng buộc bởi các điều khoản này, bạn không
           nên sử dụng dịch vụ của chúng tôi. Nếu bạn có bất kì câu hỏi hoặc phản
           ánh nào về Điều Khoản Sử Dụng, vui lòng liên hệ với chúng tôi theo địa
-          chỉ ads@hhtq.tv
+          chỉ hhtqads@gmail.com
         </p>
 
         <p>

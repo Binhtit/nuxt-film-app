@@ -68,12 +68,12 @@ export default {
         nonce: 'lkWHkJaC',
       },
       // ads
-      {
-        type: 'text/javascript',
-        async: true,
-        src: 'https://api.flygame.io/sdk/widget/hhtq.1141.js',
-        body: true,
-      },
+      // {
+      //   type: 'text/javascript',
+      //   async: true,
+      //   src: 'https://api.flygame.io/sdk/widget/hhtq.1141.js',
+      //   body: true,
+      // },
     ],
   },
   router: {
@@ -122,6 +122,17 @@ export default {
     },
   },
 
+  server: {
+    port: 3000,
+    host: '0.0.0.0',
+  },
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
+  build: {
+    // extend(config, ctx) {
+    //   if (ctx.isDev) {
+    //     config.devtool = ctx.isClient ? 'source-map' : 'inline-source-map'
+    //   }
+    // },
+  },
 }

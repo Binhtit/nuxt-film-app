@@ -31,6 +31,10 @@
               <div class="_content__description scroll-yellow--small">
                 {{ movie.description }}
               </div>
+              <div class="">
+                <span class="text-warning mr-2">Lịch chiếu:</span>
+                <span class="text-white">{{ timeSlot }}</span>
+              </div>
               <div class="row pt-2 text-white _mb-star">
                 <div class="col-md-6 _rate">
                   <div class="_rate__label mr-2 text-warning">Đánh giá:</div>
@@ -171,6 +175,9 @@ export default {
         return 'Hoàn thành'
       }
       return 'Đang cập nhật'
+    },
+    timeSlot() {
+      return this.movie.time_slot || 'Đang cập nhật'
     },
   },
   mounted() {

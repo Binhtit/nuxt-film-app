@@ -92,7 +92,7 @@
         <p>
           HHTQ cung cấp tính năng biên tập thông tin trong tài khoản cá nhân
           thông qua trang cấu hình cá nhân riêng của bạn. Bạn có thể yêu cầu xóa
-          bỏ tài khoản của bạn bằng cách liên hệ theo địa chỉ ads@hhtq.tv. Nội
+          bỏ tài khoản của bạn bằng cách liên hệ theo địa chỉ hhtqads@gmail.com. Nội
           dung hoặc các dữ liệu mà bạn đã cung cấp cho chúng tôi không nằm trong
           tài khoản cá nhân của bạn, chẳng hạn các bài viết (post) trên diễn
           đàn, có thể tiếp tục nằm trên website của chúng tôi ngay cả khi tài
@@ -125,7 +125,7 @@
         <p>
           Khi sử dụng dịch vụ của HHTQ, bạn mặc nhiên chấp nhận điều khoản trong
           Chính sách bảo vệ riêng tư này. Muốn biết thêm thông tin, vui lòng
-          liên lạc với chúng tôi tại địa chỉ ads@hhtq.tv. Chúng tôi hoạt động
+          liên lạc với chúng tôi tại địa chỉ hhtqads@gmail.com. Chúng tôi hoạt động
           hoàn toàn trong khuôn khổ luật pháp Việt Nam và cam kết tuân thủ các
           pháp chế của Nhà nước Cộng hòa Xã hội Chủ nghĩa Việt Nam . Các điều
           khoản trên là phù hợp với luật pháp hiện hành và đảm bảo quyền lợi cao
@@ -136,7 +136,7 @@
 
         <p>
           Nếu bạn có thắc mắc về Chính sách bảo vệ sự iêng tư, vui lòng liên hệ
-          với chúng tôi tại địa chỉ ads@hhtq.tv.
+          với chúng tôi tại địa chỉ hhtqads@gmail.com.
         </p>
 
         <p>· &nbsp;&nbsp;&nbsp;&nbsp;Phụ lục: Giải thích các khái niệm</p>

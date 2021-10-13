@@ -2,7 +2,7 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'server',
   // target: 'static',
-  // ssr: false,
+  ssr: false,
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -16,7 +16,7 @@ export default {
       { property: 'fb:app_id', content: '766566871423551' },
       {
         property: 'og:image:url',
-        content: 'https://i.ibb.co/Hzkt1m7/logo.png',
+        content: 'https://i.ibb.co/5j14t4H/logo-hhtq.png',
       },
       {
         property: 'og:description',

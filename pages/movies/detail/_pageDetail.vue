@@ -7,6 +7,13 @@
         <div class="_banner-wrap">
           <div class="_banner-bg">
             <img
+              v-if="$device.isMobile"
+              class="_banner-bg__img"
+              :src="movie.banner_mobile"
+              alt="banner-movie"
+            />
+            <img
+              v-else
               class="_banner-bg__img"
               :src="movie.banner"
               alt="banner-movie"
@@ -15,7 +22,18 @@
           </div>
           <div class="row _content-wrap">
             <div class="col-md-3 col-sm-3 col-12 _avatar">
-              <img class="_img-thumbnail" :src="movie.image" alt="thumbnail" />
+              <img
+                v-if="$device.isMobile"
+                class="_img-thumbnail"
+                :src="movie.image_mobile"
+                alt="thumbnail"
+              />
+              <img
+                v-else
+                class="_img-thumbnail"
+                :src="movie.image"
+                alt="thumbnail"
+              />
               <nuxt-link
                 class="btn-wrap"
                 :to="`/movies/detail/watch?id=${idMovie}`"

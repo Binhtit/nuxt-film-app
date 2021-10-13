@@ -18,16 +18,6 @@
             <img :src="require('@/assets/image/ee88-desktop.gif')" alt="ads" />
           </a>
           <!-- lixi -->
-          <a
-            href="https://lixi88vip.com/reg.shtml?id=5359840"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              :src="require('@/assets/image/Banner_lixi-desktop.gif')"
-              alt="ads"
-            />
-          </a>
         </div>
         <div v-else class="d-flex flex-column">
           <!-- e66 -->
@@ -39,16 +29,6 @@
             <img :src="require('@/assets/image/ee88-mb.gif')" alt="ads" />
           </a>
           <!-- lixi -->
-          <a
-            href="https://lixi88vip.com/reg.shtml?id=5359840"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              :src="require('@/assets/image/Banner_14062021_320x50.gif')"
-              alt="ads"
-            />
-          </a>
         </div>
       </div>
     </div>

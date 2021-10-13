@@ -1,6 +1,6 @@
 {
-  "name": "nuxt-film-app",
-  "version": "1.5.6",
+  "name": "HHTQ.tv",
+  "version": "1.5.7",
   "private": true,
   "scripts": {
     "dev": "nuxt",

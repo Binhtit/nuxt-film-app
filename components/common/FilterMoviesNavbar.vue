@@ -9,9 +9,9 @@
     "
   >
     <span v-if="!$device.isMobile" class="filter-nav__label"
-      >PHIM
+      >TOP
       <span class="font-weight-bold"><slot name="category"></slot></span>
-      MỚI CẬP NHẬT <i class="fas fa-chevron-right pl-2"></i
+      MỚI NHẤT <i class="fas fa-chevron-right pl-2"></i
     ></span>
     <span
       v-for="(type, index) in moviesTypes"

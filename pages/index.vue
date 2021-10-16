@@ -1,6 +1,13 @@
 <template>
   <div class="container home__wrapper" :class="{ _ismobile: $device.isMobile }">
     <div class="row">
+      <div
+        v-if="$device.isMobile"
+        class="fb-page col-12 bg-component"
+        data-href="https://www.facebook.com/HHTQAnimation/"
+        data-hide-cover="false"
+        data-show-facepile="false"
+      ></div>
       <AdsXbet />
       <CommonScrollUp />
       <div class="col-lg-9 p-0">
@@ -37,7 +44,7 @@
     <!-- --NOTE-- Current coding _filter logic to optimize performance. but will not be suitable when using paging in case large data. -->
     <div class="row home__filter bg-component py-2">
       <h5 v-if="$device.isMobile" class="col-12 text-center text-warning">
-        Phim 3D mới cập nhật
+        Top phim 3D mới nhất
       </h5>
       <CommonFilterMoviesNavbar
         :movies-types="moviesTypes"
@@ -54,7 +61,14 @@
         class="col-md-3 pt-3"
         :class="{ '_bg-fb _height-fb scroll-yellow--small': !$device.isMobile }"
       >
-        <AdsAdmicro />
+        <!-- <AdsAdmicro /> -->
+        <div
+          v-if="!$device.isMobile"
+          class="fb-page"
+          data-href="https://www.facebook.com/HHTQAnimation/"
+          data-hide-cover="false"
+          data-show-facepile="false"
+        ></div>
         <div
           v-if="!$device.isMobile"
           class="fb-comments"
@@ -68,7 +82,7 @@
 
     <div class="row home__filter bg-component py-2">
       <h5 v-if="$device.isMobile" class="col-12 text-center text-warning">
-        Phim 2D mới cập nhật
+        Top phim 2D mới nhất
       </h5>
       <CommonFilterMoviesNavbar
         :movies-types="moviesTypes"
@@ -214,6 +228,7 @@ export default {
     border-bottom: 2px solid var(--mainbackground);
   }
   &__wrapper {
+    padding-top: 65px;
     ._bg-fb {
       background: #6c757d;
     }

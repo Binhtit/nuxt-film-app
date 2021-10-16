@@ -41,6 +41,7 @@
           ></span>
         </div>
       </div>
+      <AdsAppLoveU />
       <div>
         <div class="text-warning text-center _fsize-13 px-1">
           Chuyển server khác nếu có tình trạng giật lắc

@@ -1,6 +1,6 @@
 # NUXT-MOVIES-APP
-
-![alt text](https://github.com/Binhtit/nuxt-movies-app/blob/main/static/logo.png)
+Những bộ phim hoạt hình 3D 2D Trung Quốc với đồ họa đẹp mắt, nội dung hấp hẫn. Top những bộ phim hoạt hình 3D 2D Trung Quốc kinh điển, hay nhất mọi thời đại
+# ![alt text](https://github.com/Binhtit/nuxt-movies-app/blob/main/static/logo.png)
 <h2 align="center">NUXT MOVIES APP</h2>
 
 ## Description:

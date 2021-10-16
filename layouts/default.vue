@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="container-fluid bg-component">
+    <div class="container-fluid bg-component header-wrap">
       <div class="container p-0 bg-component">
         <CommonHeader />
       </div>
@@ -50,6 +50,15 @@ html {
 *::after {
   box-sizing: border-box;
   margin: 0;
+}
+
+.header-wrap {
+  border-bottom: 1px solid var(--yellow1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  height: 65px;
 }
 
 .button--green {

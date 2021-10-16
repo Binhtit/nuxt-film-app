@@ -24,12 +24,12 @@
 
       <div id="navbarSupportedContent" class="collapse navbar-collapse">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active ml-3">
+          <li class="nav-item header__menu-border active ml-5 pr-3">
             <nuxt-link to="/2d-movies" class="_t-hover-yellow"
               >HOẠT HÌNH 2D<span class="sr-only">(current)</span></nuxt-link
             >
           </li>
-          <li class="nav-item ml-4">
+          <li class="nav-item pl-3">
             <nuxt-link to="/3d-movies" class="_t-hover-yellow"
               >HOẠT HÌNH 3D<span class="sr-only">(current)</span></nuxt-link
             >
@@ -297,8 +297,10 @@ export default {
 
 <style lang="scss" scoped>
 .header {
-  height: 96px;
   position: relative;
+  &__menu-border {
+    border-right: 2px solid #7d7d7d;
+  }
   &._navbar {
     .navbar {
       background: var(--componentbackground);

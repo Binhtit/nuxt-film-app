@@ -206,6 +206,7 @@ export default {
 
 <style lang="scss" scoped>
 .detail-movie {
+  padding-top: 65px;
   ._banner-wrap {
     position: relative;
     ._banner-bg {
@@ -308,6 +309,7 @@ export default {
     }
   }
   &._ismobile {
+    padding-top: 104px;
     ._banner-wrap {
       ._banner-bg__img {
         height: 450px;
@@ -323,7 +325,7 @@ export default {
           max-height: 200px;
           ._img-thumbnail {
             width: 125px;
-            padding-top: 20px;
+            padding: 10px 0;
             max-height: 180px;
           }
           .btn-wrap {

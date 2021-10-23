@@ -236,6 +236,9 @@ export default {
       max-height: 1700px;
       overflow-y: scroll;
     }
+    &._ismobile {
+      padding-top: 104px;
+    }
   }
 }
 </style>

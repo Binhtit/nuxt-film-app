@@ -60,7 +60,11 @@ export default {
 <style lang="scss" scoped>
 .movies3d {
   &__wrapper {
+    padding-top: 65px;
     border-top: 2px solid var(--mainbackground);
+    &._ismobile {
+      padding-top: 104px;
+    }
   }
   &__filter {
     border-bottom: 2px solid var(--mainbackground);

@@ -189,6 +189,7 @@ export default {
 
 <style lang="scss" scoped>
 .detail-movie {
+  padding-top: 65px;
   ._banner-wrap {
     position: relative;
     ._banner-bg {
@@ -265,6 +266,7 @@ export default {
     }
   }
   &._ismobile {
+    padding-top: 104px;
     ._banner-wrap {
       ._content-wrap {
         ._avatar {

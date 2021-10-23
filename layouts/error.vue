@@ -5,9 +5,26 @@
         <NuxtLink class="_goHome text-white" to="/">Ôi Không !!!</NuxtLink>
       </div>
       <p v-if="error.statusCode === 404">
-        <span>error 404 !</span> Xin lỗi! không tìm thấy trang bạn chọn <br />
-        Vui lòng trở về
-        <NuxtLink class="text-white" to="/">Trang chủ</NuxtLink>.
+        <span class="error-title text-danger text-uppercase">error 404 !</span>
+        <span class="text-warning text-uppercase">Đã xãy ra lỗi! </span>
+        <br />
+        <i>Có thể chúng tôi đã nâng cấp một số chức năng cho website</i><br />
+        <span class="text-warning">
+          Hãy xoá cache và lịch sử trình duyệt sau đó vào lại trang web
+        </span>
+        <a
+          href="https://wiki.ngoisaoso.vn/Phien-ban-2-0/meo-xoa-cache-website-tren-trinh-duyet-cua-dien-thoai-di-dong-va-may-tinh-77.html"
+          class="btn btn-outline-warning mx-auto mt-2"
+        >
+          Hướng dẫn xoá cache
+        </a>
+        <span class="error-space"></span>
+        <span></span>
+        <i>Chúng tôi rất xin lỗi!!.</i><br />
+        <span>
+          Quay trở về
+          <NuxtLink class="text-warning" to="/">Trang chủ</NuxtLink>.
+        </span>
       </p>
       <h2 v-else class="mt-5 text-warning">
         Đã có lỗi xãy ra. Chúng tôi rất xin lỗi!!. <br />
@@ -30,6 +47,11 @@ export default {
   margin: 0;
   padding: 0;
   height: 750px;
+  padding-top: 115px;
+}
+.error-space {
+  display: block;
+  height: 275px;
 }
 
 .box {
@@ -57,7 +79,7 @@ export default {
   background-color: #ffc900;
   font-size: 280%;
   position: absolute;
-  top: 490px;
+  top: 385px;
   text-transform: capitalize;
   animation: moving 8s linear infinite;
   -webkit-animation: moving 8s linear infinite;
@@ -75,31 +97,27 @@ export default {
   display: block;
   position: absolute;
   left: 45%;
-  top: -350px;
+  top: -135px;
 }
 
 .box div::after {
   content: '';
   width: 3px;
-  height: 335px;
+  height: 130px;
   background-color: #ffc900;
   display: block;
   position: absolute;
   left: 50%;
-  top: -330px;
+  top: -125px;
 }
 
 .box p {
-  position: absolute;
-  top: 560px;
-  left: 38%;
   font-weight: 700;
-  text-transform: uppercase;
   color: #fff;
   width: 300px;
 }
 
-.box p span {
+.box p .error-title {
   display: block;
   font-size: 300%;
 }

@@ -1,6 +1,6 @@
 {
   "name": "HHTQ.tv",
-  "version": "1.5.7",
+  "version": "2.5.9",
   "private": true,
   "scripts": {
     "dev": "nuxt",

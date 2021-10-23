@@ -3,7 +3,7 @@
     <div v-if="!$device.isMobile" class="d-flex flex-column align-items-center">
       <!-- 123b -->
       <a
-        href="http://linkfree.me/thongkehhtq"
+        href="http://linkfree.me/thongkehhtq1"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -17,7 +17,7 @@
     <div v-else class="d-flex flex-column align-items-center">
       <!-- 123b -->
       <a
-        href="http://linkfree.me/thongkehhtq"
+        href="http://linkfree.me/thongkehhtq1"
         target="_blank"
         rel="noopener noreferrer"
       >

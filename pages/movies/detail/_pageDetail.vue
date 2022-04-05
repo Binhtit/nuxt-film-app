@@ -43,6 +43,12 @@
                   XEM PHIM
                 </button>
               </nuxt-link>
+              <a class="btn-wrap" href="http://truyennet.net">
+                <i class="far fa-play-circle"></i>
+                <button class="btn _read btn-outline-info font-weight-bold">
+                  ĐỌC TRUYỆN
+                </button>
+              </a>
             </div>
             <div class="col-md-9 col-sm-3 col-12 _content">
               <h5 class="_content__title">{{ movie.name }}</h5>
@@ -257,8 +263,11 @@ export default {
           .btn {
             position: absolute;
             bottom: -50px;
-            left: 50%;
+            left: 33%;
             transform: translate(-50%);
+            &._read {
+              margin-left: 120px;
+            }
           }
           &:hover {
             background: #00000096;

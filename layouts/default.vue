@@ -7,7 +7,7 @@
     </div>
     <Nuxt />
     <div class="container">
-      <!-- <AdsLixitt /> -->
+      <AdsFixedButton />
       <CommonFooter />
     </div>
     <div

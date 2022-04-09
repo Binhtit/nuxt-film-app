@@ -333,7 +333,7 @@ export default {
           padding: 0 10px;
           overflow-y: scroll;
           position: absolute;
-          z-index: 99;
+          z-index: 99991;
           top: 42px;
           ._movie-rs {
             height: 150px;

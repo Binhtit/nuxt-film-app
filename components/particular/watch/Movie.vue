@@ -156,7 +156,7 @@ export default {
   },
   computed: {
     frameSrc() {
-      return `https://animevip.tv/ads1/?url=${this.movieSrc}${this.hideYoutobeLogo}`
+      return `https://s2fastplayer.xyz/embed-ads/?url=${this.movieSrc}${this.hideYoutobeLogo}`
     },
     movieSrc() {
       if (this.link != null) {
